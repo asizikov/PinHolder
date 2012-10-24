@@ -2,6 +2,7 @@
 using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
+using resx = PinHolder.Resourses;
 
 namespace PinHolder.ViewModel
 {
@@ -22,7 +23,7 @@ namespace PinHolder.ViewModel
         }
 
 
-        public string Title { get { return "edit"; } }
+        public string Title { get { return resx.Strings.Edit; } }
 
         public Visibility DeleteButtonVisible {get{return Visibility.Visible;}}
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Controls;
+using System.Windows.Data;
 using PinHolder.Navigation;
 using PinHolder.ViewModel;
 
@@ -40,6 +41,16 @@ namespace PinHolder.View
                 tb.Text = tb.Text[0].ToString(CultureInfo.InvariantCulture);
                 Focus();
             }
+        }
+
+        private void OnTextBoxTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            if(textBox == null) return;
+            // Update the binding source
+            var bindingExpr = textBox.GetBindingExpression(TextBox.TextProperty);
+            if(bindingExpr == null) return;
+            bindingExpr.UpdateSource();
         }
     }
 }

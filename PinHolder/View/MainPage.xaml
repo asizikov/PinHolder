@@ -9,6 +9,7 @@
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             d:DesignHeight="696"
                             d:DesignWidth="480"
+							d:DataContext="{d:DesignData Source=/SampleData/MainViewModelSampleData.xaml}"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -49,20 +50,21 @@
                                             Mode=TwoWay}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <toolkit:WrapPanel Orientation="Horizontal" />
+                        <toolkit:WrapPanel/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Border Width="150"
-                                Height="150"
+                        <Border Width="172"
+                                Height="172"
                                 Margin="0,0,12,12"
                                 Background="{StaticResource PhoneAccentBrush}"
                                 BorderBrush="Black"
+                                toolkit:TiltEffect.IsTiltEnabled="True"
                                 BorderThickness="0">
-                            <StackPanel>
-                                <TextBlock Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Name}" />
-                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Description}" />
+                            <StackPanel VerticalAlignment="Top">
+                                <TextBlock Style="{StaticResource PhoneTextTitle2Style}" Text="{Binding Name}" />
+                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Description}" TextWrapping="Wrap" />
                             </StackPanel>
                         </Border>
 

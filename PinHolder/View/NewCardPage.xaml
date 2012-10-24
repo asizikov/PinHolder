@@ -50,8 +50,9 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBox Width="460"
                              Margin="0,0,-3,0"
+                             TextChanged="OnTextBoxTextChanged"
                              Text="{Binding Card.Name,
-                                            Mode=TwoWay}" />
+                                            Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                 </StackPanel>
                 <TextBox Margin="0,0,-3,0" Text="{Binding Card.Description, Mode=TwoWay}" />
                 <toolkit:WrapPanel>

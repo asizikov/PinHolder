@@ -2,6 +2,7 @@
 using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
+using resx = PinHolder.Resourses;
 
 namespace PinHolder.ViewModel
 {
@@ -31,7 +32,7 @@ namespace PinHolder.ViewModel
                 };
         }
 
-        public string Title { get { return "new"; } }
+        public string Title { get { return resx.Strings.New; } }
         public Visibility DeleteButtonVisible
         {
             get
@@ -46,7 +47,7 @@ namespace PinHolder.ViewModel
             get
             {
                 return _saveCommand
-                    ?? (_saveCommand = new RelayCommand(SaveCard, () => CanSave()));
+                    ?? (_saveCommand = new RelayCommand(SaveCard, CanSave));
             }
         }
 
