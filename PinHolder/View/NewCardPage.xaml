@@ -54,7 +54,9 @@
                              Text="{Binding Card.Name,
                                             Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
                 </StackPanel>
-                <TextBox Margin="0,0,-3,0" Text="{Binding Card.Description, Mode=TwoWay}" />
+                <TextBox Margin="0,0,-3,0" Text="{Binding Card.Description, Mode=TwoWay,
+                    UpdateSourceTrigger=Explicit}"
+                    TextChanged="OnTextBoxTextChanged"/>
                 <toolkit:WrapPanel>
                     <Border Margin="12,0,0,12" Background="Red">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
