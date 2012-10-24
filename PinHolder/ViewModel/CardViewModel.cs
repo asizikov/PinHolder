@@ -8,7 +8,26 @@ namespace PinHolder.ViewModel
 {
     public class CardViewModel : BaseViewModel
     {
+
+        private sealed class EmptyCardViewModel: CardViewModel
+        {
+            public EmptyCardViewModel()
+            {
+                Id = -1;
+                Description = string.Empty;
+                PinItems = new List<PinItemViewModel>(0);
+
+            }
+
+            public override Card GetModel()
+            {
+                return null;
+            }
+        }
+
         public event Action ReadyToSave;
+
+        private static readonly CardViewModel _empty = new EmptyCardViewModel();
 
         private readonly Random _random = new Random();
         private const int CELLS_NUM = 20;
@@ -38,6 +57,11 @@ namespace PinHolder.ViewModel
         public string Description { get; set; }
         public List<PinItemViewModel> PinItems { get; set; }
 
+        public static CardViewModel Empty
+        {
+            get { return _empty; }
+        }
+
         private void OnUpdate(PinItemViewModel item)
         {
             if (PinItems.Count(pi => !string.IsNullOrWhiteSpace(pi.Pin)) != PIN_SIZE) return;
@@ -58,7 +82,7 @@ namespace PinHolder.ViewModel
             return _random.Next(10).ToString(CultureInfo.InvariantCulture);
         }
 
-        public Card GetModel()
+        public virtual Card GetModel()
         {
             return new Card
                 {

@@ -91,7 +91,9 @@ namespace PinHolder.Model
 
         public CardViewModel GetById(int id)
         {
-            return new CardViewModel(_cards.FirstOrDefault(c => c.Id == id));
+            var model =_cards.FirstOrDefault(c => c.Id == id);
+
+            return model != null ? new CardViewModel(model) : CardViewModel.Empty;
         }
 
 

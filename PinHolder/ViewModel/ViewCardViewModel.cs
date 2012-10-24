@@ -26,6 +26,10 @@ namespace PinHolder.ViewModel
             }
             set {
                 _card = value;
+                if (_card == CardViewModel.Empty)
+                {
+                    _navigation.GoBack();
+                }
             }
         }
 

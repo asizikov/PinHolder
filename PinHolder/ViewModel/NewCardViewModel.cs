@@ -22,6 +22,13 @@ namespace PinHolder.ViewModel
                     _canSave = true;
                     SaveCommand.RaiseCanExecuteChanged();
                 };
+            Card.PropertyChanged += (sender, args) =>
+                {
+                    if (args.PropertyName == "Description")
+                    {
+                        SaveCommand.RaiseCanExecuteChanged();
+                    }
+                };
         }
 
         public string Title { get { return "new"; } }
@@ -39,16 +46,18 @@ namespace PinHolder.ViewModel
             get
             {
                 return _saveCommand
-                    ?? (_saveCommand = new RelayCommand(SaveCard, () => _canSave));
+                    ?? (_saveCommand = new RelayCommand(SaveCard, () => CanSave()));
             }
         }
 
-        private void SaveCard()
+        private RelayCommand _deleteCommand;
+        public RelayCommand DeleteCommand
         {
-            _cardProvider.Save(Card);
-            _navigation.GoBack();
+            get
+            {
+                return _deleteCommand ?? (_deleteCommand = new RelayCommand(() => { }, () => false));
+            }
         }
-
 
         public CardViewModel Card
         {
@@ -59,6 +68,18 @@ namespace PinHolder.ViewModel
                 _card = value;
                 OnPropertyChanged("Card");
             }
+        }
+
+
+        private bool CanSave()
+        {
+            return _canSave && !string.IsNullOrWhiteSpace(Card.Name);
+        }
+
+        private void SaveCard()
+        {
+            _cardProvider.Save(Card);
+            _navigation.GoBack();
         }
     }
 }
