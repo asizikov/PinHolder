@@ -2,7 +2,7 @@
 
 namespace PinHolder.ViewModel
 {
-    public class PinItemViewModel : BaseViewModel
+    public sealed class PinItemViewModel : BaseViewModel
     {
         private string _pin;
 

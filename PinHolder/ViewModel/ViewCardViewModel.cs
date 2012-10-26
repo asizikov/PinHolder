@@ -4,7 +4,7 @@ using PinHolder.Navigation;
 
 namespace PinHolder.ViewModel
 {
-    public class ViewCardViewModel: BaseViewModel
+    public sealed class ViewCardViewModel: BaseViewModel
     {
         private readonly NavigationService _navigation;
         private readonly CardProvider _cardProvider;

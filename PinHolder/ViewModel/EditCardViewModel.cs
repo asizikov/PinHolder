@@ -6,7 +6,7 @@ using resx = PinHolder.Resourses;
 
 namespace PinHolder.ViewModel
 {
-    public class EditCardViewModel: BaseViewModel
+    public sealed class EditCardViewModel: BaseViewModel
     {
         private readonly NavigationService _navigation;
         private readonly CardProvider _cardProvider;

@@ -1,6 +1,6 @@
 ﻿namespace PinHolder.Navigation
 {
-    public class Keys
+    public sealed class Keys
     {
         public static string Id = "id";
         public static string Edit = "edit";

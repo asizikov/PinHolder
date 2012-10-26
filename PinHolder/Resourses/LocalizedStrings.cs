@@ -1,6 +1,6 @@
 ﻿namespace PinHolder.Resourses
 {
-    public class LocalizedStrings
+    public sealed class LocalizedStrings
     {
         public LocalizedStrings()
         {

@@ -8,12 +8,12 @@ using PinHolder.ViewModel;
 
 namespace PinHolder.Model
 {
-    public class CardsHolder
+    public sealed class CardsHolder
     {
         public List<Card> Cards;
     }
 
-    public class CardProvider
+    public sealed class CardProvider
     {
         private readonly List<Card> _cards;
         private const string FOLDER = "Cards";

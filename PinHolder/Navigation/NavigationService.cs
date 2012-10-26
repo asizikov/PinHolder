@@ -3,7 +3,7 @@ using Microsoft.Phone.Controls;
 
 namespace PinHolder.Navigation
 {
-    public class NavigationService
+    public sealed class NavigationService
     {
         private readonly PhoneApplicationFrame _rootFrame;
 

@@ -6,7 +6,7 @@ using resx = PinHolder.Resourses;
 
 namespace PinHolder.ViewModel
 {
-    public class NewCardViewModel : BaseViewModel
+    public sealed class NewCardViewModel : BaseViewModel
     {
         private readonly NavigationService _navigation;
         private readonly CardProvider _cardProvider;
@@ -25,7 +25,7 @@ namespace PinHolder.ViewModel
                 };
             Card.PropertyChanged += (sender, args) =>
                 {
-                    if (args.PropertyName == "Description")
+                    if (args.PropertyName == "Description" || args.PropertyName == "Name")
                     {
                         SaveCommand.RaiseCanExecuteChanged();
                     }

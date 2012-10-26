@@ -30,6 +30,8 @@ namespace PinHolder.ViewModel
         private static readonly CardViewModel _empty = new EmptyCardViewModel();
 
         private readonly Random _random = new Random();
+        private string _name;
+        private string _description;
         private const int CELLS_NUM = 20;
         private const int PIN_SIZE = 4;
 
@@ -53,8 +55,29 @@ namespace PinHolder.ViewModel
         }
 
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (value == _name) return;
+                _name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+            set
+            {
+                if (value == _description) return;
+                _description = value;
+                OnPropertyChanged("Description");
+            }
+        }
+
         public List<PinItemViewModel> PinItems { get; set; }
 
         public static CardViewModel Empty
