@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Controls;
-using System.Windows.Data;
+using System.Windows.Navigation;
+using PinHolder.Lifecycle;
 using PinHolder.Navigation;
 using PinHolder.ViewModel;
 
@@ -29,6 +30,51 @@ namespace PinHolder.View
                 }
             }
             DataContext =  ViewModelLocator.GetNewCardViewModel();
+
+            if(!this.LoadState<bool>("hasRestore")) return;
+
+            name.Text        = this.LoadState<string>("name");
+            description.Text = this.LoadState<string>("descripton");
+
+            var index = 0;
+            foreach (var child in digits.Children)
+            {
+                var border = child as Border;
+                if (border == null) return; //something went wrong. Let's sckip it
+
+                var tb = border.Child as TextBox;
+                if (tb == null) return; //something went wrong. Let's sckip it
+
+                tb.Text = this.LoadState<string>(index.ToString(CultureInfo.InvariantCulture));
+                index++;
+            }
+        }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                this.SaveState("hasRestore",false);
+                return;
+            }
+
+            this.SaveState("hasRestore", true);
+            this.SaveState("name", name.Text);
+            this.SaveState("descripton",description.Text);
+
+            var index = 0;
+            foreach (var child in digits.Children)
+            {
+                var border = child as Border;
+                if (border == null) return; //something went wrong. Let's sckip it
+
+                var tb = border.Child as TextBox;
+                if (tb == null) return; //something went wrong. Let's sckip it
+
+                this.SaveState(index.ToString(CultureInfo.InvariantCulture),tb.Text);
+                index++;
+            }
         }
 
         private void OnTextChanged(object sender, TextChangedEventArgs e)

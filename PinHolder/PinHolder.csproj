@@ -72,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardProvider.cs" />
     <Compile Include="Navigation\Keys.cs" />
