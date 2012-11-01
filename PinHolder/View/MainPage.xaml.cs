@@ -3,7 +3,7 @@ using PinHolder.ViewModel;
 
 namespace PinHolder.View
 {
-    public partial class MainPage : PhoneApplicationPage
+    public sealed partial class MainPage : PhoneApplicationPage
     {
         // Constructor
         public MainPage()

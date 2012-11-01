@@ -26,9 +26,14 @@
         <Style x:Key="PinTextBlockStyle" TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeExtraExtraLarge}" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeExtraLarge}" />
         </Style>
+        <SolidColorBrush x:Key="Purple">#FFA200FF</SolidColorBrush>
+        <SolidColorBrush x:Key="Lime">#FFA2C139</SolidColorBrush>
+        <SolidColorBrush x:Key="Mango">#FFF09609</SolidColorBrush>
+        <SolidColorBrush x:Key="Pink">#FFE671B8</SolidColorBrush>
+        <SolidColorBrush x:Key="Blue">#FF1BA1E2</SolidColorBrush>
 
     </phone:PhoneApplicationPage.Resources>
     <!--  LayoutRoot is the root grid where all page content is placed  -->
@@ -51,64 +56,64 @@
               Grid.Row="1"
               Margin="12,0,12,0">
             <toolkit:WrapPanel>
-                <Border Background="Red" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Purple}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[0].Pin}" />
                 </Border>
-                <Border Background="Green" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Lime}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[1].Pin}" />
                 </Border>
-                <Border Background="DarkOrange" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Mango}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[2].Pin}" />
                 </Border>
-                <Border Background="Magenta" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Pink}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[3].Pin}" />
                 </Border>
-                <Border Background="Blue" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Blue}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[4].Pin}" />
                 </Border>
-                <Border Background="Chartreuse" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Purple}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[5].Pin}" />
                 </Border>
-                <Border Background="DarkBlue" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Lime}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[6].Pin}" />
                 </Border>
-                <Border Background="Magenta" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Mango}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[7].Pin}" />
                 </Border>
-                <Border Background="Red" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Pink}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[8].Pin}" />
                 </Border>
-                <Border Background="DarkOrange" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Blue}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[9].Pin}" />
                 </Border>
-                <Border Background="Green" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Purple}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[10].Pin}" />
                 </Border>
-                <Border Background="Blue" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Lime}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[11].Pin}" />
                 </Border>
-                <Border Background="Chartreuse" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Mango}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[12].Pin}" />
                 </Border>
-                <Border Background="DarkBlue" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Pink}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[13].Pin}" />
                 </Border>
-                <Border Background="Lime" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Blue}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[14].Pin}" />
                 </Border>
-                <Border Background="Red" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Purple}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[15].Pin}" />
                 </Border>
-                <Border Background="DarkOrange" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Lime}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[16].Pin}" />
-                </Border>
-                <Border Background="Blue" Style="{StaticResource PinBorderStyle}">
+                </Border> 
+                <Border Background="{StaticResource Mango}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[17].Pin}" />
                 </Border>
-                <Border Background="Magenta" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Pink}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[18].Pin}" />
                 </Border>
-                <Border Background="DarkBlue" Style="{StaticResource PinBorderStyle}">
+                <Border Background="{StaticResource Blue}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[19].Pin}" />
                 </Border>
             </toolkit:WrapPanel>

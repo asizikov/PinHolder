@@ -25,7 +25,7 @@ namespace PinHolder.Model
             LoadCardsFromStorage();
         }
 
-        protected string PathToFile
+        private string PathToFile
         {
             get { return FOLDER + "\\" + FILE; }
         }

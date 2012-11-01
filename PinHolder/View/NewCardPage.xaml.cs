@@ -8,7 +8,7 @@ using PinHolder.ViewModel;
 
 namespace PinHolder.View
 {
-    public partial class NewCardPage
+    public sealed partial class NewCardPage
     {
         public NewCardPage()
         {

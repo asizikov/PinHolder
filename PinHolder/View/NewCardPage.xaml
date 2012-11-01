@@ -19,11 +19,16 @@
 
     <phone:PhoneApplicationPage.Resources>
         <ResourceDictionary>
-            <Style x:Name="EditTextBoxStyle" TargetType="TextBox">
+            <Style x:Key="EditTextBoxStyle" TargetType="TextBox">
                 <Setter Property="FontStyle" Value="{StaticResource PhoneTextLargeStyle}" />
                 <Setter Property="Width" Value="100" />
                 <Setter Property="InputScope" Value="Digits" />
             </Style>
+            <SolidColorBrush x:Key="Purple">#FFA200FF</SolidColorBrush>
+            <SolidColorBrush x:Key="Lime">#FFA2C139</SolidColorBrush>
+            <SolidColorBrush x:Key="Mango">#FFF09609</SolidColorBrush>
+            <SolidColorBrush x:Key="Pink">#FFE671B8</SolidColorBrush>
+            <SolidColorBrush x:Key="Blue">#FF1BA1E2</SolidColorBrush>
         </ResourceDictionary>
     </phone:PhoneApplicationPage.Resources>
     <!--  LayoutRoot is the root grid where all page content is placed  -->
@@ -59,121 +64,121 @@
                     UpdateSourceTrigger=Explicit}"
                     TextChanged="OnTextBoxTextChanged"/>
                 <toolkit:WrapPanel Name="digits">
-                    <Border Margin="12,0,0,12" Background="Red">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Purple}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[0].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Green">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Lime}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[1].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="DarkOrange">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Mango}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[2].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Magenta">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Pink}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[3].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Blue">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Blue}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[4].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Chartreuse">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Purple}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[5].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="DarkBlue">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Lime}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[6].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Magenta">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Mango}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[7].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Red">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Pink}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[8].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="DarkOrange">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Blue}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[9].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Green">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Purple}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[10].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Blue">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Lime}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[11].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Chartreuse">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Mango}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[12].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="DarkBlue">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Pink}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[13].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Lime">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Blue}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[14].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Red">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Purple}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[15].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="DarkOrange">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Lime}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[16].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Blue">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Mango}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[17].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="Magenta">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Pink}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[18].Pin,
                                                 Mode=TwoWay}"
                                  TextChanged="OnTextChanged" />
                     </Border>
-                    <Border Margin="12,0,0,12" Background="DarkBlue">
+                    <Border Margin="12,0,0,12" Background="{StaticResource Blue}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[19].Pin,
                                                 Mode=TwoWay}"
