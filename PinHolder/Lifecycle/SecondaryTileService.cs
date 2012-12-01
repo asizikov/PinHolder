@@ -7,7 +7,7 @@ namespace PinHolder.Lifecycle
 {
     public sealed class SecondaryTileService : ISecondaryTileService
     {
-        private const string IMAGE_PATH = "ApplicationIcon.png";
+        private const string IMAGE_PATH = "Background.png";
 
         /// <summary>
         /// Checks if secondary tile for card already exists
