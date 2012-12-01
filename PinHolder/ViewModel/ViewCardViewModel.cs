@@ -1,4 +1,5 @@
 ﻿using PinHolder.Command;
+using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
 
@@ -10,6 +11,8 @@ namespace PinHolder.ViewModel
         private readonly CardProvider _cardProvider;
         private readonly int _id;
         private CardViewModel _card;
+        
+        private readonly ISecondaryTileService _secondaryTileService = new SecondaryTileService();
 
         public ViewCardViewModel(NavigationService navigation, CardProvider cardProvider, int id)
         {
@@ -38,6 +41,16 @@ namespace PinHolder.ViewModel
             get {
                 return new RelayCommand(()=> _navigation.Navigate(Pages.New,
                     string.Format("?{0}={1}", Keys.Id, Card.Id)));
+            }
+        }
+
+        public RelayCommand CreatePinCommand
+        {
+            get
+            {
+                return new RelayCommand(
+                    ()=> _secondaryTileService.TryCreate(Card.Name, Card.Id, () => { }),
+                    ()=> _secondaryTileService.CanCreate(Card.Id));
             }
         }
     }

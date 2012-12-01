@@ -138,6 +138,9 @@
   <data name="New" xml:space="preserve">
     <value>new</value>
   </data>
+  <data name="Pin" xml:space="preserve">
+    <value>pin to start</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>save</value>
   </data>

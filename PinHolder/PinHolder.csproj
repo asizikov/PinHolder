@@ -72,7 +72,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Lifecycle\CreationState.cs" />
+    <Compile Include="Lifecycle\ISecondaryTileService.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />
+    <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardProvider.cs" />
     <Compile Include="Navigation\Keys.cs" />
@@ -142,6 +145,7 @@
     <Content Include="Images\appbar.add.rest.png" />
     <Content Include="Images\appbar.delete.rest.png" />
     <Content Include="Images\appbar.edit.rest.png" />
+    <Content Include="Images\appbar.pin.rest.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
