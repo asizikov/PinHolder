@@ -132,11 +132,20 @@
   <data name="Delete" xml:space="preserve">
     <value>delete</value>
   </data>
+  <data name="DescriptionHere" xml:space="preserve">
+    <value>type a description here</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>edit</value>
   </data>
+  <data name="NameHere" xml:space="preserve">
+    <value>type a card name here</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>new</value>
+  </data>
+  <data name="NoCard" xml:space="preserve">
+    <value>Your card holder is empty.  Let's add a new card!</value>
   </data>
   <data name="Pin" xml:space="preserve">
     <value>pin to start</value>

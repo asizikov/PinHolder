@@ -52,18 +52,17 @@
               Grid.Row="1"
               Margin="12,0,12,0">
             <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBox Width="460"
+                <toolkit:PhoneTextBox Width="460"
                              Margin="0,0,-3,0"
                              Name="name"
+                             Hint="{Binding  Strings.NameHere, Source={StaticResource LocalizedStrings}}"
                              TextChanged="OnTextBoxTextChanged"
                              Text="{Binding Card.Name,
                                             Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
-                </StackPanel>
-                <TextBox Margin="0,0,-3,0" Name="description" Text="{Binding Card.Description, Mode=TwoWay,
-                    UpdateSourceTrigger=Explicit}"
-                    TextChanged="OnTextBoxTextChanged"/>
-                <toolkit:WrapPanel Name="digits">
+                <toolkit:PhoneTextBox Margin="0,0,-3,0" Name="description" 
+                     Text="{Binding Card.Description, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                                      Hint="{Binding  Strings.DescriptionHere, Source={StaticResource LocalizedStrings}}"/>
+                <toolkit:WrapPanel Margin="0,12,0,0" Name="digits">
                     <Border Margin="12,0,0,12" Background="{StaticResource Purple}">
                         <TextBox Style="{StaticResource EditTextBoxStyle}"
                                  Text="{Binding Card.PinItems[0].Pin,

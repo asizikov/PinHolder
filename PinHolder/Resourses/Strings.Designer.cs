@@ -106,6 +106,15 @@ namespace PinHolder.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to type a description here.
+        /// </summary>
+        public static string DescriptionHere {
+            get {
+                return ResourceManager.GetString("DescriptionHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to edit.
         /// </summary>
         public static string Edit {
@@ -115,11 +124,29 @@ namespace PinHolder.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to type a card name here.
+        /// </summary>
+        public static string NameHere {
+            get {
+                return ResourceManager.GetString("NameHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to new.
         /// </summary>
         public static string New {
             get {
                 return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your card holder is empty.  Let&apos;s add a new card!.
+        /// </summary>
+        public static string NoCard {
+            get {
+                return ResourceManager.GetString("NoCard", resourceCulture);
             }
         }
         

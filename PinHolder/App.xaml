@@ -1,11 +1,14 @@
 ﻿<Application x:Class="PinHolder.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:converters="clr-namespace:PinHolder.Converters"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
 
     <!--  Application Resources  -->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:PinHolder.Resourses" x:Key="LocalizedStrings" />
+        <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
+        <converters:ReversedZeroToVisibilityConverter x:Key="ReversedZeroToVisibilityConverter"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

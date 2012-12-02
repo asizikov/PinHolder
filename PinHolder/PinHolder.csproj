@@ -72,6 +72,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Converters\ReversedZeroToVisibilityConverter.cs" />
+    <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="Lifecycle\CreationState.cs" />
     <Compile Include="Lifecycle\ISecondaryTileService.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />

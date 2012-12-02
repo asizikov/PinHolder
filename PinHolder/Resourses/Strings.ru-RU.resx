@@ -132,11 +132,20 @@
   <data name="Delete" xml:space="preserve">
     <value>удалить</value>
   </data>
+  <data name="DescriptionHere" xml:space="preserve">
+    <value>описание карты</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>изменить</value>
   </data>
+  <data name="NameHere" xml:space="preserve">
+    <value>имя карты</value>
+  </data>
   <data name="New" xml:space="preserve">
     <value>новая</value>
+  </data>
+  <data name="NoCard" xml:space="preserve">
+    <value>Хм, тут пусто... Давай добавим хотя бы одну карту?</value>
   </data>
   <data name="Pin" xml:space="preserve">
     <value>на рабочий стол</value>
