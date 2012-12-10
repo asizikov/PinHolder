@@ -59,8 +59,10 @@
                              TextChanged="OnTextBoxTextChanged"
                              Text="{Binding Card.Name,
                                             Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
-                <toolkit:PhoneTextBox Margin="0,0,-3,0" Name="description" 
-                     Text="{Binding Card.Description, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
+                <toolkit:PhoneTextBox 
+                    Margin="0,0,-3,0" Name="description" 
+                    TextChanged="OnTextBoxTextChanged"
+                    Text="{Binding Card.Description, Mode=TwoWay, UpdateSourceTrigger=Explicit}"
                                       Hint="{Binding  Strings.DescriptionHere, Source={StaticResource LocalizedStrings}}"/>
                 <toolkit:WrapPanel Margin="0,12,0,0" Name="digits">
                     <Border Margin="12,0,0,12" Background="{StaticResource Purple}">
