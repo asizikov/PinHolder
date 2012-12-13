@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{6282717e-9952-405c-8976-96a30cd65316}" Title="PinHolder" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal"  
+  <App xmlns="" ProductID="{6282717e-9952-405c-8976-96a30cd65316}" Title="PinHolder" RuntimeType="Silverlight" 
+       Version="1.1.1.0" Genre="apps.normal"  
        Author="Anton Sizikov" Description="Sample description" Publisher="Anton Sizikov">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>      

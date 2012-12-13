@@ -17,7 +17,7 @@
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
-      en-US;ru-Ru;
+      en-US;ru-Ru;de-DE;
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
@@ -84,6 +84,11 @@
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Pages.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Resourses\Strings.de-DE.Designer.cs">
+      <DependentUpon>Strings.de-DE.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resourses\Strings.ru-RU.Designer.cs">
       <DependentUpon>Strings.ru-RU.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -155,6 +160,10 @@
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resourses\Strings.de-DE.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.de-DE.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resourses\Strings.ru-RU.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru-RU.Designer.cs</LastGenOutput>
