@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -7,8 +8,8 @@ namespace PinHolder.ViewModel
 {
     public sealed class MainViewModel :BaseViewModel
     {
-        private readonly NavigationService _navigation;
-        private readonly CardProvider _cardProvider;
+        [NotNull] private readonly NavigationService _navigation;
+        [NotNull] private readonly CardProvider _cardProvider;
         private CardViewModel _selected;
 
         public MainViewModel(NavigationService navigation, CardProvider cardProvider)

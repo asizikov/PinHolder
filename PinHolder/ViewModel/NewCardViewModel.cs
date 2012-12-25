@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -13,7 +14,7 @@ namespace PinHolder.ViewModel
         private CardViewModel _card;
         private bool _canSave;
 
-        public NewCardViewModel(NavigationService navigation, CardProvider cardProvider)
+        public NewCardViewModel([NotNull] NavigationService navigation, [NotNull] CardProvider cardProvider)
         {
             _navigation = navigation;
             _cardProvider = cardProvider;
@@ -32,7 +33,10 @@ namespace PinHolder.ViewModel
                 };
         }
 
+        [UsedImplicitly]
         public string Title { get { return resx.Strings.New; } }
+
+        [UsedImplicitly]
         public Visibility DeleteButtonVisible
         {
             get
@@ -42,6 +46,8 @@ namespace PinHolder.ViewModel
         }
 
         private RelayCommand _saveCommand;
+
+        [UsedImplicitly]
         public RelayCommand SaveCommand
         {
             get
@@ -52,6 +58,8 @@ namespace PinHolder.ViewModel
         }
 
         private RelayCommand _deleteCommand;
+
+        [UsedImplicitly]
         public RelayCommand DeleteCommand
         {
             get
@@ -60,6 +68,7 @@ namespace PinHolder.ViewModel
             }
         }
 
+        [NotNull, UsedImplicitly]
         public CardViewModel Card
         {
             get { return _card; }

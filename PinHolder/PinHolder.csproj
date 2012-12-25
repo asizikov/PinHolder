@@ -78,8 +78,10 @@
     <Compile Include="Lifecycle\ISecondaryTileService.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
+    <Compile Include="Model\ApplicationSettings.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardProvider.cs" />
+    <Compile Include="Model\SettingsProvider.cs" />
     <Compile Include="Navigation\Keys.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Pages.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\NewCardViewModel.cs" />
     <Compile Include="ViewModel\PinItemViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ViewCardViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MainPage.xaml.cs">
@@ -132,6 +135,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Resource Include="View\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
     <Page Include="View\ViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

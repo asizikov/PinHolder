@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
@@ -9,7 +10,7 @@ namespace PinHolder.ViewModel
 {
     public sealed class EditCardViewModel: BaseViewModel
     {
-        private readonly ISecondaryTileService _secondaryTileService = new SecondaryTileService();
+        [NotNull] private readonly ISecondaryTileService _secondaryTileService = new SecondaryTileService();
         private readonly NavigationService _navigation;
         private readonly CardProvider _cardProvider;
         private readonly int _id;
@@ -24,8 +25,10 @@ namespace PinHolder.ViewModel
         }
 
 
+        [UsedImplicitly]
         public string Title { get { return resx.Strings.Edit; } }
 
+        [UsedImplicitly]
         public Visibility DeleteButtonVisible { get{ return Visibility.Visible;}}
 
         public CardViewModel Card

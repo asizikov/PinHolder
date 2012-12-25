@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using PinHolder.Annotations;
 using PinHolder.Model;
 
 namespace PinHolder.ViewModel
@@ -56,6 +57,7 @@ namespace PinHolder.ViewModel
 
         public int Id { get; set; }
 
+        [UsedImplicitly]
         public string Name
         {
             get { return _name; }
@@ -67,6 +69,7 @@ namespace PinHolder.ViewModel
             }
         }
 
+        [UsedImplicitly]
         public string Description
         {
             get { return _description; }
@@ -78,6 +81,7 @@ namespace PinHolder.ViewModel
             }
         }
 
+        [UsedImplicitly]
         public List<PinItemViewModel> PinItems { get; set; }
 
         public static CardViewModel Empty

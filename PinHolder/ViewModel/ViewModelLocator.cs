@@ -1,11 +1,12 @@
-﻿using PinHolder.Model;
+﻿using PinHolder.Annotations;
+using PinHolder.Model;
 using PinHolder.Navigation;
 
 namespace PinHolder.ViewModel
 {
     public static class ViewModelLocator
     {
-
+        [NotNull]
         public static NavigationService Navigation { get; set; }
 
         private static readonly CardProvider CardProvider = new CardProvider();
@@ -28,6 +29,11 @@ namespace PinHolder.ViewModel
         public static EditCardViewModel GetEditCardViewModel(int id)
         {
             return new EditCardViewModel(Navigation, CardProvider, id);
+        }
+
+        public static SettingsViewModel GetSettingsViewModel()
+        {
+            return new SettingsViewModel(new SettingsProvider());
         }
     }
 }
