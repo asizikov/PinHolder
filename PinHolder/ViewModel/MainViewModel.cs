@@ -33,18 +33,20 @@ namespace PinHolder.ViewModel
         private void InitCommands()
         {
             AddNewCommand = new RelayCommand(AddNewCard);
+            SettingsCommand = new RelayCommand(GoToSettings);
         }
 
+        
 
-        public RelayCommand AddNewCommand { get; set; }
+        public RelayCommand AddNewCommand { get; private set; }
+        public RelayCommand SettingsCommand { get; private set; }
+        public RelayCommand AboutCommand { get; private set; }
 
-        private void AddNewCard()
-        {
-            _navigation.Navigate(Pages.New);
-        }
 
+        [NotNull]
         public ObservableCollection<CardViewModel> Cards { get; set; }
 
+        [CanBeNull]
         public CardViewModel Selected
         {
             get { return _selected; }
@@ -55,6 +57,16 @@ namespace PinHolder.ViewModel
                     _navigation.Navigate(Pages.ViewPage, string.Format("?{0}={1}", Keys.Id, _selected.Id));                    
                 }
             }
+        }
+
+        private void AddNewCard()
+        {
+            _navigation.Navigate(Pages.New);
+        }
+
+        private void GoToSettings()
+        {
+            _navigation.Navigate(Pages.Settings);
         }
     }
 }

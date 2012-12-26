@@ -7,6 +7,7 @@ namespace PinHolder.ViewModel
     {
         [NotNull] private readonly SettingsProvider _settingsProvider;
         [NotNull] private readonly ApplicationSettings _settings;
+        
 
         public SettingsViewModel(SettingsProvider settingsProvider )
         {
@@ -15,10 +16,30 @@ namespace PinHolder.ViewModel
         }
 
 
+        private bool _useMasterPassword;
+
+        [UsedImplicitly]
+        public bool UseMasterPassword
+        {
+            get
+            {
+                return _useMasterPassword;
+            }
+            set
+            {
+                if (value.Equals(_useMasterPassword)) return;
+                _useMasterPassword = value;
+                OnPropertyChanged("UseMasterPassword");
+            }
+        }
+
         private void Save()
         {
             _settingsProvider.SaveSettings(_settings);
         }
+
+
+
 
     }
 }
