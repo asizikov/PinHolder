@@ -1,22 +1,31 @@
 ﻿using PinHolder.Annotations;
+using PinHolder.Command;
+using PinHolder.Lifecycle;
 using PinHolder.Model;
+using PinHolder.Navigation;
 
 namespace PinHolder.ViewModel
 {
-    public sealed class SettingsViewModel :BaseViewModel
+    public sealed class SettingsViewModel : BaseViewModel
     {
-        [NotNull] private readonly SettingsProvider _settingsProvider;
-        [NotNull] private readonly ApplicationSettings _settings;
-        
+        [NotNull]
+        private readonly SettingsProvider _settingsProvider;
 
-        public SettingsViewModel(SettingsProvider settingsProvider )
+        [NotNull]
+        private readonly NavigationService _navigationService;
+        private readonly ApplicationSettings _settings;
+
+        public SettingsViewModel(SettingsProvider settingsProvider, NavigationService navigationService)
         {
             _settingsProvider = settingsProvider;
+            _navigationService = navigationService;
             _settings = _settingsProvider.LoadSettings();
+            SaveSettingsCommand = new RelayCommand(Save, CanSave);
+            UseMasterPassword = _settings.UseMasterPassword;
         }
 
-
         private bool _useMasterPassword;
+        private string _password;
 
         [UsedImplicitly]
         public bool UseMasterPassword
@@ -30,15 +39,47 @@ namespace PinHolder.ViewModel
                 if (value.Equals(_useMasterPassword)) return;
                 _useMasterPassword = value;
                 OnPropertyChanged("UseMasterPassword");
+                SaveSettingsCommand.RaiseCanExecuteChanged();
             }
         }
 
-        private void Save()
+        [UsedImplicitly]
+        public string Password
         {
-            _settingsProvider.SaveSettings(_settings);
+            get { return _password; }
+            set
+            {
+                _password = value;
+                OnPropertyChanged("Password");
+                SaveSettingsCommand.RaiseCanExecuteChanged();
+            }
         }
 
+        [NotNull, UsedImplicitly]
+        public RelayCommand SaveSettingsCommand { get; set; }
 
+        private void Save()
+        {
+            _settingsProvider.SaveSettings(CurrentSettings);
+            _navigationService.GoBack();
+        }
+
+        private ApplicationSettings CurrentSettings
+        {
+            get
+            {
+                return new ApplicationSettings
+                {
+                    UseMasterPassword = UseMasterPassword,
+                    MasterPassword = Password
+                };
+            }
+        }
+
+        private bool CanSave()
+        {
+            return CurrentSettings != _settings;
+        }
 
 
     }

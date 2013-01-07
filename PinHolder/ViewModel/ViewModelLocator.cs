@@ -1,4 +1,5 @@
 ﻿using PinHolder.Annotations;
+using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
 
@@ -13,7 +14,7 @@ namespace PinHolder.ViewModel
 
         public static MainViewModel GetMainViewModel()
         {
-            return new MainViewModel(Navigation,CardProvider);
+            return new MainViewModel(Navigation, CardProvider, new SettingsProvider());
         }
 
         public static NewCardViewModel GetNewCardViewModel()
@@ -33,7 +34,7 @@ namespace PinHolder.ViewModel
 
         public static SettingsViewModel GetSettingsViewModel()
         {
-            return new SettingsViewModel(new SettingsProvider());
+            return new SettingsViewModel(new SettingsProvider(), Navigation);
         }
     }
 }

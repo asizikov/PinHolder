@@ -46,9 +46,13 @@
                 </toolkit:ToggleSwitch>
                 <StackPanel Visibility="{Binding UseMasterPassword, 
                                             Converter={StaticResource BoolToVisibilityConverter } }">
-                    <controls:ConfirmNumericPasswordBox SetPasswordText="type password" 
-                                                        ConfirmPasswordText="confirmPassword"/>
+                    <controls:ConfirmNumericPasswordBox 
+                        Password="{Binding Password, Mode=TwoWay}"
+                        SetPasswordText="type password" 
+                        ConfirmPasswordText="confirmPassword"/>
                 </StackPanel>
+                <Button Content="TMP Save" Command="{Binding SaveSettingsCommand}"/>
+
             </StackPanel>
             
         </Grid>

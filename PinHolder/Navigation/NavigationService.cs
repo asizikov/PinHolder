@@ -22,7 +22,10 @@ namespace PinHolder.Navigation
 
         public void GoBack()
         {
-            _rootFrame.GoBack();
+            if (_rootFrame.CanGoBack)
+            {
+                _rootFrame.GoBack();                
+            }
         }
     }
 }

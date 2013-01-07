@@ -75,7 +75,11 @@
     <Compile Include="Controls\ConfirmNumericPasswordBox.xaml.cs">
       <DependentUpon>ConfirmNumericPasswordBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PageLock.xaml.cs">
+      <DependentUpon>PageLock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\ReversedBoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ReversedZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="Lifecycle\CreationState.cs" />
@@ -85,7 +89,8 @@
     <Compile Include="Model\ApplicationSettings.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardProvider.cs" />
-    <Compile Include="Model\SettingsProvider.cs" />
+    <Compile Include="Model\SettingsKeys.cs" />
+    <Compile Include="Lifecycle\SettingsProvider.cs" />
     <Compile Include="Navigation\Keys.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Pages.cs" />
@@ -135,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Controls\ConfirmNumericPasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PageLock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,7 +205,9 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\combination-lock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

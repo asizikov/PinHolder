@@ -3,31 +3,39 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using PinHolder.Annotations;
 
 namespace PinHolder.Controls
 {
     public partial class ConfirmNumericPasswordBox : UserControl
     {
+        [NotNull] private readonly SolidColorBrush _errorBrush = new SolidColorBrush(Colors.Red);
+        [NotNull] private readonly SolidColorBrush _normalBrush = new SolidColorBrush(Colors.Transparent);
 
-        [NotNull] private readonly Dictionary<TextBox, StringBuilder> _stringBuilders = new Dictionary<TextBox, StringBuilder>();
-        [NotNull] private readonly Dictionary<TextBox, TextBlock> _textBlocks = new Dictionary<TextBox, TextBlock>();
-        [NotNull] private readonly Dictionary<TextBox, TextBlock> _tips = new Dictionary<TextBox, TextBlock>();
+        [NotNull]
+        private readonly Dictionary<TextBox, StringBuilder> _stringBuilders = new Dictionary<TextBox, StringBuilder>();
+        [NotNull]
+        private readonly Dictionary<TextBox, TextBlock> _textBlocks = new Dictionary<TextBox, TextBlock>();
+        [NotNull]
+        private readonly Dictionary<TextBox, TextBlock> _tips = new Dictionary<TextBox, TextBlock>();
+
+        private bool _passwordConfirmed;
 
         public static readonly DependencyProperty PasswordProperty =
-            DependencyProperty.Register("Password", typeof (string), typeof (ConfirmNumericPasswordBox), new PropertyMetadata(default(string)));
+            DependencyProperty.Register("Password", typeof(string), typeof(ConfirmNumericPasswordBox), new PropertyMetadata(default(string)));
 
         public static readonly DependencyProperty SetPasswordTextProperty =
-            DependencyProperty.Register("SetPasswordText", typeof (string), typeof (ConfirmNumericPasswordBox), new PropertyMetadata(default(string)));
+            DependencyProperty.Register("SetPasswordText", typeof(string), typeof(ConfirmNumericPasswordBox), new PropertyMetadata(default(string)));
 
         public static readonly DependencyProperty ConfirmPasswordTextProperty =
-            DependencyProperty.Register("ConfirmPasswordText", typeof (string), typeof (ConfirmNumericPasswordBox), new PropertyMetadata(default(string)));
+            DependencyProperty.Register("ConfirmPasswordText", typeof(string), typeof(ConfirmNumericPasswordBox), new PropertyMetadata(default(string)));
 
         public ConfirmNumericPasswordBox()
         {
             InitializeComponent();
 
-            _stringBuilders.Add(firstReal,  new StringBuilder());
+            _stringBuilders.Add(firstReal, new StringBuilder());
             _stringBuilders.Add(secondReal, new StringBuilder());
 
             _textBlocks.Add(firstReal, firstFake);
@@ -55,23 +63,42 @@ namespace PinHolder.Controls
             set { SetValue(SetPasswordTextProperty, value); }
         }
 
+        private bool PasswordConfirmed
+        {
+            get { return _passwordConfirmed; }
+            set
+            {
+                _passwordConfirmed = value;
+                var brush = _passwordConfirmed ? _normalBrush : _errorBrush;
+                firstBorder.BorderBrush = brush;
+                secondBorder.BorderBrush = brush;
+                Password = _passwordConfirmed ? firstReal.Text : string.Empty;
+            }
+        }
 
         private void KeyUpHandler(object sender, KeyEventArgs e)
         {
             var tb = sender as TextBox;
             if (tb == null) return;
             HandleInput(tb, e);
+            CheckState();
+        }
+
+        private void CheckState()
+        {
+
+            PasswordConfirmed = (!string.IsNullOrEmpty(firstReal.Text) && firstReal.Text == secondReal.Text);
         }
 
         private void HandleInput([NotNull] TextBox sender, KeyEventArgs e)
         {
             if (e.Key == Key.Unknown) return;
 
-            if(!_stringBuilders.ContainsKey(sender)) return;
+            if (!_stringBuilders.ContainsKey(sender)) return;
             if (!_textBlocks.ContainsKey(sender)) return;
             if (!_tips.ContainsKey(sender)) return;
-            
-            
+
+
             var fakeString = _stringBuilders[sender];
             var textBlock = _textBlocks[sender];
             var tip = _tips[sender];

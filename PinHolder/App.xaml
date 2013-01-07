@@ -10,6 +10,7 @@
         <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
         <converters:ReversedZeroToVisibilityConverter x:Key="ReversedZeroToVisibilityConverter"/>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converters:ReversedBoolToVisibilityConverter x:Key="ReversedBoolToVisibilityConverter"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
