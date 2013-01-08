@@ -21,6 +21,7 @@ namespace PinHolder.Controls
         private enum LockerState
         {
             WaitForPassword,
+            InputingPassword,
             IncorrectPassword,
             PasswordCorrect
         }
@@ -82,15 +83,22 @@ namespace PinHolder.Controls
                 {
                     case LockerState.WaitForPassword:
                         Password.Text = "enter password";
+                        Del.Visibility = Visibility.Collapsed;
+                        VisualStateManager.GoToState(this, "WaitForPassword", false);
+                        break;
+                    case LockerState.InputingPassword:
+                        Del.Visibility = Visibility.Visible;
                         break;
                     case LockerState.IncorrectPassword:
                         Password.Text = "incorrect password";
-                        VisualStateManager.GoToState(this, "IsPasswordIncorrect", true);
+                        VisualStateManager.GoToState(this, "IsPasswordIncorrect", false);
                         _fakeStringBuilder.Clear();
                         _inputStringBuilder.Clear();
-
-
                         break;
+                    case LockerState.PasswordCorrect:
+                        VisualStateManager.GoToState(this, "IsPasswordCorrect", false);
+                        break;
+                        
                 }
                 _currentState = value;
             }
@@ -114,10 +122,7 @@ namespace PinHolder.Controls
 
         private void CheckState(bool fromEnter)
         {
-            if (_inputStringBuilder.Length <= 0)
-            {
-                CurrentState = LockerState.WaitForPassword;
-            }
+            CurrentState = _inputStringBuilder.Length <= 0 ? LockerState.WaitForPassword : LockerState.InputingPassword;
 
             if (fromEnter)
             {
