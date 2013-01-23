@@ -9,13 +9,14 @@ namespace PinHolder.ViewModel
 {
     public sealed class MainViewModel :BaseViewModel
     {
-        [NotNull] private readonly NavigationService _navigation;
-        [NotNull] private readonly CardProvider _cardProvider;
-        [NotNull] private readonly SettingsProvider _settingsProvider;
+        [NotNull] private readonly INavigationService _navigation;
+        [NotNull] private readonly ICardProvider _cardProvider;
+        [NotNull] private readonly ISettingsProvider _settingsProvider;
+
         private CardViewModel _selected;
         private bool _showLocker;
 
-        public MainViewModel(NavigationService navigation, CardProvider cardProvider, SettingsProvider settingsProvider)
+        public MainViewModel(INavigationService navigation, ICardProvider cardProvider, ISettingsProvider settingsProvider)
         {
             _navigation = navigation;
             _cardProvider = cardProvider;
@@ -28,8 +29,7 @@ namespace PinHolder.ViewModel
 
         private void ApplySettings()
         {
-            var settings = _settingsProvider.LoadSettings();
-            ShowLocker = settings.UseMasterPassword;
+            ShowLocker = false;
         }
 
         private void LoadData()
@@ -45,8 +45,10 @@ namespace PinHolder.ViewModel
         {
             AddNewCommand = new RelayCommand(AddNewCard);
             SettingsCommand = new RelayCommand(GoToSettings);
+            AboutCommand = new RelayCommand(GoToAbout);
         }
 
+        
 
         [UsedImplicitly]
         public bool ShowLocker
@@ -89,6 +91,11 @@ namespace PinHolder.ViewModel
         private void GoToSettings()
         {
             _navigation.Navigate(Pages.Settings);
+        }
+
+        private void GoToAbout()
+        {
+           _navigation.Navigate(Pages.About);
         }
     }
 }

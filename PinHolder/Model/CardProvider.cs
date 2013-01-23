@@ -13,7 +13,7 @@ namespace PinHolder.Model
         public List<Card> Cards;
     }
 
-    public sealed class CardProvider
+    public sealed class CardProvider : ICardProvider
     {
         private readonly List<Card> _cards;
         private const string FOLDER = "Cards";

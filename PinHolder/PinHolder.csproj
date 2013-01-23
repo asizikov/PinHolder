@@ -84,17 +84,20 @@
     <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="Lifecycle\CreationState.cs" />
     <Compile Include="Lifecycle\ISecondaryTileService.cs" />
+    <Compile Include="Lifecycle\ISettingsProvider.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Model\ApplicationSettings.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardProvider.cs" />
+    <Compile Include="Model\ICardProvider.cs" />
     <Compile Include="Model\SettingsKeys.cs" />
     <Compile Include="Lifecycle\SettingsProvider.cs" />
+    <Compile Include="Navigation\INavigationService.cs" />
     <Compile Include="Navigation\Keys.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Navigation\Pages.cs" />
-    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Annotations\Annotations.cs" />
     <Compile Include="Resourses\Strings.de-DE.Designer.cs">
       <DependentUpon>Strings.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -111,6 +114,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\EditCardViewModel.cs" />
@@ -120,6 +124,12 @@
     <Compile Include="ViewModel\SettingsViewModel.cs" />
     <Compile Include="ViewModel\ViewCardViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -144,6 +154,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\PageLock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

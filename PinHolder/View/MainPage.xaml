@@ -90,10 +90,10 @@
                                                  Text="{Binding Path=Strings.Add,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBar.MenuItems>
-                <appBar:BindableApplicationBarMenuItem
-                    Command="{Binding SettingsCommand}"
-                    Text="{Binding Path=Strings.Settings , Source={StaticResource LocalizedStrings}}"
-                    />
+<!--                <appBar:BindableApplicationBarMenuItem-->
+<!--                    Command="{Binding SettingsCommand}"-->
+<!--                    Text="{Binding Path=Strings.Settings , Source={StaticResource LocalizedStrings}}"-->
+<!--                    />-->
                 <appBar:BindableApplicationBarMenuItem
                     Command="{Binding AboutCommand}"
                     Text="{Binding Path=Strings.About , Source={StaticResource LocalizedStrings}}"

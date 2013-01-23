@@ -6,5 +6,7 @@
         public static string New = "/View/NewCardPage.xaml";
         public static string ViewPage = "/View/ViewPage.xaml";
         public static string Settings = "/View/SettingsPage.xaml";
+        public static string About = "/View/AboutPage.xaml";
+
     }
 }

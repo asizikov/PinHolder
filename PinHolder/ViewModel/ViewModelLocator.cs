@@ -36,5 +36,10 @@ namespace PinHolder.ViewModel
         {
             return new SettingsViewModel(new SettingsProvider(), Navigation);
         }
+
+        public static AboutViewModel GetAboutViewModel()
+        {
+            return new AboutViewModel();
+        }
     }
 }

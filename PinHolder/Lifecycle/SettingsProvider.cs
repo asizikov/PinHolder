@@ -4,7 +4,7 @@ using PinHolder.Model;
 
 namespace PinHolder.Lifecycle
 {
-    public class SettingsProvider
+    public class SettingsProvider : ISettingsProvider
     {
         private ApplicationSettings _cachedSettrings;
         [NotNull] private readonly IsolatedStorageSettings _storageSettings;
