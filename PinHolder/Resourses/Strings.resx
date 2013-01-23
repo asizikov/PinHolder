@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>about</value>
   </data>
+  <data name="AboutContact" xml:space="preserve">
+    <value>For technical support, or when you have suggestions or comments, don't hesitate to contact me at: pinholder@yandex.ru </value>
+  </data>
   <data name="Add" xml:space="preserve">
     <value>add</value>
   </data>

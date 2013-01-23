@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>о программе</value>
   </data>
+  <data name="AboutContact" xml:space="preserve">
+    <value>Если у Вас возникли вопросы, сомнения или просто предложения, обязательно напишите мне: pinholder@yandex.ru Я обязательно отвечу.</value>
+  </data>
   <data name="Add" xml:space="preserve">
     <value>добавить</value>
   </data>
