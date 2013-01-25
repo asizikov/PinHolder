@@ -70,7 +70,7 @@ namespace PinHolder.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For technical support, or when you have suggestions or comments, don&apos;t hesitate to contact me at: pinholder@yandex.ru .
+        ///   Looks up a localized string similar to For technical support, or when you have suggestions or comments, don&apos;t hesitate to contact me at:.
         /// </summary>
         public static string AboutContact {
             get {
@@ -129,6 +129,24 @@ namespace PinHolder.Resourses {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to need help?.
+        /// </summary>
+        public static string HowTo {
+            get {
+                return ResourceManager.GetString("HowTo", resourceCulture);
             }
         }
         

@@ -123,11 +123,11 @@
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar>
             <appBar:BindableApplicationBarButton Command="{Binding EditCommand}"
-                                                 IconUri="/Images/appbar.edit.rest.png"
+                                                 IconUri="/Resourses/Images/appbar.edit.rest.png"
                                                  Text="{Binding Path=Strings.Edit,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBarButton Command="{Binding CreatePinCommand}"
-                                                 IconUri="/Images/appbar.pin.rest.png"
+                                                 IconUri="/Resourses/Images/appbar.pin.rest.png"
                                                  Text="{Binding Path=Strings.Pin,
                                                                 Source={StaticResource LocalizedStrings}}" />
         </appBar:BindableApplicationBar>

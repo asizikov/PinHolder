@@ -121,7 +121,7 @@
     <value>о программе</value>
   </data>
   <data name="AboutContact" xml:space="preserve">
-    <value>Если у Вас возникли вопросы, сомнения или просто предложения, обязательно напишите мне: pinholder@yandex.ru Я обязательно отвечу.</value>
+    <value>Если у Вас возникли вопросы, сомнения или просто предложения, обязательно напишите мне: </value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>добавить</value>
@@ -140,6 +140,12 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>изменить</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>помощь</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>как этим пользоваться?</value>
   </data>
   <data name="MasterPassIsNotUsed" xml:space="preserve">
     <value>мастер-пароль не используется</value>

@@ -121,7 +121,7 @@
     <value>about</value>
   </data>
   <data name="AboutContact" xml:space="preserve">
-    <value>For technical support, or when you have suggestions or comments, don't hesitate to contact me at: pinholder@yandex.ru </value>
+    <value>For technical support, or when you have suggestions or comments, don't hesitate to contact me at:</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>add</value>
@@ -140,6 +140,12 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>edit</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>need help?</value>
   </data>
   <data name="MasterPassIsNotUsed" xml:space="preserve">
     <value>master-password is not used</value>

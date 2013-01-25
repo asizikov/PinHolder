@@ -121,7 +121,7 @@
     <value>Info</value>
   </data>
   <data name="AboutContact" xml:space="preserve">
-    <value>For technical support, or when you have suggestions, comments or you can help me with translation, don't hesitate to contact me at: pinholder@yandex.ru [I don't speak German :( ]</value>
+    <value>For technical support, or when you have suggestions, comments or you can help me with translation, don't hesitate to contact me at:</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Hinzufügen</value>
@@ -140,6 +140,14 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Bearbeiten</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+    <comment>????</comment>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>Need help?</value>
+    <comment>???</comment>
   </data>
   <data name="MasterPassIsNotUsed" xml:space="preserve">
     <value>master-password is not used</value>

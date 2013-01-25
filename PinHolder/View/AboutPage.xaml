@@ -29,7 +29,12 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             
-            <StackPanel>
+            <StackPanel Margin="12,0,0,0">
+                <TextBlock Text="{Binding Path=Strings.AboutContact, Source={StaticResource LocalizedStrings}}"
+                           TextWrapping="Wrap"/>
+                <HyperlinkButton HorizontalContentAlignment="Left" 
+                                 Content="pinholder@yandex.ru" Command="{Binding SupportQuestionCommand}"/>
+                
                 <TextBlock Text="Copyright © 2012 Anton Sizikov"/>
                 <TextBlock Text="{Binding ApplicationVersion}"/>
                 
