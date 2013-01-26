@@ -132,6 +132,10 @@
   <data name="Cards" xml:space="preserve">
     <value>Karten</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>berühren</value>
+    <comment>??</comment>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Löschen</value>
   </data>
@@ -145,9 +149,46 @@
     <value>Hilfe</value>
     <comment>????</comment>
   </data>
+  <data name="HelpFormatted" xml:space="preserve">
+    <value>Hallo!
+Diese App kann Ihnen helfen, Ihre PIN-Codes einfach und sicher zu speichern.
+
+Auf den ersten sollten wir eine neue Karte mit der Taste "+" auf der Apps Hauptbildschirm hinzuzufügen.
+
+Auf dem Bildschirm Bearbeiten Sie den Namen Ihrer Karte und es ist Beschreibung.
+
+Zum Beispiel:
+Card name: Bank "Yourbank"
+Beschreibung: Gehalt.
+
+Dann wirst du sehen 20 Zellen. Sie sind unterschiedlich gefärbt. Geben Sie Ihren PIN-Code in allen vier Zellen.
+Kommen Sie mit einem geheimen System Ihres PIN-Code-Verschlüsselung.
+
+Zum Beispiel: In blauen Zellen, von oben nach unten.
+Oder: In der unteren Reihe von links nach rechts.
+
+Nachdem Sie vier PIN-Code eingegebenen Ziffern die App erinnert Zellen durch Zufallszahlen zu füllen.
+
+Vergessen Sie nicht, Ihre Karte zu retten!
+
+Jetzt eine neue Fliese mit Ihrer Kreditkarte Informationen werden auf dem App Hauptbildschirm angezeigt.
+
+Wenn Sie die Fliese drücken Sie die App würde zeigen Sie eine twanty Zellen Gitter.
+
+Dieses Gitter sieht aus wie ein zufälliger Ziffern eingestellt, aber Sie werden wissen, welche Zellen speichern Sie Ihre PIN-Code.
+
+Das ist alles!
+
+Jetzt ist Ihre PIN-Codes sind auf der Hand, und sie werden sicher maskiert.</value>
+    <comment>??</comment>
+  </data>
   <data name="HowTo" xml:space="preserve">
-    <value>Need help?</value>
+    <value>Brauchen Sie Hilfe?</value>
     <comment>???</comment>
+  </data>
+  <data name="IfYouLike" xml:space="preserve">
+    <value>Wenn Sie die App gefällt, senden Sie bitte eine Rezension zu dem Marktplatz.</value>
+    <comment>??</comment>
   </data>
   <data name="MasterPassIsNotUsed" xml:space="preserve">
     <value>master-password is not used</value>
@@ -169,6 +210,10 @@
   </data>
   <data name="Pin" xml:space="preserve">
     <value>Merken</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Senden Sie eine Bewertung</value>
+    <comment>??</comment>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Speichern</value>

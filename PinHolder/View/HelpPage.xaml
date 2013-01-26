@@ -24,92 +24,20 @@
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="{Binding Path=Strings.AppName, Source={StaticResource LocalizedStrings}}" 
                        Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="{Binding Path=Strings.Help,Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock 
+                Foreground="{StaticResource PhoneAccentBrush}"
+                Text="{Binding Path=Strings.Help,Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"/>
-        <ScrollViewer Grid.Row="1">
-            <RichTextBox Margin="12,8,0,0" >
-                <Paragraph>
-                    <Run Text="Привет! Данная программа поможет тебе быстро и безопасно хранить ПИН-коды от твоих банковских карт."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Работает это достаточно просто."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Для начало необходимо добавить новую запись, нажав кнопку &quot;+&quot; на главном экране."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="На экране редактирования нужно записать понятное тебе имя и описание карты."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Например: "/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Имя карты: Банк &quot;Надёжный&quot;, "/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Описание: Зарплата."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Далее ты увидешь 20 ячеек. Они разноцветные. В эти ячейки нужно ввести 4 цифры ПИН-кода."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Нужно придумать и запомнить секретную систему, по которой записан код."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Например: В синих ячейках, сверху вниз."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Или: В нижней строке, справа налево."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="После того, как ты введёшь 4 цифры своего ПИН-кода, программа заполнит остальные ячейки случайными цифрами."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Не забудь сохранить запись."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="На главном экране программы появится плитка с твоей картой. "/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Если нажмёшь на неё, то программа покажет тебе сетку из 20 цифр."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Для постороннего это просто набор цифр, но ты-то помнишь, что среди них по секретной системе хранится твой ПИН-код."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Вот и всё!"/>
-                </Paragraph>
-                <Paragraph>
-                    <Run Text="Теперь ПИН-коды всегда под рукой, и при этом они надёжно замаскированы."/>
-                </Paragraph>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-            </RichTextBox>
+        <ScrollViewer Grid.Row="1" Margin="12,0,0,0">
+            <TextBlock TextWrapping="Wrap" 
+                       Style="{StaticResource PhoneTextNormalStyle}"
+                       Text="{Binding Path=Strings.HelpFormatted, Source={StaticResource LocalizedStrings}}" 
+                       Margin="12,0,0,0" >
+               
+            </TextBlock>
         </ScrollViewer>
     </Grid>
 
