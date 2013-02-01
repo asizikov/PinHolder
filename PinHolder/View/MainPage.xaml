@@ -36,6 +36,7 @@
                                       Source={StaticResource LocalizedStrings}}" />
             <TextBlock x:Name="PageTitle"
                        Margin="9,-7,0,0"
+                       Foreground="{StaticResource PhoneAccentBrush}"
                        Style="{StaticResource PhoneTextTitle1Style}"
                        Text="{Binding Path=Strings.Cards,
                                       Source={StaticResource LocalizedStrings}}" />
@@ -45,13 +46,19 @@
         <Grid x:Name="ContentPanel"
               Grid.Row="1"
               Margin="12,0,12,0">
-            <TextBlock
+            <StackPanel
+                Visibility="{Binding Cards.Count, Converter={StaticResource ReversedZeroToVisibilityConverter}}"
+                >
+                <TextBlock
                 Margin="12,12,12,0"
                 Style="{StaticResource PhoneTextLargeStyle}"
                 TextWrapping="Wrap"
-                Visibility="{Binding Cards.Count, Converter={StaticResource ReversedZeroToVisibilityConverter}}"
                 Text="{Binding Path=Strings.NoCard, 
                 Source={StaticResource LocalizedStrings}}"/>
+                <Button Content="{Binding Path=Strings.HowTo, Source={StaticResource LocalizedStrings}}" 
+                        Command="{Binding HelpCommand}"/>
+            </StackPanel>
+            
             <ListBox Margin="12,12,0,0"
                      Visibility="{Binding Cards.Count, Converter={StaticResource ZeroToVisibilityConverter}}"
                      ItemsSource="{Binding Cards}"
@@ -86,8 +93,12 @@
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
             <appBar:BindableApplicationBarButton Command="{Binding AddNewCommand}"
-                                                 IconUri="/Images/appbar.add.rest.png"
+                                                 IconUri="/Resourses/Images/appbar.add.rest.png"
                                                  Text="{Binding Path=Strings.Add,
+                                                                Source={StaticResource LocalizedStrings}}" />
+            <appBar:BindableApplicationBarButton Command="{Binding HelpCommand}"
+                                                 IconUri="/Resourses/Images/questionmark.png"
+                                                 Text="{Binding Path=Strings.Help,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBar.MenuItems>
 <!--                <appBar:BindableApplicationBarMenuItem-->

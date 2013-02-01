@@ -23,16 +23,43 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="{Binding Path=Strings.AppName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="{Binding Path=Strings.About , Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock 
+                Foreground="{StaticResource PhoneAccentBrush}"
+                Text="{Binding Path=Strings.About , Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="0,0,0,12" Grid.Row="0">
+                <TextBlock 
+                    Style="{StaticResource PhoneTextLargeStyle}"
+                    Foreground="{StaticResource PhoneAccentBrush}"
+                    Text="{Binding Path=Strings.Contact, Source={StaticResource LocalizedStrings}}"/>
+                <TextBlock
+                    Style="{StaticResource PhoneTextNormalStyle}"
+                    Text="{Binding Path=Strings.AboutContact, Source={StaticResource LocalizedStrings}}"
+                           TextWrapping="Wrap"/>
+                <HyperlinkButton HorizontalContentAlignment="Left" 
+                                 Content="pinholder@yandex.ru" Command="{Binding SupportQuestionCommand}"/>
+                </StackPanel>
+            <StackPanel Margin="0,0,0,0" Grid.Row="1">
+                <TextBlock 
+                    Style="{StaticResource PhoneTextNormalStyle}"
+                    TextWrapping="Wrap"
+                    Text="{Binding Path=Strings.IfYouLike, Source={StaticResource LocalizedStrings}}"/>
+                <HyperlinkButton HorizontalContentAlignment="Left"
+                                 Content="{Binding Path=Strings.Rate ,Source={StaticResource LocalizedStrings}}"
+                                 Command="{Binding RateCommand}"/>
+            </StackPanel>
             
-            <StackPanel>
+            <StackPanel Margin="12,0,0,12" Grid.Row="2">
                 <TextBlock Text="Copyright © 2012 Anton Sizikov"/>
-                <TextBlock Text="{Binding ApplicationVersion}"/>
-                
+                <TextBlock Text="{Binding ApplicationVersion}"/>  
             </StackPanel>
         </Grid>
     </Grid>

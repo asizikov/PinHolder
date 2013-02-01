@@ -70,7 +70,7 @@ namespace PinHolder.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For technical support, or when you have suggestions or comments, don&apos;t hesitate to contact me at: pinholder@yandex.ru .
+        ///   Looks up a localized string similar to For technical support, or when you have suggestions or comments, don&apos;t hesitate to contact me at:.
         /// </summary>
         public static string AboutContact {
             get {
@@ -106,6 +106,15 @@ namespace PinHolder.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to contact.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to delete.
         /// </summary>
         public static string Delete {
@@ -129,6 +138,57 @@ namespace PinHolder.Resourses {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello! 
+        ///This app can help you to store your PIN-codes easily and safely.
+        ///
+        ///At first we should add a new card by pressing &quot;+&quot; on the apps main screen.
+        ///
+        ///On the Edit screen enter the name of your card and it&apos;s description.
+        ///
+        ///For example: 
+        ///Card name: Bank &quot;Yourbank&quot; 
+        ///Description: salary.
+        ///
+        ///Then you&apos;ll see twenty cells. They are different coloured. Enter your PIN-code in any four cells.
+        ///Come up with a secret system of your PIN-code encryption.
+        ///
+        ///For example: In blue cells, up to down.
+        ///Or: In the botto [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string HelpFormatted {
+            get {
+                return ResourceManager.GetString("HelpFormatted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to need help?.
+        /// </summary>
+        public static string HowTo {
+            get {
+                return ResourceManager.GetString("HowTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you like the app, please send a review to the Marketplace..
+        /// </summary>
+        public static string IfYouLike {
+            get {
+                return ResourceManager.GetString("IfYouLike", resourceCulture);
             }
         }
         
@@ -192,6 +252,15 @@ namespace PinHolder.Resourses {
         public static string Pin {
             get {
                 return ResourceManager.GetString("Pin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to send a review.
+        /// </summary>
+        public static string Rate {
+            get {
+                return ResourceManager.GetString("Rate", resourceCulture);
             }
         }
         

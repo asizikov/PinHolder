@@ -43,9 +43,10 @@ namespace PinHolder.ViewModel
 
         private void InitCommands()
         {
-            AddNewCommand = new RelayCommand(AddNewCard);
-            SettingsCommand = new RelayCommand(GoToSettings);
-            AboutCommand = new RelayCommand(GoToAbout);
+            AddNewCommand = new RelayCommand(() => _navigation.Navigate(Pages.New));
+            SettingsCommand = new RelayCommand(() => _navigation.Navigate(Pages.Settings));
+            AboutCommand = new RelayCommand(() => _navigation.Navigate(Pages.About));
+            HelpCommand = new RelayCommand(()=> _navigation.Navigate(Pages.HelpPage));
         }
 
         
@@ -65,6 +66,7 @@ namespace PinHolder.ViewModel
         public RelayCommand AddNewCommand { get; private set; }
         public RelayCommand SettingsCommand { get; private set; }
         public RelayCommand AboutCommand { get; private set; }
+        public RelayCommand HelpCommand { get; private set; }
 
 
         [NotNull]
@@ -81,21 +83,6 @@ namespace PinHolder.ViewModel
                     _navigation.Navigate(Pages.ViewPage, string.Format("?{0}={1}", Keys.Id, _selected.Id));                    
                 }
             }
-        }
-
-        private void AddNewCard()
-        {
-            _navigation.Navigate(Pages.New);
-        }
-
-        private void GoToSettings()
-        {
-            _navigation.Navigate(Pages.Settings);
-        }
-
-        private void GoToAbout()
-        {
-           _navigation.Navigate(Pages.About);
         }
     }
 }

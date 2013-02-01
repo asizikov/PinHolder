@@ -121,7 +121,7 @@
     <value>о программе</value>
   </data>
   <data name="AboutContact" xml:space="preserve">
-    <value>Если у Вас возникли вопросы, сомнения или просто предложения, обязательно напишите мне: pinholder@yandex.ru Я обязательно отвечу.</value>
+    <value>Если у Вас возникли вопросы, сомнения или просто предложения, обязательно напишите мне: </value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>добавить</value>
@@ -132,6 +132,9 @@
   <data name="Cards" xml:space="preserve">
     <value>карты</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>обратная связь</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>удалить</value>
   </data>
@@ -140,6 +143,42 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>изменить</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>помощь</value>
+  </data>
+  <data name="HelpFormatted" xml:space="preserve">
+    <value>Привет! Данная программа поможет тебе просто и безопасно хранить ПИН-коды от банковских карт.
+
+Для начало необходимо добавить новую запись, нажав кнопку "+" на главном экране.
+
+На экране редактирования нужно записать понятное тебе имя и описание карты.
+Например: 
+Имя карты: Банк "Надёжный"
+Описание: Зарплата
+
+Далее ты увидешь 20 ячеек. Они разноцветные. В эти ячейки нужно ввести 4 цифры ПИН-кода.
+Нужно придумать и запомнить секретную систему, по которой записан код.
+
+Например: В синих ячейках, сверху вниз
+Или: В нижней строке, справа налево
+
+После того, как ты введёшь 4 цифры своего ПИН-кода, программа заполнит остальные ячейки случайными цифрами.
+
+Не забудь сохранить запись.
+
+Теперь на главном экране программы появится плитка с твоей картой. 
+Если нажмёшь на неё, то программа покажет тебе сетку из 20 цифр.
+Для постороннего это просто набор цифр, но ты-то помнишь, что среди них по секретной системе хранится твой ПИН-код.
+
+Вот и всё!
+Теперь ПИН-коды всегда под рукой и надёжно замаскированы.</value>
+  </data>
+  <data name="HowTo" xml:space="preserve">
+    <value>как этим пользоваться?</value>
+  </data>
+  <data name="IfYouLike" xml:space="preserve">
+    <value>Если приложение вам понравилось,пожалуйста, оставьте отзыв и оценку.</value>
   </data>
   <data name="MasterPassIsNotUsed" xml:space="preserve">
     <value>мастер-пароль не используется</value>
@@ -162,6 +201,9 @@
   <data name="Pin" xml:space="preserve">
     <value>на рабочий стол</value>
   </data>
+  <data name="Rate" xml:space="preserve">
+    <value>отправить отзыв</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>сохранить</value>
   </data>
@@ -171,4 +213,5 @@
   <data name="Title" xml:space="preserve">
     <value>pin holder</value>
   </data>
+>>>>>>> 0abde6237058cacd0e651c66252c8d6f4fb6afac
 </root>
