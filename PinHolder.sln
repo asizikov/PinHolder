@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinHolder", "PinHolder\PinH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinHolder.Tests", "PinHolder.Tests\PinHolder.Tests.csproj", "{08C16EAC-0F8D-4F97-B3BC-A54679E6DAE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinholder.Commons", "Pinholder.Commons\Pinholder.Commons.csproj", "{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{08C16EAC-0F8D-4F97-B3BC-A54679E6DAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C16EAC-0F8D-4F97-B3BC-A54679E6DAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C16EAC-0F8D-4F97-B3BC-A54679E6DAE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

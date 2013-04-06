@@ -47,17 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PinHolder\Annotations\Annotations.cs">
-      <Link>Links\Annotations\Annotations.cs</Link>
-    </Compile>
     <Compile Include="..\PinHolder\Command\RelayCommand.cs">
       <Link>Links\Command\RelayCommand.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Lifecycle\CreationState.cs">
-      <Link>Links\Lifecycle\CreationState.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Lifecycle\ISecondaryTileService.cs">
-      <Link>Links\Lifecycle\ISecondaryTileService.cs</Link>
     </Compile>
     <Compile Include="..\PinHolder\Lifecycle\ISettingsProvider.cs">
       <Link>Links\Lifecycle\ISettingsProvider.cs</Link>
@@ -65,23 +56,11 @@
     <Compile Include="..\PinHolder\Model\ApplicationSettings.cs">
       <Link>Links\Model\ApplicationSettings.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Model\Card.cs">
-      <Link>Links\Model\Card.cs</Link>
-    </Compile>
     <Compile Include="..\PinHolder\Model\ICardProvider.cs">
       <Link>Links\Model\ICardProvider.cs</Link>
     </Compile>
     <Compile Include="..\PinHolder\Model\SettingsKeys.cs">
       <Link>Links\Model\SettingsKeys.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Navigation\INavigationService.cs">
-      <Link>Links\Navigation\INavigationService.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Navigation\Keys.cs">
-      <Link>Links\Navigation\Keys.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Navigation\Pages.cs">
-      <Link>Links\Navigation\Pages.cs</Link>
     </Compile>
     <Compile Include="..\PinHolder\ViewModel\BaseViewModel.cs">
       <Link>Links\ViewModel\BaseViewModel.cs</Link>
@@ -105,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pinholder.Commons\Pinholder.Commons.csproj">
+      <Project>{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}</Project>
+      <Name>Pinholder.Commons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -86,21 +86,15 @@
     <Compile Include="Converters\ReversedZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="Lifecycle\CreationState.cs" />
-    <Compile Include="Lifecycle\ISecondaryTileService.cs" />
     <Compile Include="Lifecycle\ISettingsProvider.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Model\ApplicationSettings.cs" />
-    <Compile Include="Model\Card.cs" />
     <Compile Include="Model\CardProvider.cs" />
     <Compile Include="Model\ICardProvider.cs" />
     <Compile Include="Model\SettingsKeys.cs" />
     <Compile Include="Lifecycle\SettingsProvider.cs" />
-    <Compile Include="Navigation\INavigationService.cs" />
-    <Compile Include="Navigation\Keys.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
-    <Compile Include="Navigation\Pages.cs" />
-    <Compile Include="Annotations\Annotations.cs" />
     <Compile Include="Resourses\Strings.de-DE.Designer.cs">
       <DependentUpon>Strings.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -238,6 +232,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resourses\Images\combination-lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pinholder.Commons\Pinholder.Commons.csproj">
+      <Project>{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}</Project>
+      <Name>Pinholder.Commons</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

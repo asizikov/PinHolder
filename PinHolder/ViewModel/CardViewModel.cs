@@ -28,7 +28,7 @@ namespace PinHolder.ViewModel
 
         public event Action ReadyToSave;
 
-        private static readonly CardViewModel _empty = new EmptyCardViewModel();
+        [NotNull] private static readonly CardViewModel _empty = new EmptyCardViewModel();
 
         private readonly Random _random = new Random();
         private string _name;
@@ -113,9 +113,9 @@ namespace PinHolder.ViewModel
         {
             return new Card
                 {
-                    Id = this.Id,
-                    Name = this.Name,
-                    Description = this.Description,
+                    Id = Id,
+                    Name = Name,
+                    Description = Description,
                     Pins = PinItems.Select(pi => pi.Pin).ToList()
                 };
         }
