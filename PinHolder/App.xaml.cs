@@ -2,6 +2,7 @@
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using PinHolder.Lifecycle;
 
 namespace PinHolder
 {

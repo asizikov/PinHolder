@@ -17,7 +17,7 @@ namespace PinHolder.Tests
         {
             var settings = new Mock<ISettingsProvider>();
             var navigation = new Mock<INavigationService>();
-            var cardProvider = new Mock<ICardProvider>();
+            var cardProvider = new Mock<BaseCardProvider>();
 
             var target = new MainViewModel(navigation.Object, cardProvider.Object, settings.Object);
 
@@ -30,7 +30,7 @@ namespace PinHolder.Tests
 
             var settings = new Mock<ISettingsProvider>();
             var navigation = new Mock<INavigationService>();
-            var cardProvider = new Mock<ICardProvider>();
+            var cardProvider = new Mock<BaseCardProvider>();
 
             cardProvider.Setup(x => x.LoadCards())
                 .Returns(() => new List<CardViewModel> {
@@ -52,7 +52,7 @@ namespace PinHolder.Tests
             navigation.Setup(x => x.Navigate(It.IsAny<string>(), It.IsAny<string>()))
                       .Callback((string s, string q) => pageName = s);
 
-            var cardProvider = new Mock<ICardProvider>();
+            var cardProvider = new Mock<BaseCardProvider>();
             var target = new MainViewModel(navigation.Object, cardProvider.Object, settings.Object);
             target.AboutCommand.Execute(null);
             navigation.Verify(x => x.Navigate(It.IsAny<string>(), It.IsAny<string>()), Times.Once());

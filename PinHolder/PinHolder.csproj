@@ -74,7 +74,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Lifecycle\Bootstrapper.cs" />
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Controls\ConfirmNumericPasswordBox.xaml.cs">
       <DependentUpon>ConfirmNumericPasswordBox.xaml</DependentUpon>
@@ -91,8 +91,8 @@
     <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Model\ApplicationSettings.cs" />
+    <Compile Include="Model\BaseCardProvider.cs" />
     <Compile Include="Model\CardProvider.cs" />
-    <Compile Include="Model\ICardProvider.cs" />
     <Compile Include="Model\SettingsKeys.cs" />
     <Compile Include="Lifecycle\SettingsProvider.cs" />
     <Compile Include="Navigation\NavigationService.cs" />

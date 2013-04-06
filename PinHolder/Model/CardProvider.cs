@@ -3,8 +3,6 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using PinHolder.ViewModel;
 
 namespace PinHolder.Model
 {
@@ -13,9 +11,10 @@ namespace PinHolder.Model
         public List<Card> Cards;
     }
 
-    public sealed class CardProvider : ICardProvider
+
+    public sealed class CardProvider: BaseCardProvider
     {
-        private readonly List<Card> _cards = new List<Card>();
+        
         private const string FOLDER = "Cards";
         private const string FILE = "cards.xml";
 
@@ -29,41 +28,8 @@ namespace PinHolder.Model
             get { return FOLDER + "\\" + FILE; }
         }
 
-       public void Save(CardViewModel newCardViewModel)
-        {
-            if (newCardViewModel == null) throw new ArgumentNullException("newCardViewModel");
 
-            var x = _cards.Any() ? _cards.Max(c => c.Id) : 0;
-            newCardViewModel.Id = x + 1;
-            _cards.Add(newCardViewModel.GetModel());
-            UpdateFile(_cards);
-        }
-
-       public void Update(CardViewModel card)
-       {
-           var old = _cards.FirstOrDefault(c => c.Id == card.Id);
-           if (old == null)
-           {
-               Save(card);
-           }
-           else
-           {
-               _cards.Remove(old);
-               _cards.Add(card.GetModel());
-               UpdateFile(_cards);
-           }
-       }
-
-       public void Delete(CardViewModel card)
-       {
-           var old = _cards.FirstOrDefault(c => c.Id == card.Id);
-           if (old == null) return;
-
-           _cards.Remove(old);
-           UpdateFile(_cards);
-       }
-
-        private static void UpdateFile(List<Card> cards)
+        protected override void UpdateFile(List<Card> cards)
         {
             using (var st = IsolatedStorageFile.GetUserStoreForApplication())
             {
@@ -81,20 +47,6 @@ namespace PinHolder.Model
                 } 
             }
         }
-
-
-        public IEnumerable<CardViewModel> LoadCards()
-        {
-            return _cards.Select(m => new CardViewModel(m)).ToList();
-        }
-
-        public CardViewModel GetById(int id)
-        {
-            var model =_cards.FirstOrDefault(c => c.Id == id);
-
-            return model != null ? new CardViewModel(model) : CardViewModel.Empty;
-        }
-
 
         private void LoadCardsFromStorage()
         {

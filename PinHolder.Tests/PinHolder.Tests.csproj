@@ -56,8 +56,8 @@
     <Compile Include="..\PinHolder\Model\ApplicationSettings.cs">
       <Link>Links\Model\ApplicationSettings.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Model\ICardProvider.cs">
-      <Link>Links\Model\ICardProvider.cs</Link>
+    <Compile Include="..\PinHolder\Model\BaseCardProvider.cs">
+      <Link>Links\Model\BaseCardProvider.cs</Link>
     </Compile>
     <Compile Include="..\PinHolder\Model\SettingsKeys.cs">
       <Link>Links\Model\SettingsKeys.cs</Link>

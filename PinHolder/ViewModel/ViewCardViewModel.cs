@@ -10,13 +10,13 @@ namespace PinHolder.ViewModel
     public sealed class ViewCardViewModel: BaseViewModel
     {
         private readonly INavigationService _navigation;
-        private readonly ICardProvider _cardProvider;
+        private readonly BaseCardProvider _cardProvider;
         private readonly int _id;
         private CardViewModel _card;
 
         [NotNull] private readonly ISecondaryTileService _secondaryTileService;
 
-        public ViewCardViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider,
+        public ViewCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
                                  [NotNull] ISecondaryTileService secondaryTileService, int id)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");

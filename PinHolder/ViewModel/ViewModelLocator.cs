@@ -19,31 +19,31 @@ namespace PinHolder.ViewModel
         public static MainViewModel GetMainViewModel()
         {
             return new MainViewModel(
-                Container.Resolve<INavigationService>(), 
-                Container.Resolve<ICardProvider>(), 
+                Container.Resolve<INavigationService>(),
+                Container.Resolve<BaseCardProvider>(), 
                 new SettingsProvider());
         }
 
         public static NewCardViewModel GetNewCardViewModel()
         {
             return new NewCardViewModel(
-                Container.Resolve<INavigationService>(), 
-                Container.Resolve<ICardProvider>());
+                Container.Resolve<INavigationService>(),
+                Container.Resolve<BaseCardProvider>());
         }
 
         public static ViewCardViewModel GetViewCardViewModel(int id)
         {
             return new ViewCardViewModel(
-                Container.Resolve<INavigationService>(), 
-                Container.Resolve<ICardProvider>(), 
+                Container.Resolve<INavigationService>(),
+                Container.Resolve<BaseCardProvider>(), 
                 Container.Resolve<ISecondaryTileService>(), id);
         }
 
         public static EditCardViewModel GetEditCardViewModel(int id)
         {
             return new EditCardViewModel(
-                Container.Resolve<INavigationService>(), 
-                Container.Resolve<ICardProvider>(), 
+                Container.Resolve<INavigationService>(),
+                Container.Resolve<BaseCardProvider>(), 
                 id);
         }
 

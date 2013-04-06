@@ -11,13 +11,13 @@ namespace PinHolder.ViewModel
     public sealed class MainViewModel :BaseViewModel
     {
         private readonly INavigationService _navigation;
-        private readonly ICardProvider _cardProvider;
+        private readonly BaseCardProvider _cardProvider;
         private readonly ISettingsProvider _settingsProvider;
 
         private CardViewModel _selected;
         private bool _showLocker;
 
-        public MainViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider,
+        public MainViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
                              [NotNull] ISettingsProvider settingsProvider)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");

@@ -13,11 +13,11 @@ namespace PinHolder.ViewModel
     {
         [NotNull] private readonly ISecondaryTileService _secondaryTileService = new SecondaryTileService();
         private readonly INavigationService _navigation;
-        private readonly ICardProvider _cardProvider;
+        private readonly BaseCardProvider _cardProvider;
         private readonly int _id;
         private CardViewModel _card;
 
-        public EditCardViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider, int id)
+        public EditCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider, int id)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (cardProvider == null) throw new ArgumentNullException("cardProvider");

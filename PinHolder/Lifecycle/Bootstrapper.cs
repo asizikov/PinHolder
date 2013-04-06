@@ -1,10 +1,9 @@
 ﻿using Microsoft.Phone.Controls;
-using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
 using TinyIoC;
 
-namespace PinHolder
+namespace PinHolder.Lifecycle
 {
     public static class Bootstrapper
     {
@@ -18,7 +17,7 @@ namespace PinHolder
             var ioc = TinyIoCContainer.Current;
             ioc.Register<INavigationService>((container, overloads) => new NavigationService(rootFrame));
             ioc.Register<ISecondaryTileService>((container, overloads) => new SecondaryTileService());
-            ioc.Register<ICardProvider>((container, overloads) => new CardProvider());
+            ioc.Register<BaseCardProvider>((container, overloads) => new CardProvider());
         }
     }
 }
