@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
+﻿using System.Windows;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using PinHolder.Navigation;
-using NavigationService = System.Windows.Navigation.NavigationService;
 
 namespace PinHolder
 {
@@ -38,9 +26,7 @@ namespace PinHolder
 
             // Phone-specific initialization
             InitializePhoneApplication();
-
-            ViewModel.ViewModelLocator.Navigation = 
-                new Navigation.NavigationService(RootFrame);
+            Bootstrapper.InitApplication(RootFrame);
 
             // Show graphics profiling information while debugging.
             if (System.Diagnostics.Debugger.IsAttached)

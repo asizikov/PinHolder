@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Lifecycle;
@@ -11,13 +12,15 @@ namespace PinHolder.ViewModel
     public sealed class EditCardViewModel: BaseViewModel
     {
         [NotNull] private readonly ISecondaryTileService _secondaryTileService = new SecondaryTileService();
-        private readonly NavigationService _navigation;
-        private readonly CardProvider _cardProvider;
+        private readonly INavigationService _navigation;
+        private readonly ICardProvider _cardProvider;
         private readonly int _id;
         private CardViewModel _card;
 
-        public EditCardViewModel(NavigationService navigation, CardProvider cardProvider, int id)
+        public EditCardViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider, int id)
         {
+            if (navigation == null) throw new ArgumentNullException("navigation");
+            if (cardProvider == null) throw new ArgumentNullException("cardProvider");
             _navigation = navigation;
             _cardProvider = cardProvider;
             _id = id;

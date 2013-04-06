@@ -8,34 +8,50 @@ namespace PinHolder.ViewModel
     public static class ViewModelLocator
     {
         [NotNull]
-        public static NavigationService Navigation { get; set; }
-
-        private static readonly CardProvider CardProvider = new CardProvider();
-        private static readonly ISecondaryTileService TileService = new SecondaryTileService();
+        private static TinyIoC.TinyIoCContainer Container
+        {
+            get
+            {
+                return TinyIoC.TinyIoCContainer.Current;
+            }
+        }
 
         public static MainViewModel GetMainViewModel()
         {
-            return new MainViewModel(Navigation, CardProvider, new SettingsProvider());
+            return new MainViewModel(
+                Container.Resolve<INavigationService>(), 
+                Container.Resolve<ICardProvider>(), 
+                new SettingsProvider());
         }
 
         public static NewCardViewModel GetNewCardViewModel()
         {
-            return new NewCardViewModel(Navigation, CardProvider);
+            return new NewCardViewModel(
+                Container.Resolve<INavigationService>(), 
+                Container.Resolve<ICardProvider>());
         }
 
         public static ViewCardViewModel GetViewCardViewModel(int id)
         {
-            return new ViewCardViewModel(Navigation, CardProvider, TileService, id);
+            return new ViewCardViewModel(
+                Container.Resolve<INavigationService>(), 
+                Container.Resolve<ICardProvider>(), 
+                Container.Resolve<ISecondaryTileService>(), id);
         }
 
         public static EditCardViewModel GetEditCardViewModel(int id)
         {
-            return new EditCardViewModel(Navigation, CardProvider, id);
+            return new EditCardViewModel(
+                Container.Resolve<INavigationService>(), 
+                Container.Resolve<ICardProvider>(), 
+                id);
         }
 
         public static SettingsViewModel GetSettingsViewModel()
         {
-            return new SettingsViewModel(new SettingsProvider(), Navigation);
+            return new SettingsViewModel(
+                new SettingsProvider(), 
+                Container.Resolve<INavigationService>());
         }
 
         public static AboutViewModel GetAboutViewModel()

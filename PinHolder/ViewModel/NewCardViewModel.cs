@@ -9,12 +9,12 @@ namespace PinHolder.ViewModel
 {
     public sealed class NewCardViewModel : BaseViewModel
     {
-        private readonly NavigationService _navigation;
-        private readonly CardProvider _cardProvider;
+        private readonly INavigationService _navigation;
+        private readonly ICardProvider _cardProvider;
         private CardViewModel _card;
         private bool _canSave;
 
-        public NewCardViewModel([NotNull] NavigationService navigation, [NotNull] CardProvider cardProvider)
+        public NewCardViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider)
         {
             _navigation = navigation;
             _cardProvider = cardProvider;

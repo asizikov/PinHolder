@@ -1,4 +1,5 @@
-﻿using PinHolder.Annotations;
+﻿using System;
+using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
@@ -12,11 +13,12 @@ namespace PinHolder.ViewModel
         private readonly SettingsProvider _settingsProvider;
 
         [NotNull]
-        private readonly NavigationService _navigationService;
+        private readonly INavigationService _navigationService;
         private readonly ApplicationSettings _settings;
 
-        public SettingsViewModel(SettingsProvider settingsProvider, NavigationService navigationService)
+        public SettingsViewModel(SettingsProvider settingsProvider, [NotNull] INavigationService navigationService)
         {
+            if (navigationService == null) throw new ArgumentNullException("navigationService");
             _settingsProvider = settingsProvider;
             _navigationService = navigationService;
             _settings = _settingsProvider.LoadSettings();
