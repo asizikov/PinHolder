@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Lifecycle;
@@ -9,18 +10,24 @@ namespace PinHolder.ViewModel
 {
     public sealed class MainViewModel :BaseViewModel
     {
-        [NotNull] private readonly INavigationService _navigation;
-        [NotNull] private readonly ICardProvider _cardProvider;
-        [NotNull] private readonly ISettingsProvider _settingsProvider;
+        private readonly INavigationService _navigation;
+        private readonly ICardProvider _cardProvider;
+        private readonly ISettingsProvider _settingsProvider;
 
         private CardViewModel _selected;
         private bool _showLocker;
 
-        public MainViewModel(INavigationService navigation, ICardProvider cardProvider, ISettingsProvider settingsProvider)
+        public MainViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider,
+                             [NotNull] ISettingsProvider settingsProvider)
         {
+            if (navigation == null) throw new ArgumentNullException("navigation");
+            if (cardProvider == null) throw new ArgumentNullException("cardProvider");
+            if (settingsProvider == null) throw new ArgumentNullException("settingsProvider");
+
             _navigation = navigation;
             _cardProvider = cardProvider;
             _settingsProvider = settingsProvider;
+
             Cards = new ObservableCollection<CardViewModel>();
             InitCommands();
             ApplySettings();
@@ -70,7 +77,7 @@ namespace PinHolder.ViewModel
 
 
         [NotNull]
-        public ObservableCollection<CardViewModel> Cards { get; set; }
+        public ObservableCollection<CardViewModel> Cards { get; private set; }
 
         [CanBeNull]
         public CardViewModel Selected

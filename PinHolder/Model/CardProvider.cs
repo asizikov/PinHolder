@@ -15,17 +15,16 @@ namespace PinHolder.Model
 
     public sealed class CardProvider : ICardProvider
     {
-        private readonly List<Card> _cards;
+        private readonly List<Card> _cards = new List<Card>();
         private const string FOLDER = "Cards";
         private const string FILE = "cards.xml";
 
         public CardProvider()
         {
-            _cards = new List<Card>();
             LoadCardsFromStorage();
         }
 
-        private string PathToFile
+        private static string PathToFile
         {
             get { return FOLDER + "\\" + FILE; }
         }
@@ -64,7 +63,7 @@ namespace PinHolder.Model
            UpdateFile(_cards);
        }
 
-        private void UpdateFile(List<Card> cards)
+        private static void UpdateFile(List<Card> cards)
         {
             using (var st = IsolatedStorageFile.GetUserStoreForApplication())
             {

@@ -95,9 +95,13 @@
     <Compile Include="..\PinHolder\ViewModel\PinItemViewModel.cs">
       <Link>Links\ViewModel\PinItemViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\PinHolder\ViewModel\ViewCardViewModel.cs">
+      <Link>Links\ViewModel\ViewCardViewModel.cs</Link>
+    </Compile>
     <Compile Include="CardViewModelTestFixture.cs" />
     <Compile Include="MainViewModelTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewCardViewModelTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

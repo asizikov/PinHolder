@@ -11,6 +11,7 @@ namespace PinHolder.ViewModel
         public static NavigationService Navigation { get; set; }
 
         private static readonly CardProvider CardProvider = new CardProvider();
+        private static readonly ISecondaryTileService TileService = new SecondaryTileService();
 
         public static MainViewModel GetMainViewModel()
         {
@@ -19,12 +20,12 @@ namespace PinHolder.ViewModel
 
         public static NewCardViewModel GetNewCardViewModel()
         {
-            return new NewCardViewModel(Navigation,CardProvider);
+            return new NewCardViewModel(Navigation, CardProvider);
         }
 
         public static ViewCardViewModel GetViewCardViewModel(int id)
         {
-            return new ViewCardViewModel(Navigation,CardProvider,id);
+            return new ViewCardViewModel(Navigation, CardProvider, TileService, id);
         }
 
         public static EditCardViewModel GetEditCardViewModel(int id)

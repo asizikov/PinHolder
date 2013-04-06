@@ -1,4 +1,6 @@
-﻿using PinHolder.Command;
+﻿using System;
+using PinHolder.Annotations;
+using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -7,21 +9,27 @@ namespace PinHolder.ViewModel
 {
     public sealed class ViewCardViewModel: BaseViewModel
     {
-        private readonly NavigationService _navigation;
-        private readonly CardProvider _cardProvider;
+        private readonly INavigationService _navigation;
+        private readonly ICardProvider _cardProvider;
         private readonly int _id;
         private CardViewModel _card;
-        
-        private readonly ISecondaryTileService _secondaryTileService = new SecondaryTileService();
 
-        public ViewCardViewModel(NavigationService navigation, CardProvider cardProvider, int id)
+        [NotNull] private readonly ISecondaryTileService _secondaryTileService;
+
+        public ViewCardViewModel([NotNull] INavigationService navigation, [NotNull] ICardProvider cardProvider,
+                                 [NotNull] ISecondaryTileService secondaryTileService, int id)
         {
+            if (navigation == null) throw new ArgumentNullException("navigation");
+            if (cardProvider == null) throw new ArgumentNullException("cardProvider");
+            if (secondaryTileService == null) throw new ArgumentNullException("secondaryTileService");
             _navigation = navigation;
             _cardProvider = cardProvider;
+            _secondaryTileService = secondaryTileService;
             _id = id;
             Card = _cardProvider.GetById(_id);
         }
 
+        [UsedImplicitly]
         public CardViewModel Card
         {
             get {
@@ -36,6 +44,7 @@ namespace PinHolder.ViewModel
             }
         }
 
+        [UsedImplicitly]
         public RelayCommand EditCommand
         {
             get {
@@ -44,12 +53,13 @@ namespace PinHolder.ViewModel
             }
         }
 
+        [UsedImplicitly]
         public RelayCommand CreatePinCommand
         {
             get
             {
                 return new RelayCommand(
-                    ()=> _secondaryTileService.TryCreate(Card.Name, Card.Id, () => { }),
+                    ()=> _secondaryTileService.TryCreate(Card.Name, Card.Description, Card.Id, () => { }),
                     ()=> _secondaryTileService.CanCreate(Card.Id));
             }
         }

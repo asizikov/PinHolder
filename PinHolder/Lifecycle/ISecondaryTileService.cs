@@ -15,9 +15,10 @@ namespace PinHolder.Lifecycle
         /// Tryes to create new secondary tile
         /// </summary>
         /// <param name="cardName">Card name</param>
+        /// <param name="cardDescription">Card description</param>
         /// <param name="cardId">Card Id</param>
         /// <param name="exists">Delegate to execute if tile already exists</param>
-        void TryCreate(string cardName, int cardId, Action exists);
+        void TryCreate(string cardName, string cardDescription, int cardId, Action exists);
 
         /// <summary>
         /// Deletes secondary tile by card Id

@@ -106,7 +106,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" x:Name="Image" Source="/PinHolder;component/Images/combination-lock.png"/>
+        <Image Grid.Row="0" x:Name="Image" Source="/Resourses\Images\combination-lock.png"/>
        <Border x:Name="border" Grid.Row="1" Background="#FF333333">
             <TextBlock x:Name="Password" Text="Enter password"  
                    Height="42"
