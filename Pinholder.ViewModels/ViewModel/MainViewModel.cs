@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using PinHolder.Annotations;
 using PinHolder.Command;
-using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
+using Pinholder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
@@ -12,36 +12,31 @@ namespace PinHolder.ViewModel
     {
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
-        private readonly ISettingsProvider _settingsProvider;
+        private readonly ICollectionFactory _collectionFactory;
 
         private CardViewModel _selected;
-        private bool _showLocker;
 
         public MainViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
-                             [NotNull] ISettingsProvider settingsProvider)
+                             [NotNull] ICollectionFactory collectionFactory)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (cardProvider == null) throw new ArgumentNullException("cardProvider");
-            if (settingsProvider == null) throw new ArgumentNullException("settingsProvider");
+            if (collectionFactory == null) throw new ArgumentNullException("collectionFactory");
+
 
             _navigation = navigation;
             _cardProvider = cardProvider;
-            _settingsProvider = settingsProvider;
+            _collectionFactory = collectionFactory;
 
-            Cards = new ObservableCollection<CardViewModel>();
+            Cards = _collectionFactory.GetCollection<CardViewModel>();
             InitCommands();
-            ApplySettings();
             LoadData();
         }
 
-        private void ApplySettings()
-        {
-            ShowLocker = false;
-        }
 
         private void LoadData()
         {
-            var cards = _cardProvider.LoadCards();
+            var cards = _cardProvider.LoadCards().ToViewModelList();
             foreach (var card in cards)
             {
                 Cards.Add(card);
@@ -50,36 +45,21 @@ namespace PinHolder.ViewModel
 
         private void InitCommands()
         {
-            AddNewCommand = new RelayCommand(() => _navigation.Navigate(Pages.New));
-            SettingsCommand = new RelayCommand(() => _navigation.Navigate(Pages.Settings));
+            AddNewCommand = new RelayCommand (() => _navigation.Navigate(Pages.New));
             AboutCommand = new RelayCommand(() => _navigation.Navigate(Pages.About));
-            HelpCommand = new RelayCommand(()=> _navigation.Navigate(Pages.HelpPage));
+            HelpCommand = new RelayCommand(() => _navigation.Navigate(Pages.HelpPage));
         }
 
-        
-
-        [UsedImplicitly]
-        public bool ShowLocker
-        {
-            get { return _showLocker; }
-            set
-            {
-                if (value.Equals(_showLocker)) return;
-                _showLocker = value;
-                OnPropertyChanged("ShowLocker");
-            }
-        }
 
         public RelayCommand AddNewCommand { get; private set; }
-        public RelayCommand SettingsCommand { get; private set; }
         public RelayCommand AboutCommand { get; private set; }
         public RelayCommand HelpCommand { get; private set; }
 
 
         [NotNull]
-        public ObservableCollection<CardViewModel> Cards { get; private set; }
+        public IList<CardViewModel> Cards { get; private set; }
 
-        [CanBeNull]
+        [CanBeNull,UsedImplicitly(ImplicitUseKindFlags.Default)]
         public CardViewModel Selected
         {
             get { return _selected; }

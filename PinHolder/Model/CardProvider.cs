@@ -14,18 +14,9 @@ namespace PinHolder.Model
 
     public sealed class CardProvider: BaseCardProvider
     {
-        
-        private const string FOLDER = "Cards";
-        private const string FILE = "cards.xml";
-
         public CardProvider()
         {
             LoadCardsFromStorage();
-        }
-
-        private static string PathToFile
-        {
-            get { return FOLDER + "\\" + FILE; }
         }
 
 

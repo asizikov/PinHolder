@@ -7,7 +7,6 @@
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-                            xmlns:controls="clr-namespace:PinHolder.Controls"
                             d:DesignHeight="696"
                             d:DesignWidth="480"
 							d:DataContext="{d:DesignData Source=/SampleData/MainViewModelSampleData.xaml}"
@@ -88,7 +87,6 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
-        <controls:PageLock Grid.RowSpan="2" Visibility="{Binding ShowLocker, Converter={StaticResource BoolToVisibilityConverter}}"/>
     </Grid>
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
@@ -101,10 +99,6 @@
                                                  Text="{Binding Path=Strings.Help,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBar.MenuItems>
-<!--                <appBar:BindableApplicationBarMenuItem-->
-<!--                    Command="{Binding SettingsCommand}"-->
-<!--                    Text="{Binding Path=Strings.Settings , Source={StaticResource LocalizedStrings}}"-->
-<!--                    />-->
                 <appBar:BindableApplicationBarMenuItem
                     Command="{Binding AboutCommand}"
                     Text="{Binding Path=Strings.About , Source={StaticResource LocalizedStrings}}"

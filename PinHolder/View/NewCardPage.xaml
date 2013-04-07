@@ -201,7 +201,7 @@
                                                  IconUri="/Resourses/Images/appbar.delete.rest.png"
                                                  Text="{Binding Path=Strings.Delete,
                                                                 Source={StaticResource LocalizedStrings}}"
-                                                 Visibility="{Binding DeleteButtonVisible}" />
+                                                 Visibility="{Binding DeleteButtonVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
         </appBar:BindableApplicationBar>
     </appBar:Bindable.ApplicationBar>
 </phone:PhoneApplicationPage>

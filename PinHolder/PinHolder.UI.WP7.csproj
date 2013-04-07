@@ -75,27 +75,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lifecycle\Bootstrapper.cs" />
-    <Compile Include="Command\RelayCommand.cs" />
-    <Compile Include="Controls\ConfirmNumericPasswordBox.xaml.cs">
-      <DependentUpon>ConfirmNumericPasswordBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\PageLock.xaml.cs">
-      <DependentUpon>PageLock.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ReversedBoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ReversedZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
-    <Compile Include="Lifecycle\CreationState.cs" />
-    <Compile Include="Lifecycle\ISettingsProvider.cs" />
-    <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
-    <Compile Include="Model\ApplicationSettings.cs" />
-    <Compile Include="Model\BaseCardProvider.cs" />
+    <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Model\CardProvider.cs" />
-    <Compile Include="Model\SettingsKeys.cs" />
-    <Compile Include="Lifecycle\SettingsProvider.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="PlatformSpecificFactories\CollectionFactory.cs" />
+    <Compile Include="PlatformSpecificFactories\PhoneTasksFactory.cs" />
     <Compile Include="Resourses\Strings.de-DE.Designer.cs">
       <DependentUpon>Strings.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -112,17 +101,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resourses\UIStringsProvider.cs" />
     <Compile Include="TinyIoC.cs" />
-    <Compile Include="ViewModel\AboutViewModel.cs" />
-    <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\CardViewModel.cs" />
-    <Compile Include="ViewModel\EditCardViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\NewCardViewModel.cs" />
-    <Compile Include="ViewModel\PinItemViewModel.cs" />
-    <Compile Include="ViewModel\SettingsViewModel.cs" />
-    <Compile Include="ViewModel\ViewCardViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModelLocator.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
@@ -136,9 +117,6 @@
     <Compile Include="View\NewCardPage.xaml.cs">
       <DependentUpon>NewCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ViewPage.xaml.cs">
       <DependentUpon>ViewPage.xaml</DependentUpon>
     </Compile>
@@ -148,14 +126,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="Controls\ConfirmNumericPasswordBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\PageLock.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,10 +139,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewCardPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,7 +207,12 @@
       <Project>{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}</Project>
       <Name>Pinholder.Commons</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pinholder.ViewModels\Pinholder.ViewModel.csproj">
+      <Project>{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}</Project>
+      <Name>Pinholder.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

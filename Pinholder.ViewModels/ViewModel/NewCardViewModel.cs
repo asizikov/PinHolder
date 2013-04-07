@@ -1,9 +1,9 @@
-﻿using System.Windows;
+﻿using System;
 using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
-using resx = PinHolder.Resourses;
+using Pinholder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
@@ -11,37 +11,35 @@ namespace PinHolder.ViewModel
     {
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
+        private readonly IUiStringsProvider _stringsProvider;
         private CardViewModel _card;
         private bool _canSave;
 
-        public NewCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider)
+        public NewCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
+                                [NotNull] IUiStringsProvider stringsProvider)
         {
+            if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
             _navigation = navigation;
             _cardProvider = cardProvider;
+            _stringsProvider = stringsProvider;
             Card = new CardViewModel();
             Card.ReadyToSave += () =>
                 {
                     _canSave = true;
                     SaveCommand.RaiseCanExecuteChanged();
                 };
-            Card.PropertyChanged += (sender, args) =>
-                {
-                    if (args.PropertyName == "Description" || args.PropertyName == "Name")
-                    {
-                        SaveCommand.RaiseCanExecuteChanged();
-                    }
-                };
+            Card.NameOfDescriptionUpdated += () => SaveCommand.RaiseCanExecuteChanged();
         }
 
         [UsedImplicitly]
-        public string Title { get { return resx.Strings.New; } }
+        public string Title { get { return _stringsProvider.New; } }
 
         [UsedImplicitly]
-        public Visibility DeleteButtonVisible
+        public bool DeleteButtonVisible
         {
             get
             {
-                return Visibility.Collapsed;
+                return false;
             }
         }
 
@@ -83,12 +81,12 @@ namespace PinHolder.ViewModel
 
         private bool CanSave()
         {
-            return _canSave && !string.IsNullOrWhiteSpace(Card.Name);
+            return _canSave && !string.IsNullOrEmpty(Card.Name);
         }
 
         private void SaveCard()
         {
-            _cardProvider.Save(Card);
+            _cardProvider.Save(Card.GetModel());
             _navigation.GoBack();
         }
     }

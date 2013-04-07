@@ -1,24 +1,28 @@
-﻿using System.ComponentModel;
+﻿using System;
 using System.Reflection;
-using Microsoft.Phone.Tasks;
 using PinHolder.Annotations;
 using PinHolder.Command;
+using Pinholder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public class AboutViewModel: BaseViewModel
+    public class AboutViewModel : BaseViewModel
     {
+        private readonly IPlatformTaskFactory _platformTaskFactory;
         private const string SUPPORT_EMAIL = "pinholder@yandex.ru";
 
 
-        public AboutViewModel()
+        public AboutViewModel([NotNull] IPlatformTaskFactory platformTaskFactory)
         {
-            RateCommand = new RelayCommand(ShowRateTask);   
+            if (platformTaskFactory == null) throw new ArgumentNullException("platformTaskFactory");
+            _platformTaskFactory = platformTaskFactory;
+
+            RateCommand = new RelayCommand(ShowRateTask);
         }
 
         private void ShowRateTask()
         {
-            var task = new MarketplaceReviewTask();
+            var task = _platformTaskFactory.GetRateTask();
             task.Show();
         }
 
@@ -30,10 +34,7 @@ namespace PinHolder.ViewModel
         {
             get
             {
-                if (DesignerProperties.IsInDesignTool)
-                    return "version x.x.x";
-
-                Assembly assembly = Assembly.GetExecutingAssembly();
+                var assembly = Assembly.GetExecutingAssembly();
                 var name = new AssemblyName(assembly.FullName);
                 return name.Version.ToString(3);
             }
@@ -45,16 +46,11 @@ namespace PinHolder.ViewModel
             get
             {
                 return new RelayCommand(() =>
-                {
-                    var emailComposeTask = new EmailComposeTask
                     {
-                        To = SUPPORT_EMAIL,
-                        Subject =
-                           "PinHolder " +
-                          ApplicationVersion
-                    };
-                    emailComposeTask.Show();
-                });
+                        var emailComposeTask = _platformTaskFactory.GetEmailTask(SUPPORT_EMAIL, "PinHolder " +
+                  ApplicationVersion);
+                        emailComposeTask.Show();
+                    });
             }
         }
 

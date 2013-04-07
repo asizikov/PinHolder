@@ -36,6 +36,8 @@ namespace PinHolder.ViewModel
         private const int CELLS_NUM = 20;
         private const int PIN_SIZE = 4;
 
+        public event Action NameOfDescriptionUpdated;
+
         public CardViewModel()
         {
             PinItems = new List<PinItemViewModel>();
@@ -66,6 +68,7 @@ namespace PinHolder.ViewModel
                 if (value == _name) return;
                 _name = value;
                 OnPropertyChanged("Name");
+                RaiseNameOrDescriptionUpdated();
             }
         }
 
@@ -78,6 +81,7 @@ namespace PinHolder.ViewModel
                 if (value == _description) return;
                 _description = value;
                 OnPropertyChanged("Description");
+                RaiseNameOrDescriptionUpdated();
             }
         }
 
@@ -91,8 +95,8 @@ namespace PinHolder.ViewModel
 
         private void OnUpdate(PinItemViewModel item)
         {
-            if (PinItems.Count(pi => !string.IsNullOrWhiteSpace(pi.Pin)) != PIN_SIZE) return;
-            foreach (var pinItemViewModel in PinItems.Where(pi => string.IsNullOrWhiteSpace(pi.Pin)))
+            if (PinItems.Count(pi => !string.IsNullOrEmpty(pi.Pin)) != PIN_SIZE) return;
+            foreach (var pinItemViewModel in PinItems.Where(pi => string.IsNullOrEmpty(pi.Pin)))
             {
                 pinItemViewModel.SetSilently(GetRandomPinAsString());
                 pinItemViewModel.RaiseChanged();
@@ -118,6 +122,14 @@ namespace PinHolder.ViewModel
                     Description = Description,
                     Pins = PinItems.Select(pi => pi.Pin).ToList()
                 };
+        }
+
+        private void RaiseNameOrDescriptionUpdated()
+        {
+            if (NameOfDescriptionUpdated != null)
+            {
+                NameOfDescriptionUpdated();
+            }
         }
     }
 }

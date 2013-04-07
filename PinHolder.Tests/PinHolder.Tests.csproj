@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PinHolder.Tests</RootNamespace>
     <AssemblyName>PinHolder.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>TRACE;DEBUG;TEST</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Moq">
@@ -40,6 +42,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,35 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PinHolder\Command\RelayCommand.cs">
-      <Link>Links\Command\RelayCommand.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Lifecycle\ISettingsProvider.cs">
-      <Link>Links\Lifecycle\ISettingsProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Model\ApplicationSettings.cs">
-      <Link>Links\Model\ApplicationSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Model\BaseCardProvider.cs">
-      <Link>Links\Model\BaseCardProvider.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\Model\SettingsKeys.cs">
-      <Link>Links\Model\SettingsKeys.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\ViewModel\BaseViewModel.cs">
-      <Link>Links\ViewModel\BaseViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\ViewModel\CardViewModel.cs">
-      <Link>Links\ViewModel\CardViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\ViewModel\MainViewModel.cs">
-      <Link>Links\ViewModel\MainViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\ViewModel\PinItemViewModel.cs">
-      <Link>Links\ViewModel\PinItemViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\PinHolder\ViewModel\ViewCardViewModel.cs">
-      <Link>Links\ViewModel\ViewCardViewModel.cs</Link>
+    <Compile Include="..\PinHolder\PlatformSpecificFactories\CollectionFactory.cs">
+      <Link>Links\PlatformSpecificFactories\CollectionFactory.cs</Link>
     </Compile>
     <Compile Include="CardViewModelTestFixture.cs" />
     <Compile Include="MainViewModelTestFixture.cs" />
@@ -90,7 +66,12 @@
       <Project>{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}</Project>
       <Name>Pinholder.Commons</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pinholder.ViewModels\Pinholder.ViewModel.csproj">
+      <Project>{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}</Project>
+      <Name>Pinholder.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

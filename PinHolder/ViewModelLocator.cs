@@ -2,6 +2,7 @@
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
+using Pinholder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
@@ -20,15 +21,16 @@ namespace PinHolder.ViewModel
         {
             return new MainViewModel(
                 Container.Resolve<INavigationService>(),
-                Container.Resolve<BaseCardProvider>(), 
-                new SettingsProvider());
+                Container.Resolve<BaseCardProvider>(),
+                Container.Resolve<ICollectionFactory>());
         }
 
         public static NewCardViewModel GetNewCardViewModel()
         {
             return new NewCardViewModel(
                 Container.Resolve<INavigationService>(),
-                Container.Resolve<BaseCardProvider>());
+                Container.Resolve<BaseCardProvider>(),
+                Container.Resolve<IUiStringsProvider>());
         }
 
         public static ViewCardViewModel GetViewCardViewModel(int id)
@@ -43,20 +45,15 @@ namespace PinHolder.ViewModel
         {
             return new EditCardViewModel(
                 Container.Resolve<INavigationService>(),
-                Container.Resolve<BaseCardProvider>(), 
+                Container.Resolve<BaseCardProvider>(),
+                Container.Resolve<BaseSecondaryTileService>(),
+                Container.Resolve<IUiStringsProvider>(),
                 id);
-        }
-
-        public static SettingsViewModel GetSettingsViewModel()
-        {
-            return new SettingsViewModel(
-                new SettingsProvider(), 
-                Container.Resolve<INavigationService>());
         }
 
         public static AboutViewModel GetAboutViewModel()
         {
-            return new AboutViewModel();
+            return new AboutViewModel(Container.Resolve<IPlatformTaskFactory>());
         }
     }
 }

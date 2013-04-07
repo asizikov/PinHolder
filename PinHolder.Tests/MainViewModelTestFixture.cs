@@ -2,64 +2,34 @@
 using System.Globalization;
 using Moq;
 using NUnit.Framework;
-using PinHolder.Lifecycle;
+using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
+using PinHolder.PlatformSpecificFactories;
 using PinHolder.ViewModel;
 
 namespace PinHolder.Tests
 {
     [TestFixture]
-    class MainViewModelTestFixture
+    public class MainViewModelTestFixture
     {
-        [Test]
-        public void DoesNotShowLockerByDefault()
-        {
-            var settings = new Mock<ISettingsProvider>();
-            var navigation = new Mock<INavigationService>();
-            var cardProvider = new Mock<BaseCardProvider>();
-
-            var target = new MainViewModel(navigation.Object, cardProvider.Object, settings.Object);
-
-            Assert.IsFalse(target.ShowLocker);
-        }
-
         [Test]
         public void LoadsCardsOnStart()
         {
-
-            var settings = new Mock<ISettingsProvider>();
             var navigation = new Mock<INavigationService>();
             var cardProvider = new Mock<BaseCardProvider>();
+            var collectionFactory = new CollectionFactory();;
 
             cardProvider.Setup(x => x.LoadCards())
-                .Returns(() => new List<CardViewModel> {
-                    new CardViewModel(GetCard())});
+                .Returns(() => new List<Card> { GetCard()});
 
-            var target = new MainViewModel(navigation.Object, cardProvider.Object, settings.Object);
+            var target = new MainViewModel(navigation.Object, cardProvider.Object, collectionFactory);
             cardProvider.Verify(x => x.LoadCards(), Times.Once());
             Assert.AreEqual(1, target.Cards.Count);
             Assert.AreEqual(1, target.Cards[0].Id);
 
         }
 
-        [Test]
-        public void NavigatesToAboutPage()
-        {
-            var settings = new Mock<ISettingsProvider>();
-            var navigation = new Mock<INavigationService>();
-            var pageName = string.Empty;
-            navigation.Setup(x => x.Navigate(It.IsAny<string>(), It.IsAny<string>()))
-                      .Callback((string s, string q) => pageName = s);
-
-            var cardProvider = new Mock<BaseCardProvider>();
-            var target = new MainViewModel(navigation.Object, cardProvider.Object, settings.Object);
-            target.AboutCommand.Execute(null);
-            navigation.Verify(x => x.Navigate(It.IsAny<string>(), It.IsAny<string>()), Times.Once());
-            Assert.AreEqual(Pages.About, pageName);
-
-
-        }
 
         private Card GetCard()
         {

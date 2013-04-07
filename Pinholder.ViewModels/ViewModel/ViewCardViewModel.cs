@@ -26,7 +26,7 @@ namespace PinHolder.ViewModel
             _cardProvider = cardProvider;
             _secondaryTileService = secondaryTileService;
             _id = id;
-            Card = _cardProvider.GetById(_id);
+            Card = _cardProvider.GetById(_id).ToViewModel();
         }
 
         [UsedImplicitly]

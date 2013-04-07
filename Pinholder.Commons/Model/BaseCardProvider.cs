@@ -1,27 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PinHolder.ViewModel;
 
 namespace PinHolder.Model
 {
     public abstract class BaseCardProvider
     {
+        protected const string FOLDER = "Cards";
+        protected const string FILE = "cards.xml";
+
         protected readonly List<Card> _cards = new List<Card>();
 
-        public void Save(CardViewModel newCardViewModel)
+        public void Save(Card newCardModel)
         {
             {
-                if (newCardViewModel == null) throw new ArgumentNullException("newCardViewModel");
+                if (newCardModel == null) throw new ArgumentNullException("newCardModel");
 
                 var x = _cards.Any() ? _cards.Max(c => c.Id) : 0;
-                newCardViewModel.Id = x + 1;
-                _cards.Add(newCardViewModel.GetModel());
+                newCardModel.Id = x + 1;
+                _cards.Add(newCardModel);
                 UpdateFile(_cards);
             }
         }
 
-        public void Update(CardViewModel card)
+        public void Update(Card card)
         {
             var old = _cards.FirstOrDefault(c => c.Id == card.Id);
             if (old == null)
@@ -31,33 +33,36 @@ namespace PinHolder.Model
             else
             {
                 _cards.Remove(old);
-                _cards.Add(card.GetModel());
+                _cards.Add(card);
                 UpdateFile(_cards);
             }
         }
 
-        public void Delete(CardViewModel card)
+        public void DeleteById(int id)
         {
-            var old = _cards.FirstOrDefault(c => c.Id == card.Id);
+            var old = _cards.FirstOrDefault(c => c.Id == id);
             if (old == null) return;
 
             _cards.Remove(old);
             UpdateFile(_cards);
         }
 
-        public virtual IEnumerable<CardViewModel> LoadCards()
+        public virtual IEnumerable<Card> LoadCards()
         {
-            return _cards.Select(m => new CardViewModel(m)).ToList();
+            return _cards.ToList();
         }
 
-        public CardViewModel GetById(int id)
+        public Card GetById(int id)
         {
-            var model = _cards.FirstOrDefault(c => c.Id == id);
-
-            return model != null ? new CardViewModel(model) : CardViewModel.Empty;
+            return _cards.FirstOrDefault(c => c.Id == id);
         }
 
 
         protected abstract void UpdateFile(List<Card> cards);
+
+        protected static string PathToFile
+        {
+            get { return FOLDER + "\\" + FILE; }
+        }
     }
 }
