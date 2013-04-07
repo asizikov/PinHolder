@@ -18,7 +18,7 @@ namespace PinHolder.Tests
         {
             var navigation = new Mock<INavigationService>();
             var cardProvider = new Mock<BaseCardProvider>();
-            var collectionFactory = new CollectionFactory();;
+            var collectionFactory = new CollectionFactory();
 
             cardProvider.Setup(x => x.LoadCards())
                 .Returns(() => new List<Card> { GetCard()});
@@ -30,6 +30,23 @@ namespace PinHolder.Tests
 
         }
 
+        [Test]
+        public void NavigatesToAboutPage()
+        {
+            var navigation = new Mock<INavigationService>();
+            var collectionFactory = new CollectionFactory(); ;
+            var pageName = string.Empty;
+            navigation.Setup(x => x.Navigate(It.IsAny<string>(), It.IsAny<string>()))
+                      .Callback((string s, string q) => pageName = s);
+
+            var cardProvider = new Mock<BaseCardProvider>();
+            var target = new MainViewModel(navigation.Object, cardProvider.Object, collectionFactory);
+            target.AboutCommand.Execute(null);
+            navigation.Verify(x => x.Navigate(It.IsAny<string>(), It.IsAny<string>()), Times.Once());
+            Assert.AreEqual(Pages.About, pageName);
+
+
+        }
 
         private Card GetCard()
         {
