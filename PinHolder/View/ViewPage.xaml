@@ -7,6 +7,7 @@
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:conrols="clr-namespace:PinHolder.Conrols"
                             d:DesignHeight="696"
                             d:DesignWidth="480"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -117,6 +118,12 @@
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[19].Pin}" />
                 </Border>
             </toolkit:WrapPanel>
+            <conrols:Locker 
+                DataContext="{Binding Locker}"
+                Accepted="{Binding PasswordAccepted, Mode=TwoWay}"
+                Password="{Binding StoredPassword}"
+                Visibility="{Binding ShowLocker, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue='False'}">
+            </conrols:Locker>
         </Grid>
     </Grid>
 

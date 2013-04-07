@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Pinholder.PlatformAbstractions
+namespace PinHolder.PlatformAbstractions
 {
     public interface ICollectionFactory
     {

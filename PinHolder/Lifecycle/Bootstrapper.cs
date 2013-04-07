@@ -1,9 +1,10 @@
 ﻿using Microsoft.Phone.Controls;
 using PinHolder.Model;
 using PinHolder.Navigation;
+using PinHolder.PlatformAbstractions;
 using PinHolder.PlatformSpecificFactories;
+using PinHolder.PlatformSpecificImplementations;
 using PinHolder.Resourses;
-using Pinholder.PlatformAbstractions;
 using TinyIoC;
 
 namespace PinHolder.Lifecycle
@@ -23,6 +24,8 @@ namespace PinHolder.Lifecycle
             ioc.Register<BaseCardProvider>((container, overloads) => new CardProvider());
             ioc.Register<ICollectionFactory>((container, overloads) => new CollectionFactory());
             ioc.Register<IUiStringsProvider>((container, overloads) => new UiStringsProvider());
+            ioc.Register<ISettingsLoader>((container, overloads) => new SettingsLoader());
+            ioc.Register((container, overloads) => new ApplicationSettingsProvider(container.Resolve<ISettingsLoader>()));
         }
     }
 }

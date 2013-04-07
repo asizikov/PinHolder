@@ -4,7 +4,7 @@ using PinHolder.Annotations;
 using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
-using Pinholder.PlatformAbstractions;
+using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {

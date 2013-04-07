@@ -74,6 +74,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Conrols\Locker.xaml.cs">
+      <DependentUpon>Locker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lifecycle\Bootstrapper.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ReversedBoolToVisibilityConverter.cs" />
@@ -83,8 +86,9 @@
     <Compile Include="Lifecycle\StateManager.cs" />
     <Compile Include="Model\CardProvider.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
-    <Compile Include="PlatformSpecificFactories\CollectionFactory.cs" />
-    <Compile Include="PlatformSpecificFactories\PhoneTasksFactory.cs" />
+    <Compile Include="PlatformSpecificImplementations\CollectionFactory.cs" />
+    <Compile Include="PlatformSpecificImplementations\PhoneTasksFactory.cs" />
+    <Compile Include="PlatformSpecificImplementations\SettingsLoader.cs" />
     <Compile Include="Resourses\Strings.de-DE.Designer.cs">
       <DependentUpon>Strings.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -126,6 +130,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Conrols\Locker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

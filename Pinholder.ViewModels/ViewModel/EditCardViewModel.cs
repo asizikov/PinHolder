@@ -4,14 +4,14 @@ using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
-using Pinholder.PlatformAbstractions;
+using PinHolder.PlatformAbstractions;
 
 
 namespace PinHolder.ViewModel
 {
     public sealed class EditCardViewModel: BaseViewModel
     {
-        [NotNull] private readonly BaseSecondaryTileService _secondaryTileService;
+        [NotNull] private readonly ISecondaryTileService _secondaryTileService;
         private readonly IUiStringsProvider _stringsProvider;
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
@@ -19,7 +19,7 @@ namespace PinHolder.ViewModel
         private CardViewModel _card;
 
         public EditCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
-                                 [NotNull] BaseSecondaryTileService secondaryTileService,
+                                 [NotNull] ISecondaryTileService secondaryTileService,
                                  [NotNull] IUiStringsProvider stringsProvider, int id)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");

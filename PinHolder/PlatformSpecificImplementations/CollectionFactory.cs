@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Pinholder.PlatformAbstractions;
+using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.PlatformSpecificFactories
 {

@@ -2,7 +2,6 @@
 using System.Globalization;
 using Moq;
 using NUnit.Framework;
-using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
 using PinHolder.PlatformSpecificFactories;

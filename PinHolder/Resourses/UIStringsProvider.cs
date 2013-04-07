@@ -1,4 +1,4 @@
-﻿using Pinholder.PlatformAbstractions;
+﻿using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.Resourses
 {

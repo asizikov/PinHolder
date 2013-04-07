@@ -1,4 +1,4 @@
-﻿namespace Pinholder.PlatformAbstractions
+﻿namespace PinHolder.PlatformAbstractions
 {
     public interface IUiStringsProvider
     {

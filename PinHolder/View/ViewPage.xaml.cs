@@ -1,11 +1,9 @@
 ﻿using System;
-using Microsoft.Phone.Controls;
 using PinHolder.Navigation;
-using PinHolder.ViewModel;
 
 namespace PinHolder.View
 {
-    public sealed partial class ViewPage : PhoneApplicationPage
+    public sealed partial class ViewPage
     {
         public ViewPage()
         {
@@ -16,13 +14,12 @@ namespace PinHolder.View
         {
             base.OnNavigatedTo(e);
             string parameter;
-            if (NavigationContext.QueryString.TryGetValue(Keys.Id, out parameter))
+            if (!NavigationContext.QueryString.TryGetValue(Keys.Id, out parameter)) return;
+            
+            int id;
+            if (Int32.TryParse(parameter, out id))
             {
-                int id;
-                if (Int32.TryParse(parameter, out id))
-                {
-                   DataContext = ViewModelLocator.GetViewCardViewModel(id);
-                }
+                DataContext = ViewModelLocator.GetViewCardViewModel(id);
             }
         }
     }

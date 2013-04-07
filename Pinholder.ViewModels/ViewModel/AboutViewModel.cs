@@ -2,7 +2,7 @@
 using System.Reflection;
 using PinHolder.Annotations;
 using PinHolder.Command;
-using Pinholder.PlatformAbstractions;
+using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {

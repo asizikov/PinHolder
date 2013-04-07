@@ -1,7 +1,7 @@
 ﻿using Microsoft.Phone.Tasks;
-using Pinholder.PlatformAbstractions;
+using PinHolder.PlatformAbstractions;
 
-namespace PinHolder.PlatformSpecificFactories
+namespace PinHolder.PlatformSpecificImplementations
 {
     public class PhoneMarketplaceTaskWrapper : IPlatformTask
     {

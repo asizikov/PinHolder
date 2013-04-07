@@ -50,10 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PinHolder\PlatformSpecificFactories\CollectionFactory.cs">
+    <Compile Include="..\PinHolder\PlatformSpecificImplementations\CollectionFactory.cs">
       <Link>Links\PlatformSpecificFactories\CollectionFactory.cs</Link>
     </Compile>
     <Compile Include="CardViewModelTestFixture.cs" />
+    <Compile Include="CommonsTestFixtures\ApplicationSettingsProviderTestFixture.cs" />
+    <Compile Include="LockerViewModelTestFixture.cs" />
     <Compile Include="MainViewModelTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewCardViewModelTestFixture.cs" />

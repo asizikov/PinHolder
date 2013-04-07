@@ -51,19 +51,19 @@ namespace PinHolder.Model
                     var xml = new XmlSerializer(typeof(CardsHolder));
                     var holder = xml.Deserialize(stream) as CardsHolder;
                     if (holder == null) return;
-                    _cards.Clear();
-                    _cards.AddRange(holder.Cards);
+                    Cards.Clear();
+                    Cards.AddRange(holder.Cards);
                 }
             }
         }
 
         private static bool CheckDir(IsolatedStorageFile storage)
         {
-            if (!storage.DirectoryExists(FOLDER))
+            if (!storage.DirectoryExists(Folder))
             {
                 try
                 {
-                    storage.CreateDirectory(FOLDER);
+                    storage.CreateDirectory(Folder);
                 }
                 catch (Exception)
                 {

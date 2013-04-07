@@ -2,9 +2,10 @@
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
-using Pinholder.PlatformAbstractions;
+using PinHolder.PlatformAbstractions;
+using PinHolder.ViewModel;
 
-namespace PinHolder.ViewModel
+namespace PinHolder
 {
     public static class ViewModelLocator
     {
@@ -38,7 +39,8 @@ namespace PinHolder.ViewModel
             return new ViewCardViewModel(
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(), 
-                Container.Resolve<ISecondaryTileService>(), id);
+                Container.Resolve<ISecondaryTileService>(),
+                new LockerViewModel(Container.Resolve<ApplicationSettingsProvider>()), id);
         }
 
         public static EditCardViewModel GetEditCardViewModel(int id)
@@ -46,7 +48,7 @@ namespace PinHolder.ViewModel
             return new EditCardViewModel(
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
-                Container.Resolve<BaseSecondaryTileService>(),
+                Container.Resolve<ISecondaryTileService>(),
                 Container.Resolve<IUiStringsProvider>(),
                 id);
         }

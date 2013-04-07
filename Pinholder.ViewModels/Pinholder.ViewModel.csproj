@@ -45,12 +45,16 @@
     <Compile Include="CardExtentions.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\EditCardViewModel.cs" />
+    <Compile Include="ViewModel\LockerViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\NewCardViewModel.cs" />
     <Compile Include="ViewModel\PinItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Comand\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewCardViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
