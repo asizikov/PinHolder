@@ -73,6 +73,7 @@ namespace PinHolder.ViewModel
         }
 
         [NotNull]
+        [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public LockerViewModel Locker { get; private set; }
     }
 }
