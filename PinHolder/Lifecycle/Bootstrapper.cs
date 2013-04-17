@@ -4,7 +4,7 @@ using PinHolder.Navigation;
 using PinHolder.PlatformAbstractions;
 using PinHolder.PlatformSpecificFactories;
 using PinHolder.PlatformSpecificImplementations;
-using PinHolder.Resourses;
+using PinHolder.Resources;
 using TinyIoC;
 
 namespace PinHolder.Lifecycle
