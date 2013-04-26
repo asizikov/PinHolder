@@ -1,6 +1,7 @@
-<PinHolder_ViewModel:MainViewModel xmlns:PinHolder_ViewModel="clr-namespace:PinHolder.ViewModel" xmlns:PinHolder_Command="clr-namespace:PinHolder.Command">
+<PinHolder_ViewModel:MainViewModel xmlns:PinHolder_ViewModel="clr-namespace:PinHolder.ViewModel;assembly=Pinholder.ViewModel" xmlns:PinHolder_Command="clr-namespace:PinHolder.Command"
+                                   xmlns:command="clr-namespace:PinHolder.Command;assembly=Pinholder.ViewModels">
 	<PinHolder_ViewModel:MainViewModel.AddNewCommand>
-		<PinHolder_Command:RelayCommand/>
+		<command:RelayCommand/>
 	</PinHolder_ViewModel:MainViewModel.AddNewCommand>
 	<PinHolder_ViewModel:MainViewModel.Cards>
 		<PinHolder_ViewModel:CardViewModel Description="Curabitur aenean phasellus nam aliquam" Id="22" Name="Dictumst congue aliquam leo">

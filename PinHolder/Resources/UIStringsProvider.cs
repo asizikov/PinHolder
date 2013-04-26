@@ -1,6 +1,6 @@
 ﻿using PinHolder.PlatformAbstractions;
 
-namespace PinHolder.Resourses
+namespace PinHolder.Resources
 {
     public class UiStringsProvider : IUiStringsProvider
     {

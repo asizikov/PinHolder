@@ -89,23 +89,23 @@
     <Compile Include="PlatformSpecificImplementations\CollectionFactory.cs" />
     <Compile Include="PlatformSpecificImplementations\PhoneTasksFactory.cs" />
     <Compile Include="PlatformSpecificImplementations\SettingsLoader.cs" />
-    <Compile Include="Resourses\Strings.de-DE.Designer.cs">
+    <Compile Include="Resources\Strings.de-DE.Designer.cs">
       <DependentUpon>Strings.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resourses\Strings.ru-RU.Designer.cs">
+    <Compile Include="Resources\Strings.ru-RU.Designer.cs">
       <DependentUpon>Strings.ru-RU.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resourses\LocalizedStrings.cs" />
-    <Compile Include="Resourses\Strings.Designer.cs">
+    <Compile Include="Resources\LocalizedStrings.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resourses\UIStringsProvider.cs" />
+    <Compile Include="Resources\UIStringsProvider.cs" />
     <Compile Include="TinyIoC.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
@@ -177,11 +177,11 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resourses\Images\appbar.add.rest.png" />
-    <Content Include="Resourses\Images\appbar.delete.rest.png" />
-    <Content Include="Resourses\Images\appbar.edit.rest.png" />
-    <Content Include="Resourses\Images\appbar.pin.rest.png" />
-    <Content Include="Resourses\Images\questionmark.png" />
+    <Content Include="Resources\Images\appbar.add.rest.png" />
+    <Content Include="Resources\Images\appbar.delete.rest.png" />
+    <Content Include="Resources\Images\appbar.edit.rest.png" />
+    <Content Include="Resources\Images\appbar.pin.rest.png" />
+    <Content Include="Resources\Images\questionmark.png" />
     <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
@@ -189,15 +189,15 @@
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resourses\Strings.de-DE.resx">
+    <EmbeddedResource Include="Resources\Strings.de-DE.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.de-DE.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resourses\Strings.ru-RU.resx">
+    <EmbeddedResource Include="Resources\Strings.ru-RU.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru-RU.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resourses\Strings.resx">
+    <EmbeddedResource Include="Resources\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -209,7 +209,7 @@
     </DesignData>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resourses\Images\combination-lock.png" />
+    <Resource Include="Resources\Images\combination-lock.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pinholder.Commons\Pinholder.Commons.csproj">

@@ -6,7 +6,7 @@
 
     <!--  Application Resources  -->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:PinHolder.Resourses" x:Key="LocalizedStrings" />
+        <local:LocalizedStrings xmlns:local="clr-namespace:PinHolder.Resources" x:Key="LocalizedStrings" />
         <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
         <converters:ReversedZeroToVisibilityConverter x:Key="ReversedZeroToVisibilityConverter"/>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
