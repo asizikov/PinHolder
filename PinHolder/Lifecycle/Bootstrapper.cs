@@ -26,6 +26,7 @@ namespace PinHolder.Lifecycle
             ioc.Register<IUiStringsProvider>((container, overloads) => new UiStringsProvider());
             ioc.Register<ISettingsLoader>((container, overloads) => new SettingsLoader());
             ioc.Register((container, overloads) => new ApplicationSettingsProvider(container.Resolve<ISettingsLoader>()));
+            ioc.Register<IPlatformTaskFactory>((container, overloads) => new PhoneTaskFactory());
         }
     }
 }

@@ -91,11 +91,11 @@
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
             <appBar:BindableApplicationBarButton Command="{Binding AddNewCommand}"
-                                                 IconUri="/Resourses/Images/appbar.add.rest.png"
+                                                 IconUri="/Resources/Images/appbar.add.rest.png"
                                                  Text="{Binding Path=Strings.Add,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBarButton Command="{Binding HelpCommand}"
-                                                 IconUri="/Resourses/Images/questionmark.png"
+                                                 IconUri="/Resources/Images/questionmark.png"
                                                  Text="{Binding Path=Strings.Help,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBar.MenuItems>
