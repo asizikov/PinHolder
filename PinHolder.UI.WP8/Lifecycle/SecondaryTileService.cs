@@ -31,13 +31,16 @@ namespace PinHolder.Lifecycle
 
         private static StandardTileData GetSecondaryTileData(string cardName, string cardDescription)
         {
-            var tileData = new StandardTileData
+            var tileData = new FlipTileData
                 {
+                    
                     Title = cardName,
                     BackTitle = cardName,
                     BackContent = cardDescription,
                     BackBackgroundImage = new Uri(BACKGROUND_IMAGE_PATH, UriKind.Relative),
                     BackgroundImage = new Uri(BACKGROUND_IMAGE_PATH, UriKind.Relative),
+                    WideBackBackgroundImage = new Uri(BACKGROUND_WIDE_IMAGE_PATH, UriKind.Relative),
+                    WideBackgroundImage = new Uri(BACKGROUND_WIDE_IMAGE_PATH, UriKind.Relative),
                 };
             return tileData;
         }
@@ -46,25 +49,8 @@ namespace PinHolder.Lifecycle
 
         protected override void CreateTile(string cardName, string cardDescription, string uri)
         {
-//            if (Utils.CanUseLiveTiles)
-//            {
-//                var tiledata = TilesCreator.CreateFlipTile(cardName, cardName,
-//                                                           cardDescription,
-//                                                           cardDescription,
-//                                                           null,
-//                                                           backBackgroundImage: new Uri(BACKGROUND_IMAGE_PATH, UriKind.Relative),
-//                                                           smallBackgroundImage: new Uri(BACKGROUND_SMALL_IMAGE_PATH, UriKind.Relative),
-//                                                           backgroundImage: new Uri(BACKGROUND_IMAGE_PATH, UriKind.Relative),
-//                                                           wideBackgroundImage: new Uri(BACKGROUND_WIDE_IMAGE_PATH, UriKind.Relative),
-//                                                           wideBackBackgroundImage: new Uri(BACKGROUND_WIDE_IMAGE_PATH, UriKind.Relative));
-//                ShellTileExt.Create(new Uri(uri, UriKind.Relative), tiledata, true);
-//            }
-//            else
-            {
                 var tile = GetSecondaryTileData(cardName, cardDescription);
-                ShellTile.Create(new Uri(uri, UriKind.Relative), tile);
-            }
-
+                ShellTile.Create(new Uri(uri, UriKind.Relative), tile, true);
         }
     }
 }
