@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{3b0345f9-9d02-4c78-a74e-709a0caea9ce}" Title="PinHolder.UI.WP8" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PinHolder.UI.WP8 author" Description="Sample description" Publisher="PinHolder.UI.WP8" PublisherID="{14cedeb3-c894-47c9-bd5c-8e20380bc6cc}">
+  <Languages xmlns="">
+    <Language code="ru-RU" />
+    <Language code="de-DE" />
+  </Languages>
+  <App xmlns="" ProductID="{3b0345f9-9d02-4c78-a74e-709a0caea9ce}" Title="PinHolder" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Anton Sizikov" Description="Hold your pin-codes" Publisher="Anton Sizikov" PublisherID="{14cedeb3-c894-47c9-bd5c-8e20380bc6cc}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
       <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
-      <Capability Name="ID_CAP_SENSORS" />
-      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="/View/MainPage.xaml" />
@@ -16,20 +18,23 @@
     <Tokens>
       <PrimaryToken TokenID="PinHolder.UI.WP8Token" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Background-Small.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>PinHolder.UI.WP8</Title>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <Title>PinHolder</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Background-Wide.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>
