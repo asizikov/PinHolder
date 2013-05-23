@@ -10,10 +10,8 @@ namespace PinHolder.ViewModel
     public sealed class ViewCardViewModel: BaseViewModel
     {
         private readonly INavigationService _navigation;
-        private readonly BaseCardProvider _cardProvider;
         private readonly ISecondaryTileService _secondaryTileService;
 
-        private readonly int _id;
         private CardViewModel _card;
 
 
@@ -26,21 +24,20 @@ namespace PinHolder.ViewModel
             if (secondaryTileService == null) throw new ArgumentNullException("secondaryTileService");
             if (locker == null) throw new ArgumentNullException("locker");
             _navigation = navigation;
-            _cardProvider = cardProvider;
             _secondaryTileService = secondaryTileService;
-            _id = id;
-
-            Card = _cardProvider.GetById(_id).ToViewModel();
+            Card = cardProvider.GetById(id).ToViewModel();
             Locker = locker;
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public CardViewModel Card
         {
-            get {
+            get 
+            {
                 return _card;
             }
-            private set {
+            private set 
+            {
                 _card = value;
                 if (_card == CardViewModel.Empty)
                 {

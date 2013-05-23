@@ -198,7 +198,7 @@
                                                  Text="{Binding Path=Strings.Save,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBarButton Command="{Binding DeleteCommand}"
-                                                 IconUri="/Resourses/Images/appbar.delete.rest.png"
+                                                 IconUri="/Resources\Images\appbar.delete.rest.png"
                                                  Text="{Binding Path=Strings.Delete,
                                                                 Source={StaticResource LocalizedStrings}}"
                                                  Visibility="{Binding DeleteButtonVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
