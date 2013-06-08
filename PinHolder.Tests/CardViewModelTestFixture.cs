@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using NUnit.Framework;
 using PinHolder.Model;
@@ -96,8 +97,13 @@ namespace PinHolder.Tests
             target.PinItems[2].Pin = "1";
             target.PinItems[3].Pin = "1";
 
-            Assert.IsTrue(raised);
-            
+            Assert.IsTrue(raised);      
+        }
+
+        [Test, ExpectedException(typeof(NullReferenceException))]
+        public void CardViewModelThrowsNullReference()
+        {
+            var target = new CardViewModel(null);
         }
     }
 }

@@ -73,5 +73,27 @@ namespace PinHolder.Tests
 
         }
 
+        [Test]
+        public void CantPinEmptyCard()
+        {
+            _cardProvider.Setup(c => c.GetById(It.IsAny<int>()))
+                .Returns<Card>(null);
+
+            var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker, ID);
+            
+            Assert.IsFalse(target.CreatePinCommand.CanExecute(null));
+        }
+
+        [Test]
+        public void CantEditEmptyCard()
+        {
+            _cardProvider.Setup(c => c.GetById(It.IsAny<int>()))
+                .Returns<Card>(null);
+
+            var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker, ID);
+
+            Assert.IsFalse(target.EditCommand.CanExecute(null));
+        }
+
     }
 }

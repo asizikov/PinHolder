@@ -36,6 +36,11 @@ namespace PinHolder.ViewModel
             {
                 ShowLocker = true;
             }
+            else
+            {
+                if(onPasswordAccepted != null)
+                    _onPasswordAccepted();
+            }
             
         }
 

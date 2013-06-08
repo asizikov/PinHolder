@@ -48,13 +48,14 @@ namespace PinHolder.Model
             UpdateFile(Cards);
         }
 
+        [NotNull]
         public virtual IEnumerable<Card> LoadCards()
         {
             return Cards.ToList();
         }
 
         [CanBeNull]
-        public Card GetById(int id)
+        public virtual Card GetById(int id)
         {
             return Cards.FirstOrDefault(c => c.Id == id);
         }

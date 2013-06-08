@@ -9,9 +9,10 @@ using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public sealed class EditCardViewModel: BaseViewModel
+    public sealed class EditCardViewModel : BaseViewModel
     {
-        [NotNull] private readonly ISecondaryTileService _secondaryTileService;
+        [NotNull]
+        private readonly ISecondaryTileService _secondaryTileService;
         private readonly IUiStringsProvider _stringsProvider;
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
@@ -54,16 +55,16 @@ namespace PinHolder.ViewModel
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand SaveCommand
         {
-            get 
+            get
             {
-                return new RelayCommand(Save);
+                return new RelayCommand(Save, CanPerformCommands());
             }
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand DeleteCommand
         {
-            get 
+            get
             {
                 return new RelayCommand(Delete);
             }
@@ -78,8 +79,14 @@ namespace PinHolder.ViewModel
 
         private void Save()
         {
-            _cardProvider.Update(Card.GetModel());
+            var model = Card.GetModel();
+            if (model != null) _cardProvider.Update(model);
             _navigation.GoBack();
+        }
+
+        private Func<bool> CanPerformCommands()
+        {
+            return () => Card != CardViewModel.Empty;
         }
     }
 }

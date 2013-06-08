@@ -12,7 +12,6 @@ namespace PinHolder.ViewModel
     {
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
-        private readonly ICollectionFactory _collectionFactory;
 
         private CardViewModel _selected;
 
@@ -26,9 +25,8 @@ namespace PinHolder.ViewModel
 
             _navigation = navigation;
             _cardProvider = cardProvider;
-            _collectionFactory = collectionFactory;
 
-            Cards = _collectionFactory.GetCollection<CardViewModel>();
+            Cards = collectionFactory.GetCollection<CardViewModel>();
             InitCommands();
             LoadData();
         }

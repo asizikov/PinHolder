@@ -9,15 +9,14 @@ namespace PinHolder.ViewModel
 {
     public class CardViewModel : BaseViewModel
     {
-
         private sealed class EmptyCardViewModel: CardViewModel
         {
             public EmptyCardViewModel()
             {
                 Id = -1;
+                Name = string.Empty;
                 Description = string.Empty;
                 PinItems = new List<PinItemViewModel>(0);
-
             }
 
             public override Card GetModel()
@@ -41,9 +40,8 @@ namespace PinHolder.ViewModel
         public CardViewModel()
         {
             PinItems = new List<PinItemViewModel>();
-#pragma warning disable 168
+// ReSharper disable once UnusedVariable
             foreach (var i in Enumerable.Range(0, CELLS_NUM))
-#pragma warning restore 168
             {
                 PinItems.Add(new PinItemViewModel(OnUpdate));
             }
@@ -113,6 +111,7 @@ namespace PinHolder.ViewModel
             return _random.Next(10).ToString(CultureInfo.InvariantCulture);
         }
 
+        [CanBeNull]
         public virtual Card GetModel()
         {
             return new Card

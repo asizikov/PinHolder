@@ -52,7 +52,8 @@ namespace PinHolder.ViewModel
             get {
                 return new RelayCommand(()=> Locker
                     .Activate(
-                    () => _navigation.Navigate(Pages.New,string.Format("?{0}={1}", Keys.Id, Card.Id)))
+                    () => _navigation.Navigate(Pages.New,string.Format("?{0}={1}", Keys.Id, Card.Id))),
+                    CanPerformCommand
                     );
                 
             }
@@ -65,12 +66,17 @@ namespace PinHolder.ViewModel
             {
                 return new RelayCommand(
                     ()=> _secondaryTileService.TryCreate(Card.Name, Card.Description, Card.Id, () => { }),
-                    ()=> _secondaryTileService.CanCreate(Card.Id));
+                    ()=> CanPerformCommand() && _secondaryTileService.CanCreate(Card.Id));
             }
         }
 
         [NotNull]
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public LockerViewModel Locker { get; private set; }
+
+        private bool CanPerformCommand()
+        {
+            return Card != CardViewModel.Empty;
+        }
     }
 }
