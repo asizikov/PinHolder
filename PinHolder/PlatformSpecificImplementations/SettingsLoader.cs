@@ -1,5 +1,4 @@
-﻿using System;
-using PinHolder.Model;
+﻿using PinHolder.Model;
 using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.PlatformSpecificImplementations
@@ -8,7 +7,7 @@ namespace PinHolder.PlatformSpecificImplementations
     {
         public ApplicationSettings GetSettings()
         {
-            return new ApplicationSettings {Password = "12345", AskPassword = true};
+            return new ApplicationSettings {Password = "12345", AskPassword = false};
         }
     }
 }

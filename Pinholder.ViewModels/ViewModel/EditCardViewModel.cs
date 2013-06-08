@@ -15,7 +15,6 @@ namespace PinHolder.ViewModel
         private readonly IUiStringsProvider _stringsProvider;
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
-        private readonly int _id;
         private CardViewModel _card;
 
         public EditCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
@@ -30,8 +29,7 @@ namespace PinHolder.ViewModel
             _cardProvider = cardProvider;
             _secondaryTileService = secondaryTileService;
             _stringsProvider = stringsProvider;
-            _id = id;
-            Card = _cardProvider.GetById(_id).ToViewModel();
+            Card = _cardProvider.GetById(id).ToViewModel();
         }
 
 
