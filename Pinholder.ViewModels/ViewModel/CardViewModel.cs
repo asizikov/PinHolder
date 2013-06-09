@@ -40,11 +40,8 @@ namespace PinHolder.ViewModel
         public CardViewModel()
         {
             PinItems = new List<PinItemViewModel>();
-// ReSharper disable once UnusedVariable
-            foreach (var i in Enumerable.Range(0, CELLS_NUM))
-            {
-                PinItems.Add(new PinItemViewModel(OnUpdate));
-            }
+            PinItems.AddRange(Enumerable.Range(0, CELLS_NUM)
+                .Select(_ =>new PinItemViewModel(OnUpdate)));
         }
 
         public CardViewModel(Card model)
