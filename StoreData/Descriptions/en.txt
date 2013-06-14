@@ -1,0 +1,7 @@
+inHolder - is an application for everybody. We all have many bank cards in our wallets. Every card has a PIN code. And you have to remember all of them. Sounds like a challenge, doesn't it?
+
+PinHolder will help you to remember your PINs in any moment. The app starts in a second, so you don't need to waste your time looking through your notes. The most important thing is that your PINs are protected from stangers glances. Even they can see your Windows Phone screen, they will have no idea what your PIN is.
+
+PinHolder - secure storage for your PIN codes!
+
+Feel free to contact me at pinholder@yandex.ru
