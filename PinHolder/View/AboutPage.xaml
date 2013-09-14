@@ -6,7 +6,6 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -15,7 +14,10 @@
     shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -47,7 +49,7 @@
                            TextWrapping="Wrap"/>
                 <HyperlinkButton HorizontalContentAlignment="Left" 
                                  Content="pinholder@yandex.ru" Command="{Binding SupportQuestionCommand}"/>
-                </StackPanel>
+            </StackPanel>
             <StackPanel Margin="0,0,0,0" Grid.Row="1">
                 <TextBlock 
                     Style="{StaticResource PhoneTextNormalStyle}"
@@ -57,31 +59,12 @@
                                  Content="{Binding Path=Strings.Rate ,Source={StaticResource LocalizedStrings}}"
                                  Command="{Binding RateCommand}"/>
             </StackPanel>
-            
+
             <StackPanel Margin="12,0,0,12" Grid.Row="2">
                 <TextBlock Text="Copyright © 2012 Anton Sizikov"/>
-                <TextBlock Text="{Binding ApplicationVersion}"/>  
+                <TextBlock Text="{Binding ApplicationVersion}"/>
             </StackPanel>
         </Grid>
     </Grid>
-    <toolkit:TransitionService.NavigationInTransition>
-        <toolkit:NavigationInTransition>
-            <toolkit:NavigationInTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardIn"/>
-            </toolkit:NavigationInTransition.Backward>
-            <toolkit:NavigationInTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardIn"/>
-            </toolkit:NavigationInTransition.Forward>
-        </toolkit:NavigationInTransition>
-    </toolkit:TransitionService.NavigationInTransition>
-    <toolkit:TransitionService.NavigationOutTransition>
-        <toolkit:NavigationOutTransition>
-            <toolkit:NavigationOutTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardOut"/>
-            </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardOut"/>
-            </toolkit:NavigationOutTransition.Forward>
-        </toolkit:NavigationOutTransition>
-    </toolkit:TransitionService.NavigationOutTransition>
+
 </phone:PhoneApplicationPage>

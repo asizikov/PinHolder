@@ -7,6 +7,6 @@
         public static string ViewPage = "/View/ViewPage.xaml";
         public static string About = "/View/AboutPage.xaml";
         public static string HelpPage = "/View/HelpPage.xaml";
-
+        public static string Reorder = "/View/ReoderPage.xaml";
     }
 }

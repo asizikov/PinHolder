@@ -13,6 +13,7 @@
         <converters:ReversedZeroToVisibilityConverter x:Key="ReversedZeroToVisibilityConverter"/>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
         <converters:ReversedBoolToVisibilityConverter x:Key="ReversedBoolToVisibilityConverter"/>
+        <converters:NegativeValueConverter x:Key="NegativeValueConverter"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

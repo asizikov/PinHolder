@@ -33,8 +33,9 @@ namespace PinHolder.Model
             }
             else
             {
+                var index = Cards.IndexOf(old);
                 Cards.Remove(old);
-                Cards.Add(card);
+                Cards.Insert(index, card);
                 UpdateFile(Cards);
             }
         }
@@ -66,6 +67,17 @@ namespace PinHolder.Model
         protected static string PathToFile
         {
             get { return Folder + "\\" + File; }
+        }
+
+        public void UpdateList(IEnumerable<Card> cards)
+        {
+            Cards.Clear();
+            foreach (var card in cards)
+            {
+                Cards.Add(card);
+            }
+            UpdateFile(Cards);
+
         }
     }
 }

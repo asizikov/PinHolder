@@ -51,6 +51,7 @@
     <Compile Include="ViewModel\PinItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Comand\RelayCommand.cs" />
+    <Compile Include="ViewModel\ReorderViewModel.cs" />
     <Compile Include="ViewModel\ViewCardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

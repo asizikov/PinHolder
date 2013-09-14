@@ -1,9 +1,6 @@
-﻿using Microsoft.Phone.Controls;
-using PinHolder.ViewModel;
-
-namespace PinHolder.View
+﻿namespace PinHolder.View
 {
-    public partial class About : PhoneApplicationPage
+    public partial class About
     {
         public About()
         {

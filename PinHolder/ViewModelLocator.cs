@@ -12,10 +12,7 @@ namespace PinHolder
         [NotNull]
         private static TinyIoC.TinyIoCContainer Container
         {
-            get
-            {
-                return TinyIoC.TinyIoCContainer.Current;
-            }
+            get { return TinyIoC.TinyIoCContainer.Current; }
         }
 
         public static MainViewModel GetMainViewModel()
@@ -23,6 +20,13 @@ namespace PinHolder
             return new MainViewModel(
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
+                Container.Resolve<ICollectionFactory>());
+        }
+
+        public static ReorderViewModel GetReorderViewModel()
+        {
+            return new ReorderViewModel(
+                Container.Resolve<BaseCardProvider>(), 
                 Container.Resolve<ICollectionFactory>());
         }
 
@@ -38,7 +42,7 @@ namespace PinHolder
         {
             return new ViewCardViewModel(
                 Container.Resolve<INavigationService>(),
-                Container.Resolve<BaseCardProvider>(), 
+                Container.Resolve<BaseCardProvider>(),
                 Container.Resolve<ISecondaryTileService>(),
                 new LockerViewModel(Container.Resolve<ApplicationSettingsProvider>()), id);
         }

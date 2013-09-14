@@ -46,12 +46,14 @@ namespace PinHolder.ViewModel
             AddNewCommand = new RelayCommand (() => _navigation.Navigate(Pages.New));
             AboutCommand = new RelayCommand(() => _navigation.Navigate(Pages.About));
             HelpCommand = new RelayCommand(() => _navigation.Navigate(Pages.HelpPage));
+            ReorderCommand = new RelayCommand(() => _navigation.Navigate(Pages.Reorder));
         }
 
 
         public RelayCommand AddNewCommand { get; private set; }
         public RelayCommand AboutCommand { get; private set; }
         public RelayCommand HelpCommand { get; private set; }
+        public RelayCommand ReorderCommand { get; private set; }
 
 
         [NotNull]

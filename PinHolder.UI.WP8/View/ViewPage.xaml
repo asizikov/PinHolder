@@ -38,7 +38,10 @@
 
     </phone:PhoneApplicationPage.Resources>
     <!--  LayoutRoot is the root grid where all page content is placed  -->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -128,7 +131,8 @@
     </Grid>
 
     <appBar:Bindable.ApplicationBar>
-        <appBar:BindableApplicationBar>
+        <appBar:BindableApplicationBar
+            BindableOpacity="0.5">
             <appBar:BindableApplicationBarButton Command="{Binding EditCommand}"
                                                  IconUri="/Resources/Images/appbar.edit.rest.png"
                                                  Text="{Binding Path=Strings.Edit,

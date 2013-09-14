@@ -209,6 +209,9 @@ Now your PIN-codes are on hand, and they are safely masked.</value>
   <data name="Rate" xml:space="preserve">
     <value>send a review</value>
   </data>
+  <data name="Reorder" xml:space="preserve">
+    <value>reorder</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>save</value>
   </data>

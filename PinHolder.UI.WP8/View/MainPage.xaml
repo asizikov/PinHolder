@@ -9,7 +9,7 @@
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             d:DesignHeight="696"
                             d:DesignWidth="480"
-							d:DataContext="{d:DesignData Source=/SampleData/MainViewModelSampleData.xaml}"
+                            d:DataContext="{d:DesignData Source=/SampleData/MainViewModelSampleData.xaml}"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -19,7 +19,10 @@
                             mc:Ignorable="d">
 
     <!--  LayoutRoot is the root grid where all page content is placed  -->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -46,50 +49,74 @@
               Grid.Row="1"
               Margin="12,0,12,0">
             <StackPanel
-                Visibility="{Binding Cards.Count, Converter={StaticResource ReversedZeroToVisibilityConverter}}"
-                >
+                Visibility="{Binding Cards.Count, Converter={StaticResource ReversedZeroToVisibilityConverter}}">
                 <TextBlock
-                Margin="12,12,12,0"
-                Style="{StaticResource PhoneTextLargeStyle}"
-                TextWrapping="Wrap"
-                Text="{Binding Path=Strings.NoCard, 
-                Source={StaticResource LocalizedStrings}}"/>
-                <Button Content="{Binding Path=Strings.HowTo, Source={StaticResource LocalizedStrings}}" 
-                        Command="{Binding HelpCommand}"/>
+                    Margin="12,12,12,0"
+                    Style="{StaticResource PhoneTextLargeStyle}"
+                    TextWrapping="Wrap"
+                    Text="{Binding Path=Strings.NoCard, 
+                Source={StaticResource LocalizedStrings}}" />
+                <Button Content="{Binding Path=Strings.HowTo, Source={StaticResource LocalizedStrings}}"
+                        Command="{Binding HelpCommand}" />
             </StackPanel>
-            
+
             <ListBox Margin="12,12,0,0"
                      Visibility="{Binding Cards.Count, Converter={StaticResource ZeroToVisibilityConverter}}"
                      ItemsSource="{Binding Cards}"
                      SelectedItem="{Binding Selected,
                                             Mode=TwoWay}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <toolkit:WrapPanel/>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
+                <!--                <ListBox.ItemsPanel>-->
+                <!--                    <ItemsPanelTemplate>-->
+                <!--                        <toolkit:WrapPanel/>-->
+                <!--                    </ItemsPanelTemplate>-->
+                <!--                </ListBox.ItemsPanel>-->
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Border Width="172"
-                                Height="172"
-                                Margin="0,0,12,12"
-                                Background="{StaticResource PhoneAccentBrush}"
-                                BorderBrush="Black"
-                                toolkit:TiltEffect.IsTiltEnabled="True"
-                                BorderThickness="0">
-                            <StackPanel VerticalAlignment="Top">
-                                <TextBlock Style="{StaticResource PhoneTextTitle2Style}" Text="{Binding Name}" />
-                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Description}" TextWrapping="Wrap" />
-                            </StackPanel>
-                        </Border>
-
+                        <Grid
+                            Width="400"
+                            toolkit:TiltEffect.IsTiltEnabled="True"
+                            Margin="0,0,12,12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock 
+                                Margin="0"
+                                Style="{StaticResource PhoneTextExtraLargeStyle}" Text="{Binding Name}" />
+                            <TextBlock 
+                                Margin="0"
+                                Grid.Row="1" Style="{StaticResource PhoneTextNormalStyle}" Foreground="DarkGray"
+                                       Text="{Binding Description}"
+                                       TextWrapping="Wrap" />
+                        </Grid>
                     </DataTemplate>
+                    <!--                    <DataTemplate>-->
+                    <!--                        <Border Width="172"-->
+                    <!--                                Height="172"-->
+                    <!--                                Margin="0,0,12,12"-->
+                    <!--                                Background="{StaticResource PhoneAccentBrush}"-->
+                    <!--                                BorderBrush="Black"-->
+                    <!--                                toolkit:TiltEffect.IsTiltEnabled="True"-->
+                    <!--                                BorderThickness="0">-->
+                    <!--                            <StackPanel VerticalAlignment="Top">-->
+                    <!--                                <TextBlock Style="{StaticResource PhoneTextTitle2Style}" Text="{Binding Name}" />-->
+                    <!--                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Description}" TextWrapping="Wrap" />-->
+                    <!--                            </StackPanel>-->
+                    <!--                        </Border>-->
+                    <!---->
+                    <!--                    </DataTemplate>-->
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
     </Grid>
     <appBar:Bindable.ApplicationBar>
-        <appBar:BindableApplicationBar Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
+        <appBar:BindableApplicationBar
+            BindableOpacity="0.5"
+            Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
+            <appBar:BindableApplicationBarButton Command="{Binding ReorderCommand}"
+                                                 IconUri="/Resources/Images/appbar.list.reorder.png"
+                                                 Text="{Binding Path=Strings.Reorder,
+                                                                Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBarButton Command="{Binding AddNewCommand}"
                                                  IconUri="/Resources/Images/appbar.add.rest.png"
                                                  Text="{Binding Path=Strings.Add,
@@ -101,10 +128,9 @@
             <appBar:BindableApplicationBar.MenuItems>
                 <appBar:BindableApplicationBarMenuItem
                     Command="{Binding AboutCommand}"
-                    Text="{Binding Path=Strings.About , Source={StaticResource LocalizedStrings}}"
-                    />
+                    Text="{Binding Path=Strings.About , Source={StaticResource LocalizedStrings}}" />
             </appBar:BindableApplicationBar.MenuItems>
-            
+
         </appBar:BindableApplicationBar>
     </appBar:Bindable.ApplicationBar>
 </phone:PhoneApplicationPage>
