@@ -5,14 +5,19 @@
     xmlns:converters="clr-namespace:PinHolder.Converters"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
 
-    <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:PinHolder.Resourses" x:Key="LocalizedStrings" />
-        <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
-        <converters:ReversedZeroToVisibilityConverter x:Key="ReversedZeroToVisibilityConverter"/>
-        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-        <converters:ReversedBoolToVisibilityConverter x:Key="ReversedBoolToVisibilityConverter"/>
-        <converters:NegativeValueConverter x:Key="NegativeValueConverter"/>
+        <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary>
+                <local:LocalizedStrings xmlns:local="clr-namespace:PinHolder.Resourses" x:Key="LocalizedStrings" />
+                <converters:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter"/>
+                <converters:ReversedZeroToVisibilityConverter x:Key="ReversedZeroToVisibilityConverter"/>
+                <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+                <converters:ReversedBoolToVisibilityConverter x:Key="ReversedBoolToVisibilityConverter"/>
+            </ResourceDictionary>
+            <ResourceDictionary Source="Resources/Styles.xaml"/>
+        </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

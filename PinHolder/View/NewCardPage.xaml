@@ -13,28 +13,13 @@
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="True"
+                            shell:SystemTray.IsVisible="False"
                             SupportedOrientations="Portrait"
                             mc:Ignorable="d">
-
-    <phone:PhoneApplicationPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="EditTextBoxStyle" TargetType="TextBox">
-                <Setter Property="FontStyle" Value="{StaticResource PhoneTextLargeStyle}" />
-                <Setter Property="Width" Value="100" />
-                <Setter Property="InputScope" Value="Digits" />
-            </Style>
-            <SolidColorBrush x:Key="Purple">#FFA200FF</SolidColorBrush>
-            <SolidColorBrush x:Key="Lime">#FFA2C139</SolidColorBrush>
-            <SolidColorBrush x:Key="Mango">#FFF09609</SolidColorBrush>
-            <SolidColorBrush x:Key="Pink">#FFE671B8</SolidColorBrush>
-            <SolidColorBrush x:Key="Blue">#FF1BA1E2</SolidColorBrush>
-        </ResourceDictionary>
-    </phone:PhoneApplicationPage.Resources>
     <!--  LayoutRoot is the root grid where all page content is placed  -->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -196,6 +181,7 @@
     </Grid>
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar
+            Style="{StaticResource AppBarStyle}"
             BindableOpacity="0.5">
             <appBar:BindableApplicationBarButton Command="{Binding SaveCommand}"
                                                  IconUri="/Toolkit.Content/ApplicationBar.Check.png"

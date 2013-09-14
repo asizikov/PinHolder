@@ -11,12 +11,12 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480">
+    shell:SystemTray.IsVisible="False" d:DesignHeight="768" d:DesignWidth="480">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

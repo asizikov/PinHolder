@@ -14,7 +14,7 @@
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="True"
+                            shell:SystemTray.IsVisible="False"
                             SupportedOrientations="Portrait"
                             mc:Ignorable="d">
     <!--  LayoutRoot is the root grid where all page content is placed  -->
@@ -60,6 +60,7 @@
             <ListBox Margin="12,12,0,0"
                      Visibility="{Binding Cards.Count, Converter={StaticResource ZeroToVisibilityConverter}}"
                      ItemsSource="{Binding Cards}"
+                     ItemTemplate="{StaticResource SquareCardDataTemplate}"
                      SelectedItem="{Binding Selected,
                                             Mode=TwoWay}">
                 <ListBox.ItemsPanel>
@@ -67,28 +68,14 @@
                         <toolkit:WrapPanel/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border Width="172"
-                                Height="172"
-                                Margin="0,0,12,12"
-                                Background="{StaticResource PhoneAccentBrush}"
-                                BorderBrush="Black"
-                                toolkit:TiltEffect.IsTiltEnabled="True"
-                                BorderThickness="0">
-                            <StackPanel VerticalAlignment="Top">
-                                <TextBlock Style="{StaticResource PhoneTextTitle2Style}" Text="{Binding Name}" />
-                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Description}" TextWrapping="Wrap" />
-                            </StackPanel>
-                        </Border>
-
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
     </Grid>
     <appBar:Bindable.ApplicationBar>
-        <appBar:BindableApplicationBar Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
+        <appBar:BindableApplicationBar 
+            BindableOpacity="0.5"
+            Style="{StaticResource AppBarStyle}"
+            Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
             <appBar:BindableApplicationBarButton Command="{Binding AddNewCommand}"
                                                  IconUri="/Resources\Images\appbar.add.rest.png"
                                                  Text="{Binding Path=Strings.Add,
