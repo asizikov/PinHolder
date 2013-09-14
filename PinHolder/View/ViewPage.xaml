@@ -38,7 +38,10 @@
 
     </phone:PhoneApplicationPage.Resources>
     <!--  LayoutRoot is the root grid where all page content is placed  -->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -107,7 +110,7 @@
                 </Border>
                 <Border Background="{StaticResource Lime}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[16].Pin}" />
-                </Border> 
+                </Border>
                 <Border Background="{StaticResource Mango}" Style="{StaticResource PinBorderStyle}">
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[17].Pin}" />
                 </Border>
@@ -128,36 +131,16 @@
     </Grid>
 
     <appBar:Bindable.ApplicationBar>
-        <appBar:BindableApplicationBar>
+        <appBar:BindableApplicationBar
+            BindableOpacity="0.5">
             <appBar:BindableApplicationBarButton Command="{Binding EditCommand}"
-                                                 IconUri="/Resources\Images\appbar.edit.rest.png"
+                                                 IconUri="/Resources/Images/appbar.edit.rest.png"
                                                  Text="{Binding Path=Strings.Edit,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBarButton Command="{Binding CreatePinCommand}"
-                                                 IconUri="/Resources\Images\appbar.pin.rest.png"
+                                                 IconUri="/Resources/Images/appbar.pin.rest.png"
                                                  Text="{Binding Path=Strings.Pin,
                                                                 Source={StaticResource LocalizedStrings}}" />
         </appBar:BindableApplicationBar>
     </appBar:Bindable.ApplicationBar>
-    <toolkit:TransitionService.NavigationInTransition>
-        <toolkit:NavigationInTransition>
-            <toolkit:NavigationInTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardIn"/>
-            </toolkit:NavigationInTransition.Backward>
-            <toolkit:NavigationInTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardIn"/>
-            </toolkit:NavigationInTransition.Forward>
-        </toolkit:NavigationInTransition>
-    </toolkit:TransitionService.NavigationInTransition>
-    <toolkit:TransitionService.NavigationOutTransition>
-        <toolkit:NavigationOutTransition>
-            <toolkit:NavigationOutTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardOut"/>
-            </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardOut"/>
-            </toolkit:NavigationOutTransition.Forward>
-        </toolkit:NavigationOutTransition>
-    </toolkit:TransitionService.NavigationOutTransition>
-
 </phone:PhoneApplicationPage>

@@ -32,7 +32,10 @@
         </ResourceDictionary>
     </phone:PhoneApplicationPage.Resources>
     <!--  LayoutRoot is the root grid where all page content is placed  -->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/Images/bg.jpg" Opacity="0.7" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -192,36 +195,17 @@
         </Grid>
     </Grid>
     <appBar:Bindable.ApplicationBar>
-        <appBar:BindableApplicationBar>
+        <appBar:BindableApplicationBar
+            BindableOpacity="0.5">
             <appBar:BindableApplicationBarButton Command="{Binding SaveCommand}"
                                                  IconUri="/Toolkit.Content/ApplicationBar.Check.png"
                                                  Text="{Binding Path=Strings.Save,
                                                                 Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBarButton Command="{Binding DeleteCommand}"
-                                                 IconUri="/Resources\Images\appbar.delete.rest.png"
+                                                 IconUri="/Resources/Images/appbar.delete.rest.png"
                                                  Text="{Binding Path=Strings.Delete,
                                                                 Source={StaticResource LocalizedStrings}}"
                                                  Visibility="{Binding DeleteButtonVisible, Converter={StaticResource BoolToVisibilityConverter}}" />
         </appBar:BindableApplicationBar>
     </appBar:Bindable.ApplicationBar>
-    <toolkit:TransitionService.NavigationInTransition>
-        <toolkit:NavigationInTransition>
-            <toolkit:NavigationInTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardIn"/>
-            </toolkit:NavigationInTransition.Backward>
-            <toolkit:NavigationInTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardIn"/>
-            </toolkit:NavigationInTransition.Forward>
-        </toolkit:NavigationInTransition>
-    </toolkit:TransitionService.NavigationInTransition>
-    <toolkit:TransitionService.NavigationOutTransition>
-        <toolkit:NavigationOutTransition>
-            <toolkit:NavigationOutTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardOut"/>
-            </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardOut"/>
-            </toolkit:NavigationOutTransition.Forward>
-        </toolkit:NavigationOutTransition>
-    </toolkit:TransitionService.NavigationOutTransition>
 </phone:PhoneApplicationPage>

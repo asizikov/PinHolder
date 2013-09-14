@@ -94,6 +94,12 @@
       <Link>Conrols\Locker.xaml.cs</Link>
       <DependentUpon>Locker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\PinHolder\Conrols\ReorderListBox.cs">
+      <Link>Conrols\ReorderListBox.cs</Link>
+    </Compile>
+    <Compile Include="..\PinHolder\Conrols\ReorderListBoxItem.cs">
+      <Link>Conrols\ReorderListBoxItem.cs</Link>
+    </Compile>
     <Compile Include="..\PinHolder\Converters\BoolToVisibilityConverter.cs">
       <Link>Converters\BoolToVisibilityConverter.cs</Link>
     </Compile>
@@ -137,13 +143,27 @@
       <Link>View\AboutPage.xaml.cs</Link>
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\PinHolder\View\HelpPage.xaml.cs">
+      <Link>View\HelpPage.xaml.cs</Link>
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PinHolder\View\NewCardPage.xaml.cs">
+      <Link>View\NewCardPage.xaml.cs</Link>
+      <DependentUpon>NewCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PinHolder\View\ReoderPage.xaml.cs">
+      <Link>View\ReoderPage.xaml.cs</Link>
+      <DependentUpon>ReoderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PinHolder\View\ViewPage.xaml.cs">
+      <Link>View\ViewPage.xaml.cs</Link>
+      <DependentUpon>ViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Conrols\ReorderListBox.cs" />
-    <Compile Include="Conrols\ReorderListBoxItem.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,23 +187,8 @@
     </Compile>
     <Compile Include="Resources\UIStringsProvider.cs" />
     <Compile Include="TinyIoC.cs" />
-    <Compile Include="View\AboutPage2.xaml.cs">
-      <DependentUpon>AboutPage2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\HelpPage.xaml.cs">
-      <DependentUpon>HelpPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\NewCardPage.xaml.cs">
-      <DependentUpon>NewCardPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ReoderPage.xaml.cs">
-      <DependentUpon>ReoderPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ViewPage.xaml.cs">
-      <DependentUpon>ViewPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -278,36 +283,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\PinHolder\Themes\Generic.xaml">
+      <Link>Themes\Generic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\PinHolder\View\AboutPage.xaml">
       <Link>View\AboutPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Generic.xaml">
+    <Page Include="..\PinHolder\View\HelpPage.xaml">
+      <Link>View\HelpPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AboutPage2.xaml">
+    <Page Include="..\PinHolder\View\NewCardPage.xaml">
+      <Link>View\NewCardPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\HelpPage.xaml">
+    <Page Include="..\PinHolder\View\ReoderPage.xaml">
+      <Link>View\ReoderPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PinHolder\View\ViewPage.xaml">
+      <Link>View\ViewPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\NewCardPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ReoderPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

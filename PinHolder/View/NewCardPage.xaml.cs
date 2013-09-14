@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Navigation;
 using PinHolder.Lifecycle;
 using PinHolder.Navigation;
-using PinHolder.ViewModel;
 
 namespace PinHolder.View
 {
@@ -29,15 +30,15 @@ namespace PinHolder.View
                     return;
                 }
             }
-            DataContext =  ViewModelLocator.GetNewCardViewModel();
+            DataContext = ViewModelLocator.GetNewCardViewModel();
 
-            if(!this.LoadState<bool>("hasRestore")) return;
+            if (!this.LoadState<bool>("hasRestore")) return;
 
-            name.Text        = this.LoadState<string>("name");
+            name.Text = this.LoadState<string>("name");
             description.Text = this.LoadState<string>("descripton");
 
-            var index = 0;
-            foreach (var child in digits.Children)
+            int index = 0;
+            foreach (UIElement child in digits.Children)
             {
                 var border = child as Border;
                 if (border == null) return; //something went wrong. Let's sckip it
@@ -55,16 +56,16 @@ namespace PinHolder.View
             base.OnNavigatedFrom(e);
             if (e.NavigationMode == NavigationMode.Back)
             {
-                this.SaveState("hasRestore",false);
+                this.SaveState("hasRestore", false);
                 return;
             }
 
             this.SaveState("hasRestore", true);
             this.SaveState("name", name.Text);
-            this.SaveState("descripton",description.Text);
+            this.SaveState("descripton", description.Text);
 
-            var index = 0;
-            foreach (var child in digits.Children)
+            int index = 0;
+            foreach (UIElement child in digits.Children)
             {
                 var border = child as Border;
                 if (border == null) return; //something went wrong. Let's sckip it
@@ -72,7 +73,7 @@ namespace PinHolder.View
                 var tb = border.Child as TextBox;
                 if (tb == null) return; //something went wrong. Let's sckip it
 
-                this.SaveState(index.ToString(CultureInfo.InvariantCulture),tb.Text);
+                this.SaveState(index.ToString(CultureInfo.InvariantCulture), tb.Text);
                 index++;
             }
         }
@@ -81,7 +82,7 @@ namespace PinHolder.View
         {
             var tb = sender as TextBox;
             if (tb == null) return;
-            
+
             if (tb.Text.Length > 0)
             {
                 tb.Text = tb.Text[0].ToString(CultureInfo.InvariantCulture);
@@ -92,10 +93,10 @@ namespace PinHolder.View
         private void OnTextBoxTextChanged(object sender, TextChangedEventArgs e)
         {
             var textBox = sender as TextBox;
-            if(textBox == null) return;
+            if (textBox == null) return;
             // Update the binding source
-            var bindingExpr = textBox.GetBindingExpression(TextBox.TextProperty);
-            if(bindingExpr == null) return;
+            BindingExpression bindingExpr = textBox.GetBindingExpression(TextBox.TextProperty);
+            if (bindingExpr == null) return;
             bindingExpr.UpdateSource();
         }
     }
