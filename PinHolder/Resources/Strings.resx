@@ -171,7 +171,7 @@ Don't forget to save your card!
 
 Now a new tile with your card info will appear on the app's main screen.
 
-If you press the tile the app would show you a twanty cells grid.
+If you press the tile the app would show you a twenty cells grid.
 
 This grid looks like a random digits set, but you will know wich cells store your PIN-code.
 
@@ -208,6 +208,9 @@ Now your PIN-codes are on hand, and they are safely masked.</value>
   </data>
   <data name="Rate" xml:space="preserve">
     <value>send a review</value>
+  </data>
+  <data name="Reorder" xml:space="preserve">
+    <value>reorder</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>save</value>

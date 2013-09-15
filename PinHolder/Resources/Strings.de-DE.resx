@@ -215,6 +215,9 @@ Jetzt ist Ihre PIN-Codes sind auf der Hand, und sie werden sicher maskiert.</val
     <value>Senden Sie eine Bewertung</value>
     <comment>??</comment>
   </data>
+  <data name="Reorder" xml:space="preserve">
+    <value>anordnen</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Speichern</value>
   </data>

@@ -196,6 +196,7 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Images\appbar.list.reorder.png" />
     <Content Include="Resources\Images\bg.jpg" />
     <Content Include="Resources\Images\appbar.add.rest.png" />
     <Content Include="Resources\Images\appbar.delete.rest.png" />
