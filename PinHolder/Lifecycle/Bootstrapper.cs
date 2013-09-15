@@ -14,6 +14,7 @@ namespace PinHolder.Lifecycle
         public static void InitApplication(PhoneApplicationFrame rootFrame)
         {
             RegisterServices(rootFrame);
+            ThemeManager.ToDarkTheme();
         }
 
         private static void RegisterServices(PhoneApplicationFrame rootFrame)

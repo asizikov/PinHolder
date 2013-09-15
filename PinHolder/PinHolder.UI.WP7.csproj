@@ -87,6 +87,7 @@
     <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />
+    <Compile Include="Lifecycle\ThemeManager.cs" />
     <Compile Include="Model\CardProvider.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="PlatformSpecificImplementations\CollectionFactory.cs" />

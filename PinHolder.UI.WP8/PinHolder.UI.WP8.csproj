@@ -121,6 +121,9 @@
     <Compile Include="..\PinHolder\Lifecycle\StateManager.cs">
       <Link>Lifecycle\StateManager.cs</Link>
     </Compile>
+    <Compile Include="..\PinHolder\Lifecycle\ThemeManager.cs">
+      <Link>Lifecycle\ThemeManager.cs</Link>
+    </Compile>
     <Compile Include="..\PinHolder\Model\CardProvider.cs">
       <Link>Model\CardProvider.cs</Link>
     </Compile>
@@ -146,6 +149,10 @@
     <Compile Include="..\PinHolder\View\HelpPage.xaml.cs">
       <Link>View\HelpPage.xaml.cs</Link>
       <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PinHolder\View\MainPage.xaml.cs">
+      <Link>View\MainPage.xaml.cs</Link>
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\PinHolder\View\NewCardPage.xaml.cs">
       <Link>View\NewCardPage.xaml.cs</Link>
@@ -187,9 +194,6 @@
     </Compile>
     <Compile Include="Resources\UIStringsProvider.cs" />
     <Compile Include="TinyIoC.cs" />
-    <Compile Include="View\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -303,6 +307,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\PinHolder\View\MainPage.xaml">
+      <Link>View\MainPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\PinHolder\View\NewCardPage.xaml">
       <Link>View\NewCardPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -315,10 +324,6 @@
     </Page>
     <Page Include="..\PinHolder\View\ViewPage.xaml">
       <Link>View\ViewPage.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
