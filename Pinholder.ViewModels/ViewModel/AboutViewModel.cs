@@ -46,13 +46,12 @@ namespace PinHolder.ViewModel
             get
             {
                 return new RelayCommand(() =>
-                    {
-                        var emailComposeTask = _platformTaskFactory.GetEmailTask(SUPPORT_EMAIL, "PinHolder " +
-                  ApplicationVersion);
-                        emailComposeTask.Show();
-                    });
+                {
+                    var emailComposeTask = _platformTaskFactory.GetEmailTask(SUPPORT_EMAIL, "PinHolder " +
+                                                                                            ApplicationVersion);
+                    emailComposeTask.Show();
+                });
             }
         }
-
     }
 }

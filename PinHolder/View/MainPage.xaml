@@ -58,13 +58,24 @@
                 <Button Content="{Binding Path=Strings.HowTo, Source={StaticResource LocalizedStrings}}"
                         Command="{Binding HelpCommand}" />
             </StackPanel>
-
-            <ListBox Margin="12,12,0,0"
-                     Visibility="{Binding Cards.Count, Converter={StaticResource ZeroToVisibilityConverter}}"
-                     ItemsSource="{Binding Cards}"
-                     ItemTemplate="{StaticResource PlaneCardDateaDataTemplate}"
-                     SelectedItem="{Binding Selected,
-                                            Mode=TwoWay}">
+            <ListBox
+                Margin="12,0,0,0"
+                Visibility="{Binding Cards.Count, Converter={StaticResource ZeroToVisibilityConverter}}"
+                ItemsSource="{Binding Cards}"
+                ItemTemplate="{StaticResource PlaneCardDateaDataTemplate}"
+                SelectedItem="{Binding Selected, Mode=TwoWay}" >
+                <ListBox.Template>
+                    <ControlTemplate TargetType="ItemsControl">
+                        <ScrollViewer>
+                            <StackPanel>
+                                <ItemsPresenter />
+                                <Line Height="84"
+                                              VerticalAlignment="Bottom"
+                                              Fill="Transparent" />
+                            </StackPanel>
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </ListBox.Template>
             </ListBox>
         </Grid>
     </Grid>
