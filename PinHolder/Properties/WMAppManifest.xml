@@ -3,6 +3,9 @@
   <App xmlns="" ProductID="{6282717e-9952-405c-8976-96a30cd65316}" Title="PinHolder" RuntimeType="Silverlight" Version="1.1.2.0" Genre="apps.normal" Author="Anton Sizikov" Description="Hold your pin-codes" Publisher="Anton Sizikov">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_NETWORKING" />
     </Capabilities>
     <Requirements>
     </Requirements>

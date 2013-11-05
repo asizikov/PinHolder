@@ -8,86 +8,86 @@
 
         public void PublishAboutLoaded()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("About page loaded");
         }
 
         public void PublishAboutSupportButtonClicked()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("About page: support button clicked");
         }
 
         public void PublishAboutRateButtonClicked()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("About page: rate button clicked");
         }
 
         public void PublishReorderPageLoaded()
         {
-            
 
+            PublishEvent("Reorder page loaded");
         }
 
         public void PublishEditPageLoaded()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("Edit page loaded");
         }
 
         public void PublishEditCardSaved()
         {
-            
+            PublishEvent("Edit page: save card button clicked");
 
         }
 
         public void PublishEditCardDeleted()
         {
-            
 
+            PublishEvent("Edit page: delet card button clicked");
         }
 
         public void PublishMainPageLoaded()
         {
-            
+            PublishEvent("Main page loaded");
 
         }
 
         public void PublishMainAddNewButtonClick()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("Main page: new card button clicked");
         }
 
         public void PublishMainAboutButtonClick()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("Main page: about button clicked");
         }
 
         public void PublishMainHelpButtonClick()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("Main page: help button clicked");
         }
 
         public void PublishMainReorderButtonClick()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("Main page: reorder button clicked");
         }
 
         public void PublishNewCardPageLoaded()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("New card page loaded");
         }
 
         public void PublishNewCardSaveCardButtonClick()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("New card page: save card button clicked");
         }
 
         public void PublishViewCardPageLoaded()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("View card page loaded");
         }
 
         public void PublishViewCardPinButtonClick()
         {
-            throw new System.NotImplementedException();
+            PublishEvent("View card: pin card button clicked");
         }
     }
 }
