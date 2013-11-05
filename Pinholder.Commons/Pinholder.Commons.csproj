@@ -34,8 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Annotations\Annotations.cs" />
+    <Compile Include="Lifecycle\Configuration.cs" />
     <Compile Include="Model\ApplicationSettings.cs" />
     <Compile Include="Model\ApplicationSettingsProvider.cs" />
+    <Compile Include="PlatformAbstractions\StatisticsService.cs" />
     <Compile Include="PlatformAbstractions\ICollectionFactory.cs" />
     <Compile Include="Lifecycle\BaseSecondaryTileService.cs" />
     <Compile Include="Lifecycle\CreationState.cs" />

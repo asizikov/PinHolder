@@ -12,7 +12,7 @@
             get { return 2; }
         }
 
-        public static long StatisticsKey
+        public static uint StatisticsKey
         {
             get { return 0; }
         }

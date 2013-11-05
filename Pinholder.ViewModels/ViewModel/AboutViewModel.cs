@@ -28,6 +28,7 @@ namespace PinHolder.ViewModel
         private void ShowRateTask()
         {
             var task = _platformTaskFactory.GetRateTask();
+            _statistics.PublishAboutRateButtonClicked();
             task.Show();
         }
 
@@ -49,6 +50,7 @@ namespace PinHolder.ViewModel
                 {
                     var emailComposeTask = _platformTaskFactory.GetEmailTask(SUPPORT_EMAIL, "PinHolder " +
                                                                                             ApplicationVersion);
+                    _statistics.PublishAboutSupportButtonClicked();
                     emailComposeTask.Show();
                 });
             }

@@ -1,5 +1,7 @@
 ﻿using System;
+using PinHolder.Lifecycle;
 using PinHolder.PlatformAbstractions;
+using Yandex.Metrica;
 
 namespace PinHolder.PlatformSpecificImplementations
 {
@@ -7,12 +9,14 @@ namespace PinHolder.PlatformSpecificImplementations
     {
         protected override void PublishEvent(string eventName)
         {
-            throw new NotImplementedException();
+            Counter.ReportEvent(eventName);
         }
 
         public override void Initialize()
         {
-            throw new NotImplementedException();
+            Counter.CustomAppVersion = new Version(Configuration.MajorVersion, Configuration.MinorVersion);
+            Counter.TrackLocationEnabled = true;
+            Counter.Start(Configuration.StatisticsKey);
         }
     }
 }
