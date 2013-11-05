@@ -12,19 +12,23 @@ namespace PinHolder.ViewModel
     public class ReorderViewModel : BaseViewModel
     {
         private readonly BaseCardProvider _cardProvider;
+        private readonly StatisticsService _statistics;
 
 
         public ReorderViewModel([NotNull] BaseCardProvider cardProvider,
-            [NotNull] ICollectionFactory collectionFactory)
+            [NotNull] ICollectionFactory collectionFactory, [NotNull] StatisticsService statistics)
         {
             if (cardProvider == null) throw new ArgumentNullException("cardProvider");
             if (collectionFactory == null) throw new ArgumentNullException("collectionFactory");
+            if (statistics == null) throw new ArgumentNullException("statistics");
 
             _cardProvider = cardProvider;
+            _statistics = statistics;
 
             Cards = collectionFactory.GetCollection<CardViewModel>();
             LoadData();
             ApplyChangesCommand = new RelayCommand(SaveChanges);
+            _statistics.PublishReorderPageLoaded();
         }
 
         private void SaveChanges()

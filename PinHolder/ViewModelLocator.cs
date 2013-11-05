@@ -20,14 +20,15 @@ namespace PinHolder
             return new MainViewModel(
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
-                Container.Resolve<ICollectionFactory>());
+                Container.Resolve<ICollectionFactory>(),
+                Container.Resolve<StatisticsService>());
         }
 
         public static ReorderViewModel GetReorderViewModel()
         {
             return new ReorderViewModel(
-                Container.Resolve<BaseCardProvider>(), 
-                Container.Resolve<ICollectionFactory>());
+                Container.Resolve<BaseCardProvider>(),
+                Container.Resolve<ICollectionFactory>(), Container.Resolve<StatisticsService>());
         }
 
         public static NewCardViewModel GetNewCardViewModel()
@@ -35,7 +36,8 @@ namespace PinHolder
             return new NewCardViewModel(
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
-                Container.Resolve<IUiStringsProvider>());
+                Container.Resolve<IUiStringsProvider>(),
+                Container.Resolve<StatisticsService>());
         }
 
         public static ViewCardViewModel GetViewCardViewModel(int id)
@@ -44,7 +46,8 @@ namespace PinHolder
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
                 Container.Resolve<ISecondaryTileService>(),
-                new LockerViewModel(Container.Resolve<ApplicationSettingsProvider>()), id);
+                new LockerViewModel(Container.Resolve<ApplicationSettingsProvider>()),
+                Container.Resolve<StatisticsService>(), id);
         }
 
         public static EditCardViewModel GetEditCardViewModel(int id)
@@ -53,6 +56,7 @@ namespace PinHolder
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
                 Container.Resolve<ISecondaryTileService>(),
+                Container.Resolve<StatisticsService>(),
                 Container.Resolve<IUiStringsProvider>(),
                 id);
         }

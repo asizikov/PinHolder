@@ -6,7 +6,7 @@ namespace PinHolder.ViewModel
     {
         private string _pin;
 
-        private Action<PinItemViewModel> _valueUpdatedCallback;
+        private readonly Action<PinItemViewModel> _valueUpdatedCallback;
 
         public PinItemViewModel(Action<PinItemViewModel> updatedCallback )
         {

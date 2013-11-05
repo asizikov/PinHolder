@@ -12,16 +12,19 @@ namespace PinHolder.ViewModel
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
         private readonly IUiStringsProvider _stringsProvider;
+        private readonly StatisticsService _statistics;
         private CardViewModel _card;
         private bool _canSave;
 
         public NewCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
-                                [NotNull] IUiStringsProvider stringsProvider)
+                                [NotNull] IUiStringsProvider stringsProvider, [NotNull] StatisticsService statistics)
         {
             if (stringsProvider == null) throw new ArgumentNullException("stringsProvider");
+            if (statistics == null) throw new ArgumentNullException("statistics");
             _navigation = navigation;
             _cardProvider = cardProvider;
             _stringsProvider = stringsProvider;
+            _statistics = statistics;
             Card = new CardViewModel();
             Card.ReadyToSave += () =>
                 {
@@ -29,6 +32,7 @@ namespace PinHolder.ViewModel
                     SaveCommand.RaiseCanExecuteChanged();
                 };
             Card.NameOfDescriptionUpdated += () => SaveCommand.RaiseCanExecuteChanged();
+            _statistics.PublishNewCardPageLoaded();
         }
 
         [UsedImplicitly]
@@ -87,6 +91,7 @@ namespace PinHolder.ViewModel
         private void SaveCard()
         {
             _cardProvider.Save(Card.GetModel());
+            _statistics.PublishNewCardSaveCardButtonClick();
             _navigation.GoBack();
         }
     }

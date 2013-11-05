@@ -8,27 +8,31 @@ using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public sealed class MainViewModel :BaseViewModel
+    public sealed class MainViewModel : BaseViewModel
     {
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;
+        private readonly StatisticsService _statistics;
 
         private CardViewModel _selected;
 
         public MainViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
-                             [NotNull] ICollectionFactory collectionFactory)
+            [NotNull] ICollectionFactory collectionFactory, [NotNull] StatisticsService statistics)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (cardProvider == null) throw new ArgumentNullException("cardProvider");
             if (collectionFactory == null) throw new ArgumentNullException("collectionFactory");
+            if (statistics == null) throw new ArgumentNullException("statistics");
 
 
             _navigation = navigation;
             _cardProvider = cardProvider;
+            _statistics = statistics;
 
             Cards = collectionFactory.GetCollection<CardViewModel>();
             InitCommands();
             LoadData();
+            _statistics.PublishMainPageLoaded();
         }
 
 
@@ -43,31 +47,54 @@ namespace PinHolder.ViewModel
 
         private void InitCommands()
         {
-            AddNewCommand = new RelayCommand (() => _navigation.Navigate(Pages.New));
-            AboutCommand = new RelayCommand(() => _navigation.Navigate(Pages.About));
-            HelpCommand = new RelayCommand(() => _navigation.Navigate(Pages.HelpPage));
-            ReorderCommand = new RelayCommand(() => _navigation.Navigate(Pages.Reorder));
+            AddNewCommand = new RelayCommand(() =>
+            {
+                _statistics.PublishMainAddNewButtonClick();
+                _navigation.Navigate(Pages.New);
+            });
+            AboutCommand = new RelayCommand(() =>
+            {
+                _statistics.PublishMainAboutButtonClick();
+                _navigation.Navigate(Pages.About);
+            });
+            HelpCommand = new RelayCommand(() =>
+            {
+                _statistics.PublishMainHelpButtonClick();
+                _navigation.Navigate(Pages.HelpPage);
+            });
+            ReorderCommand = new RelayCommand(() =>
+            {
+                _statistics.PublishMainReorderButtonClick();
+                _navigation.Navigate(Pages.Reorder);
+            });
         }
 
-
+        [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand AddNewCommand { get; private set; }
+
+        [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand AboutCommand { get; private set; }
+
+        [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand HelpCommand { get; private set; }
+
+        [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand ReorderCommand { get; private set; }
 
 
         [NotNull]
         public IList<CardViewModel> Cards { get; private set; }
 
-        [CanBeNull,UsedImplicitly(ImplicitUseKindFlags.Default)]
+        [CanBeNull, UsedImplicitly(ImplicitUseKindFlags.Default)]
         public CardViewModel Selected
         {
             get { return _selected; }
-            set {
+            set
+            {
                 _selected = value;
                 if (value != null)
                 {
-                    _navigation.Navigate(Pages.ViewPage, string.Format("?{0}={1}", Keys.Id, _selected.Id));                    
+                    _navigation.Navigate(Pages.ViewPage, string.Format("?{0}={1}", Keys.Id, _selected.Id));
                 }
             }
         }
