@@ -14,7 +14,7 @@ namespace PinHolder.PlatformSpecificImplementations
 
         public override void Initialize()
         {
-            Counter.CustomAppVersion = new Version(Configuration.MajorVersion, Configuration.MinorVersion);
+            Counter.CustomAppVersion = Configuration.Version;
             Counter.TrackLocationEnabled = true;
             Counter.Start(Configuration.StatisticsKey);
         }

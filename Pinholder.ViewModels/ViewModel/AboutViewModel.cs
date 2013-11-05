@@ -38,7 +38,7 @@ namespace PinHolder.ViewModel
         [UsedImplicitly]
         public string ApplicationVersion
         {
-            get { return string.Format("{0}.{1}", Configuration.MajorVersion, Configuration.MinorVersion); }
+            get { return Configuration.Version.ToString(); }
         }
 
         [UsedImplicitly]

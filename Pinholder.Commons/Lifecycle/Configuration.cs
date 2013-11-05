@@ -1,15 +1,12 @@
-﻿namespace PinHolder.Lifecycle
+﻿using System;
+
+namespace PinHolder.Lifecycle
 {
     public static class Configuration
     {
-        public static int MajorVersion
+        public static Version Version
         {
-            get { return 1; }
-        }
-
-        public static int MinorVersion
-        {
-            get { return 2; }
+            get { return new Version(1, 1, 6); }
         }
 
         public static uint StatisticsKey
