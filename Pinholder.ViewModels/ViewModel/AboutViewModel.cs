@@ -2,6 +2,7 @@
 using System.Reflection;
 using PinHolder.Annotations;
 using PinHolder.Command;
+using PinHolder.Lifecycle;
 using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
@@ -9,15 +10,19 @@ namespace PinHolder.ViewModel
     public class AboutViewModel : BaseViewModel
     {
         private readonly IPlatformTaskFactory _platformTaskFactory;
+        private readonly StatisticsService _statistics;
         private const string SUPPORT_EMAIL = "pinholder@yandex.ru";
 
 
-        public AboutViewModel([NotNull] IPlatformTaskFactory platformTaskFactory)
+        public AboutViewModel([NotNull] IPlatformTaskFactory platformTaskFactory, [NotNull] StatisticsService statistics)
         {
             if (platformTaskFactory == null) throw new ArgumentNullException("platformTaskFactory");
+            if (statistics == null) throw new ArgumentNullException("statistics");
             _platformTaskFactory = platformTaskFactory;
+            _statistics = statistics;
 
             RateCommand = new RelayCommand(ShowRateTask);
+            _statistics.PublishAboutLoaded();
         }
 
         private void ShowRateTask()
@@ -32,12 +37,7 @@ namespace PinHolder.ViewModel
         [UsedImplicitly]
         public string ApplicationVersion
         {
-            get
-            {
-                var assembly = Assembly.GetExecutingAssembly();
-                var name = new AssemblyName(assembly.FullName);
-                return name.Version.ToString(3);
-            }
+            get { return string.Format("{0}.{1}", Configuration.MajorVersion, Configuration.MinorVersion); }
         }
 
         [UsedImplicitly]

@@ -15,6 +15,7 @@ namespace PinHolder.Lifecycle
         {
             RegisterServices(rootFrame);
             ThemeManager.ToDarkTheme();
+            TinyIoCContainer.Current.Resolve<StatisticsService>().Initialize();
         }
 
         private static void RegisterServices(PhoneApplicationFrame rootFrame)
@@ -28,6 +29,7 @@ namespace PinHolder.Lifecycle
             ioc.Register<ISettingsLoader>((container, overloads) => new SettingsLoader());
             ioc.Register((container, overloads) => new ApplicationSettingsProvider(container.Resolve<ISettingsLoader>()));
             ioc.Register<IPlatformTaskFactory>((container, overloads) => new PhoneTaskFactory());
+            ioc.Register<StatisticsService>((container, overloads) => new YandexStatistics());
         }
     }
 }

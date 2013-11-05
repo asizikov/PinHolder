@@ -59,7 +59,7 @@ namespace PinHolder
 
         public static AboutViewModel GetAboutViewModel()
         {
-            return new AboutViewModel(Container.Resolve<IPlatformTaskFactory>());
+            return new AboutViewModel(Container.Resolve<IPlatformTaskFactory>(), Container.Resolve<StatisticsService>());
         }
     }
 }
