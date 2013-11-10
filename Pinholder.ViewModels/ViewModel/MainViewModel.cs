@@ -94,7 +94,8 @@ namespace PinHolder.ViewModel
                 _selected = value;
                 if (value != null)
                 {
-                    _navigation.Navigate(Pages.ViewPage, string.Format("?{0}={1}", Keys.Id, _selected.Id));
+                    var uri = string.Format("?{0}={1}&{2}={3}", Keys.Id, _selected.Id, Keys.From, From.MainPage);
+                    _navigation.Navigate(Pages.ViewPage, uri);
                 }
             }
         }

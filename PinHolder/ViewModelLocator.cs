@@ -40,14 +40,14 @@ namespace PinHolder
                 Container.Resolve<StatisticsService>());
         }
 
-        public static ViewCardViewModel GetViewCardViewModel(int id)
+        public static ViewCardViewModel GetViewCardViewModel(int id, From from)
         {
             return new ViewCardViewModel(
                 Container.Resolve<INavigationService>(),
                 Container.Resolve<BaseCardProvider>(),
                 Container.Resolve<ISecondaryTileService>(),
                 new LockerViewModel(Container.Resolve<ApplicationSettingsProvider>()),
-                Container.Resolve<StatisticsService>(), id);
+                Container.Resolve<StatisticsService>(), from, id);
         }
 
         public static EditCardViewModel GetEditCardViewModel(int id)

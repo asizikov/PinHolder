@@ -8,12 +8,6 @@ using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public enum From
-    {
-        MainPage = 0,
-        Tile = 1,
-    }
-
     public sealed class ViewCardViewModel : BaseViewModel
     {
         private readonly INavigationService _navigation;
@@ -22,11 +16,9 @@ namespace PinHolder.ViewModel
 
         private CardViewModel _card;
 
-
         public ViewCardViewModel([NotNull] INavigationService navigation, [NotNull] BaseCardProvider cardProvider,
             [NotNull] ISecondaryTileService secondaryTileService, [NotNull] LockerViewModel locker,
-            [NotNull] StatisticsService statistics,
-            int id)
+            [NotNull] StatisticsService statistics, From from, int id)
         {
             if (navigation == null) throw new ArgumentNullException("navigation");
             if (cardProvider == null) throw new ArgumentNullException("cardProvider");
@@ -38,7 +30,7 @@ namespace PinHolder.ViewModel
             _statistics = statistics;
             Card = cardProvider.GetById(id).ToViewModel();
             Locker = locker;
-            _statistics.PublishViewCardPageLoaded();
+            _statistics.PublishViewCardPageLoaded(from == From.Tile);
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]

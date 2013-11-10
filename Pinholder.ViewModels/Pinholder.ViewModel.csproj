@@ -45,6 +45,7 @@
     <Compile Include="CardExtentions.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\EditCardViewModel.cs" />
+    <Compile Include="ViewModel\From.cs" />
     <Compile Include="ViewModel\LockerViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\NewCardViewModel.cs" />

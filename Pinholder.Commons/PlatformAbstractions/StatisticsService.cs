@@ -76,9 +76,9 @@
             PublishEvent("New card page: save card button clicked");
         }
 
-        public void PublishViewCardPageLoaded(bool fromTile = false)
+        public void PublishViewCardPageLoaded(bool isFromTile = false)
         {
-            PublishEvent(string.Format("View card page loaded: {0}", (fromTile ? "regular" : "from tile")));
+            PublishEvent(string.Format("View card page loaded: {0}", (isFromTile ? "regular" : "from tile")));
         }
 
         public void PublishViewCardPinButtonClick()

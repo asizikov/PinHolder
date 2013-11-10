@@ -40,7 +40,7 @@ namespace PinHolder.Tests
                 .Returns(false);
 
             var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker,
-                _statistics.Object, ID);
+                _statistics.Object, From.MainPage, ID);
 
             Assert.False(target.CreatePinCommand.CanExecute(null));
         }
@@ -49,7 +49,7 @@ namespace PinHolder.Tests
         public void DoesNotShowLockerByDefault()
         {
             var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker,
-                _statistics.Object, ID);
+                _statistics.Object, From.MainPage, ID);
             Assert.IsFalse(target.Locker.ShowLocker);
         }
 
@@ -57,7 +57,7 @@ namespace PinHolder.Tests
         public void ShowsLockerBeforeNavigatingToEditPage()
         {
             var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker,
-                _statistics.Object, ID);
+                _statistics.Object, From.MainPage, ID);
             target.EditCommand.Execute(null);
 
             Assert.IsTrue(target.Locker.ShowLocker);
@@ -69,7 +69,7 @@ namespace PinHolder.Tests
             _navigation.Setup(n => n.Navigate(It.IsAny<string>(), It.IsAny<string>()));
 
             var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker,
-                _statistics.Object, ID);
+                _statistics.Object, From.MainPage, ID);
 
 
             target.EditCommand.Execute(null);
@@ -85,7 +85,7 @@ namespace PinHolder.Tests
                 .Returns<Card>(null);
 
             var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker,
-                _statistics.Object, ID);
+                _statistics.Object, From.MainPage, ID);
 
             Assert.IsFalse(target.CreatePinCommand.CanExecute(null));
         }
@@ -97,7 +97,7 @@ namespace PinHolder.Tests
                 .Returns<Card>(null);
 
             var target = new ViewCardViewModel(_navigation.Object, _cardProvider.Object, _tile.Object, _locker,
-                _statistics.Object, ID);
+                _statistics.Object, From.MainPage, ID);
 
             Assert.IsFalse(target.EditCommand.CanExecute(null));
         }
