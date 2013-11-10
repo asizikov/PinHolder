@@ -78,7 +78,7 @@
 
         public void PublishViewCardPageLoaded(bool isFromTile = false)
         {
-            PublishEvent(string.Format("View card page loaded: {0}", (isFromTile ? "regular" : "from tile")));
+            PublishEvent(string.Format("View card page loaded: {0}", (isFromTile ? "from tile" : "from main page")));
         }
 
         public void PublishViewCardPinButtonClick()
