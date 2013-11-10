@@ -8,6 +8,12 @@ using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
+    public enum From
+    {
+        MainPage = 0,
+        Tile = 1,
+    }
+
     public sealed class ViewCardViewModel : BaseViewModel
     {
         private readonly INavigationService _navigation;

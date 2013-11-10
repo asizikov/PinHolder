@@ -4,6 +4,10 @@ namespace PinHolder.Lifecycle
 {
     public static class Configuration
     {
+        public static bool TrackStatistics
+        {
+            get { return true; }
+        }
         public static Version Version
         {
             get { return new Version(1, 1, 6); }

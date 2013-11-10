@@ -23,7 +23,6 @@
 
         public void PublishReorderPageLoaded()
         {
-
             PublishEvent("Reorder page loaded");
         }
 
@@ -35,19 +34,16 @@
         public void PublishEditCardSaved()
         {
             PublishEvent("Edit page: save card button clicked");
-
         }
 
         public void PublishEditCardDeleted()
         {
-
             PublishEvent("Edit page: delet card button clicked");
         }
 
         public void PublishMainPageLoaded()
         {
             PublishEvent("Main page loaded");
-
         }
 
         public void PublishMainAddNewButtonClick()
@@ -80,9 +76,9 @@
             PublishEvent("New card page: save card button clicked");
         }
 
-        public void PublishViewCardPageLoaded()
+        public void PublishViewCardPageLoaded(bool fromTile = false)
         {
-            PublishEvent("View card page loaded");
+            PublishEvent(string.Format("View card page loaded: {0}", (fromTile ? "regular" : "from tile")));
         }
 
         public void PublishViewCardPinButtonClick()
