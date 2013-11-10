@@ -82,8 +82,7 @@
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar
             Style="{StaticResource AppBarStyle}"
-            BindableOpacity="0.5"
-            Visibility="{Binding ShowLocker, Converter={StaticResource ReversedBoolToVisibilityConverter}}">
+            BindableOpacity="0.5">
             <appBar:BindableApplicationBarButton Command="{Binding ReorderCommand}"
                                                  IconUri="/Resources/Images/appbar.list.reorder.png"
                                                  Text="{Binding Path=Strings.Reorder,
