@@ -9,8 +9,8 @@
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_IDENTITY_USER" />
       <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="/View/MainPage.xaml" />

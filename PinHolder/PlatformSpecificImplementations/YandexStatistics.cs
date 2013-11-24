@@ -20,6 +20,7 @@ namespace PinHolder.PlatformSpecificImplementations
             Counter.CustomAppVersion = Configuration.Version;
             Counter.TrackLocationEnabled = true;
             Counter.Start(Configuration.StatisticsKey);
+            Counter.SendEventsBuffer();
         }
     }
 }
