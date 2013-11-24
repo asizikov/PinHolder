@@ -32,7 +32,7 @@ namespace PinHolder.ViewModel
             Cards = collectionFactory.GetCollection<CardViewModel>();
             InitCommands();
             LoadData();
-            _statistics.PublishMainPageLoaded();
+            _statistics.PublishMainPageLoaded(Cards == null ? 0 : Cards.Count);
         }
 
 

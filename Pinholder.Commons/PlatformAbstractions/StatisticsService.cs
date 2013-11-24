@@ -41,9 +41,9 @@
             PublishEvent("Edit page: delet card button clicked");
         }
 
-        public void PublishMainPageLoaded()
+        public void PublishMainPageLoaded(int count)
         {
-            PublishEvent("Main page loaded");
+            PublishEvent("Main page loaded. Cards amount: " + count);
         }
 
         public void PublishMainAddNewButtonClick()
