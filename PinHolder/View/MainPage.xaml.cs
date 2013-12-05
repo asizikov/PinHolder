@@ -1,15 +1,12 @@
-﻿using Microsoft.Phone.Controls;
-using PinHolder.ViewModel;
-
-namespace PinHolder.View
+﻿namespace PinHolder.View
 {
-    public sealed partial class MainPage : PhoneApplicationPage
+    public sealed partial class MainPage
     {
-        // Constructor
         public MainPage()
         {
             InitializeComponent();
         }
+
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {

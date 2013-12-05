@@ -7,6 +7,7 @@
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:controls="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
                             d:DesignHeight="696"
                             d:DesignWidth="480"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -26,7 +27,6 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
         <!--  TitlePanel contains the name of the application and page title  -->
         <StackPanel x:Name="TitlePanel"
                     Grid.Row="0"
@@ -63,21 +63,27 @@
                 Visibility="{Binding Cards.Count, Converter={StaticResource ZeroToVisibilityConverter}}"
                 ItemsSource="{Binding Cards}"
                 ItemTemplate="{StaticResource PlaneCardDateaDataTemplate}"
-                SelectedItem="{Binding Selected, Mode=TwoWay}" >
+                SelectedItem="{Binding Selected, Mode=TwoWay}">
                 <ListBox.Template>
                     <ControlTemplate TargetType="ItemsControl">
                         <ScrollViewer>
                             <StackPanel>
                                 <ItemsPresenter />
                                 <Line Height="84"
-                                              VerticalAlignment="Bottom"
-                                              Fill="Transparent" />
+                                      VerticalAlignment="Bottom"
+                                      Fill="Transparent" />
                             </StackPanel>
                         </ScrollViewer>
                     </ControlTemplate>
                 </ListBox.Template>
             </ListBox>
         </Grid>
+        <controls:FeedbackOverlay
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            CompanyName="{Binding Path=Strings.CompanyName, Source={StaticResource LocalizedStrings}}"
+            FeedbackTo="{Binding Path=Strings.FeedbackTo, Source={StaticResource LocalizedStrings}}"
+            ApplicationName="{Binding Path=Strings.AppName, Source={StaticResource LocalizedStrings}}" />
     </Grid>
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar
@@ -106,20 +112,20 @@
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
             </toolkit:NavigationInTransition.Backward>
             <toolkit:NavigationInTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
             </toolkit:NavigationInTransition.Forward>
         </toolkit:NavigationInTransition>
     </toolkit:TransitionService.NavigationInTransition>
     <toolkit:TransitionService.NavigationOutTransition>
         <toolkit:NavigationOutTransition>
             <toolkit:NavigationOutTransition.Backward>
-                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
             </toolkit:NavigationOutTransition.Backward>
             <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>

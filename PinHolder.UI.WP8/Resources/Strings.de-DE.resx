@@ -132,6 +132,9 @@
   <data name="Cards" xml:space="preserve">
     <value>Karten</value>
   </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Anton Sizikov</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>berühren</value>
     <comment>??</comment>
@@ -144,6 +147,9 @@
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Bearbeiten</value>
+  </data>
+  <data name="FeedbackTo" xml:space="preserve">
+    <value>pinholder@yandex.ru</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hilfe</value>
