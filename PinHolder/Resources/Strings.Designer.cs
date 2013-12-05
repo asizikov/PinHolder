@@ -106,6 +106,15 @@ namespace PinHolder.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anton Sizikov.
+        /// </summary>
+        public static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to contact.
         /// </summary>
         public static string Contact {
@@ -138,6 +147,15 @@ namespace PinHolder.Resources {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pinholder@yandex.ru.
+        /// </summary>
+        public static string FeedbackTo {
+            get {
+                return ResourceManager.GetString("FeedbackTo", resourceCulture);
             }
         }
         
