@@ -6,7 +6,7 @@ namespace PinHolder.Lifecycle
     {
         public static bool TrackStatistics
         {
-            get { return false; }
+            get { return true; }
         }
         public static Version Version
         {
@@ -15,7 +15,7 @@ namespace PinHolder.Lifecycle
 
         public static uint StatisticsKey
         {
-            get { return 0; }
+            get { return 9760; }
         }
     }
 }
