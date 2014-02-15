@@ -215,7 +215,7 @@ Teraz twoje kody PIN są zawsze pod ręką i jednocześnie bezpieczne.</value>
     <value>Nie dodałeś jescze żadnej karty. Dodaj nową kartę.</value>
   </data>
   <data name="Pin" xml:space="preserve">
-    <value>Pin startowy</value>
+    <value>przypnij</value>
     <comment>???</comment>
   </data>
   <data name="Rate" xml:space="preserve">
