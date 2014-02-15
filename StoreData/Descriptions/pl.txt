@@ -1,0 +1,9 @@
+PinHolder to aplikacja dla każdego. Wszyscy mamy po kilka kart w naszych portfelach. Każda karta ma własny PIN, a ty musisz pamiętać wszystkie - co nie jest łatwe. 
+
+PinHolder może Ci pomóc. 
+
+Aplikacja uruchamia się błyskawicznie, więc nie musisz tracić czasu na przeglądanie notesu. Najważniejsze jest to, że kody PIN są chronione przed postronnymi obserwatorami. Choć są oni w stanie widzieć ekran telefonu, to nie nie są wstanie zgadnąć gdzie znajduje się twój PIN.
+
+PinHolder - bezpieczne miejsce dla twoich kodów PIN!
+
+Kontakt pinholder@yandex.ru
