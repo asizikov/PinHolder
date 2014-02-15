@@ -4,6 +4,7 @@
   <Languages xmlns="">
     <Language code="ru-RU" />
     <Language code="de-DE" />
+    <Language code="pl-PL" />
   </Languages>
   <App xmlns="" ProductID="{3b0345f9-9d02-4c78-a74e-709a0caea9ce}" Title="PinHolder" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Anton Sizikov" Description="Hold your pin-codes" Publisher="Anton Sizikov" PublisherID="{14cedeb3-c894-47c9-bd5c-8e20380bc6cc}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
