@@ -17,7 +17,7 @@
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
-      en-US;ru-Ru;de-DE;
+      en-US;ru-Ru;de-DE;pl-PL;
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
@@ -128,6 +128,11 @@
     <Compile Include="PlatformSpecificImplementations\PhoneTasksFactory.cs" />
     <Compile Include="PlatformSpecificImplementations\SettingsLoader.cs" />
     <Compile Include="PlatformSpecificImplementations\YandexStatistics.cs" />
+    <Compile Include="Resources\Strings.pl-PL.Designer.cs">
+      <DependentUpon>Strings.pl-PL.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Strings.de-DE.Designer.cs">
       <DependentUpon>Strings.de-DE.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -245,6 +250,10 @@
     <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.pl-PL.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.pl-PL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Strings.de-DE.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.de-DE.Designer.cs</LastGenOutput>
