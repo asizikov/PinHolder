@@ -98,12 +98,6 @@
                     <TextBlock Style="{StaticResource PinTextBlockStyle}" Text="{Binding Card.PinItems[19].Pin}" />
                 </Border>
             </toolkit:WrapPanel>
-            <conrols:Locker 
-                DataContext="{Binding Locker}"
-                Accepted="{Binding PasswordAccepted, Mode=TwoWay}"
-                Password="{Binding StoredPassword}"
-                Visibility="{Binding ShowLocker, Converter={StaticResource BoolToVisibilityConverter}}">
-            </conrols:Locker>
         </Grid>
     </Grid>
 

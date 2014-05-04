@@ -90,10 +90,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\PinHolder.UI.WP7\Conrols\Locker.xaml.cs">
-      <Link>Conrols\Locker.xaml.cs</Link>
-      <DependentUpon>Locker.xaml</DependentUpon>
-    </Compile>
     <Compile Include="..\PinHolder.UI.WP7\Conrols\ReorderListBox.cs">
       <Link>Conrols\ReorderListBox.cs</Link>
     </Compile>
@@ -303,11 +299,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="..\PinHolder.UI.WP7\Conrols\Locker.xaml">
-      <Link>Conrols\Locker.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\PinHolder.UI.WP7\Resources\Styles.xaml">
       <Link>Resources\Styles.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -370,9 +361,7 @@
       <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ReorderListBox\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

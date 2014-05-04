@@ -109,9 +109,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Conrols\Locker.xaml.cs">
-      <DependentUpon>Locker.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Conrols\ReorderListBox.cs" />
     <Compile Include="Conrols\ReorderListBoxItem.cs" />
     <Compile Include="Converters\NegativeValueConverter.cs" />
@@ -178,10 +175,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="Conrols\Locker.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
