@@ -1,0 +1,3 @@
+[submodule "src/submodules/Curacao.Mvvm"]
+	path = src/submodules/Curacao.Mvvm
+	url = https://github.com/asizikov/Curacao.Mvvm.git
