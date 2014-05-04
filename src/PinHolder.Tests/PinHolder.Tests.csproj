@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PinHolder\PlatformSpecificImplementations\CollectionFactory.cs">
+    <Compile Include="..\PinHolder.UI.WP7\PlatformSpecificImplementations\CollectionFactory.cs">
       <Link>Links\PlatformSpecificFactories\CollectionFactory.cs</Link>
     </Compile>
     <Compile Include="CardViewModelTestFixture.cs" />

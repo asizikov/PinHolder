@@ -90,82 +90,82 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\PinHolder\Conrols\Locker.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Conrols\Locker.xaml.cs">
       <Link>Conrols\Locker.xaml.cs</Link>
       <DependentUpon>Locker.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\PinHolder\Conrols\ReorderListBox.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Conrols\ReorderListBox.cs">
       <Link>Conrols\ReorderListBox.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Conrols\ReorderListBoxItem.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Conrols\ReorderListBoxItem.cs">
       <Link>Conrols\ReorderListBoxItem.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Converters\BoolToVisibilityConverter.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Converters\BoolToVisibilityConverter.cs">
       <Link>Converters\BoolToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Converters\NegativeValueConverter.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Converters\NegativeValueConverter.cs">
       <Link>Converters\NegativeValueConverter.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Converters\ReversedBoolToVisibilityConverter.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Converters\ReversedBoolToVisibilityConverter.cs">
       <Link>Converters\ReversedBoolToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Converters\ReversedZeroToVisibilityConverter.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Converters\ReversedZeroToVisibilityConverter.cs">
       <Link>Converters\ReversedZeroToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Converters\ZeroToVisibilityConverter.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Converters\ZeroToVisibilityConverter.cs">
       <Link>Converters\ZeroToVisibilityConverter.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Lifecycle\Bootstrapper.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Lifecycle\Bootstrapper.cs">
       <Link>Lifecycle\Bootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Lifecycle\StateManager.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Lifecycle\StateManager.cs">
       <Link>Lifecycle\StateManager.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Lifecycle\ThemeManager.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Lifecycle\ThemeManager.cs">
       <Link>Lifecycle\ThemeManager.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Model\CardProvider.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Model\CardProvider.cs">
       <Link>Model\CardProvider.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\Navigation\NavigationService.cs">
+    <Compile Include="..\PinHolder.UI.WP7\Navigation\NavigationService.cs">
       <Link>Navigation\NavigationService.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\PlatformSpecificImplementations\CollectionFactory.cs">
+    <Compile Include="..\PinHolder.UI.WP7\PlatformSpecificImplementations\CollectionFactory.cs">
       <Link>PlatformSpecificImplementations\CollectionFactory.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\PlatformSpecificImplementations\PhoneTasksFactory.cs">
+    <Compile Include="..\PinHolder.UI.WP7\PlatformSpecificImplementations\PhoneTasksFactory.cs">
       <Link>PlatformSpecificImplementations\PhoneTasksFactory.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\PlatformSpecificImplementations\SettingsLoader.cs">
+    <Compile Include="..\PinHolder.UI.WP7\PlatformSpecificImplementations\SettingsLoader.cs">
       <Link>PlatformSpecificImplementations\SettingsLoader.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\PlatformSpecificImplementations\YandexStatistics.cs">
+    <Compile Include="..\PinHolder.UI.WP7\PlatformSpecificImplementations\YandexStatistics.cs">
       <Link>PlatformSpecificImplementations\YandexStatistics.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\ViewModelLocator.cs">
+    <Compile Include="..\PinHolder.UI.WP7\ViewModelLocator.cs">
       <Link>ViewModelLocator.cs</Link>
     </Compile>
-    <Compile Include="..\PinHolder\View\AboutPage.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\View\AboutPage.xaml.cs">
       <Link>View\AboutPage.xaml.cs</Link>
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\PinHolder\View\HelpPage.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\View\HelpPage.xaml.cs">
       <Link>View\HelpPage.xaml.cs</Link>
       <DependentUpon>HelpPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\PinHolder\View\MainPage.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\View\MainPage.xaml.cs">
       <Link>View\MainPage.xaml.cs</Link>
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\PinHolder\View\NewCardPage.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\View\NewCardPage.xaml.cs">
       <Link>View\NewCardPage.xaml.cs</Link>
       <DependentUpon>NewCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\PinHolder\View\ReoderPage.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\View\ReoderPage.xaml.cs">
       <Link>View\ReoderPage.xaml.cs</Link>
       <DependentUpon>ReoderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\PinHolder\View\ViewPage.xaml.cs">
+    <Compile Include="..\PinHolder.UI.WP7\View\ViewPage.xaml.cs">
       <Link>View\ViewPage.xaml.cs</Link>
       <DependentUpon>ViewPage.xaml</DependentUpon>
     </Compile>
@@ -295,47 +295,47 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="..\PinHolder\Conrols\Locker.xaml">
+    <Page Include="..\PinHolder.UI.WP7\Conrols\Locker.xaml">
       <Link>Conrols\Locker.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\Resources\Styles.xaml">
+    <Page Include="..\PinHolder.UI.WP7\Resources\Styles.xaml">
       <Link>Resources\Styles.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\Themes\Generic.xaml">
+    <Page Include="..\PinHolder.UI.WP7\Themes\Generic.xaml">
       <Link>Themes\Generic.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\View\AboutPage.xaml">
+    <Page Include="..\PinHolder.UI.WP7\View\AboutPage.xaml">
       <Link>View\AboutPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\View\HelpPage.xaml">
+    <Page Include="..\PinHolder.UI.WP7\View\HelpPage.xaml">
       <Link>View\HelpPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\View\MainPage.xaml">
+    <Page Include="..\PinHolder.UI.WP7\View\MainPage.xaml">
       <Link>View\MainPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\View\NewCardPage.xaml">
+    <Page Include="..\PinHolder.UI.WP7\View\NewCardPage.xaml">
       <Link>View\NewCardPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\View\ReoderPage.xaml">
+    <Page Include="..\PinHolder.UI.WP7\View\ReoderPage.xaml">
       <Link>View\ReoderPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\PinHolder\View\ViewPage.xaml">
+    <Page Include="..\PinHolder.UI.WP7\View\ViewPage.xaml">
       <Link>View\ViewPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
