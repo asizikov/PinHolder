@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinHolder.Tests", "PinHolde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinholder.Commons", "Pinholder.Commons\Pinholder.Commons.csproj", "{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinholder.ViewModel", "Pinholder.ViewModels\Pinholder.ViewModel.csproj", "{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinHolder.UI.WP8", "PinHolder.UI.WP8\PinHolder.UI.WP8.csproj", "{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curacao.Mvvm.Abstractions", "submodules\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj", "{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}"
@@ -51,14 +49,6 @@ Global
 		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Release|ARM.ActiveCfg = Release|Any CPU
 		{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}.Release|x86.ActiveCfg = Release|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Release|ARM.ActiveCfg = Release|Any CPU
-		{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
