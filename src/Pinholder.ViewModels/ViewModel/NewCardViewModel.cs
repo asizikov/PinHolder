@@ -1,6 +1,6 @@
 ﻿using System;
+using Curacao.Mvvm.Commands;
 using PinHolder.Annotations;
-using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
 using PinHolder.PlatformAbstractions;
@@ -55,7 +55,7 @@ namespace PinHolder.ViewModel
             get
             {
                 return _saveCommand
-                    ?? (_saveCommand = new RelayCommand(SaveCard, CanSave));
+                    ?? (_saveCommand = new RelayCommand(SaveCard, _ => CanSave()));
             }
         }
 
@@ -66,7 +66,7 @@ namespace PinHolder.ViewModel
         {
             get
             {
-                return _deleteCommand ?? (_deleteCommand = new RelayCommand(() => { }, () => false));
+                return _deleteCommand ?? (_deleteCommand = new RelayCommand(_ => { }, _ => false));
             }
         }
 

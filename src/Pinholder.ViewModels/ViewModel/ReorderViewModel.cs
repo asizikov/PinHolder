@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
+using Curacao.Mvvm.Commands;
 using PinHolder.Annotations;
-using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.PlatformAbstractions;
 

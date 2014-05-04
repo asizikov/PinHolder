@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Reflection;
+using Curacao.Mvvm.Commands;
 using PinHolder.Annotations;
-using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.PlatformAbstractions;
 

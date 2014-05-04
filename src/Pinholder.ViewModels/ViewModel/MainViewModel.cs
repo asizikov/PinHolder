@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Curacao.Mvvm.Commands;
 using PinHolder.Annotations;
-using PinHolder.Command;
 using PinHolder.Model;
 using PinHolder.Navigation;
 using PinHolder.PlatformAbstractions;
@@ -47,22 +47,22 @@ namespace PinHolder.ViewModel
 
         private void InitCommands()
         {
-            AddNewCommand = new RelayCommand(() =>
+            AddNewCommand = new RelayCommand(_ =>
             {
                 _statistics.PublishMainAddNewButtonClick();
                 _navigation.Navigate(Pages.New);
             });
-            AboutCommand = new RelayCommand(() =>
+            AboutCommand = new RelayCommand(_ =>
             {
                 _statistics.PublishMainAboutButtonClick();
                 _navigation.Navigate(Pages.About);
             });
-            HelpCommand = new RelayCommand(() =>
+            HelpCommand = new RelayCommand(_ =>
             {
                 _statistics.PublishMainHelpButtonClick();
                 _navigation.Navigate(Pages.HelpPage);
             });
-            ReorderCommand = new RelayCommand(() =>
+            ReorderCommand = new RelayCommand(_ =>
             {
                 _statistics.PublishMainReorderButtonClick();
                 _navigation.Navigate(Pages.Reorder);

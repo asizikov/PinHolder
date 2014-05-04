@@ -1,6 +1,6 @@
 ﻿using System;
+using Curacao.Mvvm.Commands;
 using PinHolder.Annotations;
-using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -66,7 +66,7 @@ namespace PinHolder.ViewModel
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand SaveCommand
         {
-            get { return new RelayCommand(Save, CanPerformCommands()); }
+            get { return new RelayCommand(Save, _ => CanPerformCommands()); }
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
@@ -91,9 +91,9 @@ namespace PinHolder.ViewModel
             _navigation.GoBack();
         }
 
-        private Func<bool> CanPerformCommands()
+        private bool CanPerformCommands()
         {
-            return () => Card != CardViewModel.Empty;
+            return Card != CardViewModel.Empty;
         }
     }
 }

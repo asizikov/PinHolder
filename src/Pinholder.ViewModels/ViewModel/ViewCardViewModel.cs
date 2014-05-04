@@ -1,6 +1,6 @@
 ﻿using System;
+using Curacao.Mvvm.Commands;
 using PinHolder.Annotations;
-using PinHolder.Command;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -55,7 +55,7 @@ namespace PinHolder.ViewModel
                 return new RelayCommand(() => Locker
                     .Activate(
                         () => _navigation.Navigate(Pages.New, string.Format("?{0}={1}", Keys.Id, Card.Id))),
-                    CanPerformCommand
+                    _ => CanPerformCommand()
                     );
             }
         }
@@ -71,7 +71,7 @@ namespace PinHolder.ViewModel
                         _statistics.PublishViewCardPinButtonClick();
                         _secondaryTileService.TryCreate(Card.Name, Card.Description, Card.Id, () => { });
                     },
-                    () => CanPerformCommand() && _secondaryTileService.CanCreate(Card.Id));
+                    _ => CanPerformCommand() && _secondaryTileService.CanCreate(Card.Id));
             }
         }
 
