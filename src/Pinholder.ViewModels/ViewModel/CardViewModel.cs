@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 
 namespace PinHolder.ViewModel
 {
-    public class CardViewModel : BaseViewModel
+    public class CardViewModel : UnsafeBaseViewModel
     {
         private sealed class EmptyCardViewModel: CardViewModel
         {

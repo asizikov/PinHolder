@@ -286,6 +286,14 @@
       <Project>{4275F564-A4AE-4ED2-BB3A-0F1AD1FC87A1}</Project>
       <Name>Pinholder.ViewModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj">
+      <Project>{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}</Project>
+      <Name>Curacao.Mvvm.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj">
+      <Project>{F66E4F7D-DF19-447E-BAF2-31118687BE7F}</Project>
+      <Name>Curacao.Mvvm</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

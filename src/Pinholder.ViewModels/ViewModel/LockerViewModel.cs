@@ -1,10 +1,11 @@
 ﻿using System;
+using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 
 namespace PinHolder.ViewModel
 {
-    public class LockerViewModel: BaseViewModel
+    public class LockerViewModel : UnsafeBaseViewModel
     {
         private readonly ApplicationSettingsProvider _settingsProvider;
         private bool _showLocker;

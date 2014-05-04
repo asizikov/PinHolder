@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Curacao.Mvvm.Commands;
+using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -8,7 +9,7 @@ using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public sealed class MainViewModel : BaseViewModel
+    public sealed class MainViewModel : UnsafeBaseViewModel
     {
         private readonly INavigationService _navigation;
         private readonly BaseCardProvider _cardProvider;

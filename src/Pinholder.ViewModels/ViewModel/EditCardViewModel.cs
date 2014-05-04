@@ -1,5 +1,6 @@
 ﻿using System;
 using Curacao.Mvvm.Commands;
+using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
@@ -9,7 +10,7 @@ using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public sealed class EditCardViewModel : BaseViewModel
+    public sealed class EditCardViewModel : UnsafeBaseViewModel
     {
         [NotNull] private readonly ISecondaryTileService _secondaryTileService;
 

@@ -1,12 +1,13 @@
 ﻿using System;
 using Curacao.Mvvm.Commands;
+using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Lifecycle;
 using PinHolder.PlatformAbstractions;
 
 namespace PinHolder.ViewModel
 {
-    public class AboutViewModel : BaseViewModel
+    public class AboutViewModel : UnsafeBaseViewModel
     {
         private readonly IPlatformTaskFactory _platformTaskFactory;
         private readonly StatisticsService _statistics;

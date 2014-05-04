@@ -1,8 +1,9 @@
 ﻿using System;
+using Curacao.Mvvm.ViewModel;
 
 namespace PinHolder.ViewModel
 {
-    public sealed class PinItemViewModel : BaseViewModel
+    public sealed class PinItemViewModel : UnsafeBaseViewModel
     {
         private string _pin;
 
