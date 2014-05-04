@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -109,7 +112,7 @@ namespace PinHolder
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
             //RootFrame = new PhoneApplicationFrame();
-            RootFrame = new TransitionFrame();
+            RootFrame = CreateAppFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures
@@ -117,6 +120,18 @@ namespace PinHolder
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
+        }
+
+        private static TransitionFrame CreateAppFrame()
+        {
+            return new TransitionFrame
+            {
+                Background = new ImageBrush
+                {
+                    ImageSource = new BitmapImage(
+                        new Uri("Resources/Images/bg.jpg", UriKind.RelativeOrAbsolute))
+                }
+            };
         }
 
         // Do not add any additional code to this method

@@ -16,6 +16,7 @@
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
+      ru-RU,en-US, pl-PL, de-DE
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
@@ -144,6 +145,10 @@
     <Compile Include="..\PinHolder.UI.WP7\View\AboutPage.xaml.cs">
       <Link>View\AboutPage.xaml.cs</Link>
       <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PinHolder.UI.WP7\View\DevPage.xaml.cs">
+      <Link>View\DevPage.xaml.cs</Link>
+      <DependentUpon>DevPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\PinHolder.UI.WP7\View\HelpPage.xaml.cs">
       <Link>View\HelpPage.xaml.cs</Link>
@@ -307,6 +312,11 @@
     </Page>
     <Page Include="..\PinHolder.UI.WP7\View\AboutPage.xaml">
       <Link>View\AboutPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PinHolder.UI.WP7\View\DevPage.xaml">
+      <Link>View\DevPage.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

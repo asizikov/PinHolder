@@ -10,7 +10,7 @@ namespace PinHolder.Lifecycle
         }
         public static Version Version
         {
-            get { return new Version(1, 1, 8); }
+            get { return new Version(1, 1, 9); }
         }
 
         public static uint StatisticsKey

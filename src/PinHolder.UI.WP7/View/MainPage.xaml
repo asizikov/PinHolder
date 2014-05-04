@@ -84,6 +84,7 @@
     </Grid>
     <appBar:Bindable.ApplicationBar>
         <appBar:BindableApplicationBar
+            Name="ApplicationBar"
             Style="{StaticResource AppBarStyle}"
             BindableOpacity="0.5">
             <appBar:BindableApplicationBarButton Command="{Binding ReorderCommand}"

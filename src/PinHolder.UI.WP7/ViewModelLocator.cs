@@ -10,7 +10,7 @@ namespace PinHolder
     public static class ViewModelLocator
     {
         [NotNull]
-        private static TinyIoC.TinyIoCContainer Container
+        internal static TinyIoC.TinyIoCContainer Container
         {
             get { return TinyIoC.TinyIoCContainer.Current; }
         }
