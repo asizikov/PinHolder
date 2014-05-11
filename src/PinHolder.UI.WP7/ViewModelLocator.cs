@@ -1,4 +1,5 @@
-﻿using PinHolder.Annotations;
+﻿using Curacao.Mvvm.Abstractions.Services;
+using PinHolder.Annotations;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -62,7 +63,16 @@ namespace PinHolder
 
         public static AboutViewModel GetAboutViewModel()
         {
-            return new AboutViewModel(Container.Resolve<IPlatformTaskFactory>(), Container.Resolve<StatisticsService>());
+            return new AboutViewModel(
+                Container.Resolve<IPlatformTaskFactory>(), 
+                Container.Resolve<StatisticsService>());
+        }
+
+        public static BackupViewModel GetBackupPage()
+        {
+            return new BackupViewModel(
+                Container.Resolve<ISystemDispatcher>(), 
+                Container.Resolve<StatisticsService>());
         }
     }
 }
