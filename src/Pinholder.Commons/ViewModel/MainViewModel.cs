@@ -68,6 +68,12 @@ namespace PinHolder.ViewModel
                 _statistics.PublishMainReorderButtonClick();
                 _navigation.Navigate(Pages.Reorder);
             });
+
+            CloudSettingsCommand = new RelayCommand(_ =>
+            {
+                _statistics.PublishCloudSettingsButtonClick();
+                _navigation.Navigate(Pages.CloudSettingsPage);
+            });
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
@@ -81,6 +87,9 @@ namespace PinHolder.ViewModel
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand ReorderCommand { get; private set; }
+
+        [UsedImplicitly(ImplicitUseKindFlags.Access)]
+        public RelayCommand CloudSettingsCommand { get; private set; }
 
 
         [NotNull]

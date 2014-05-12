@@ -85,5 +85,10 @@
         {
             PublishEvent("View card: pin card button clicked");
         }
+
+        public void PublishCloudSettingsButtonClick()
+        {
+            PublishEvent("Main page: cloud settings button cliked");
+        }
     }
 }

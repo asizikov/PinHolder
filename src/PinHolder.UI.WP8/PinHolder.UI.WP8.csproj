@@ -107,6 +107,7 @@
     <Compile Include="Lifecycle\ThemeManager.cs" />
     <Compile Include="Model\CardProvider.cs" />
     <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="PlatformSpecificImplementations\SystemDispatcher.cs" />
     <Compile Include="PlatformSpecificImplementations\CollectionFactory.cs" />
     <Compile Include="PlatformSpecificImplementations\PhoneTasksFactory.cs" />
     <Compile Include="PlatformSpecificImplementations\SettingsLoader.cs" />
@@ -145,8 +146,8 @@
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BaskupPage.xaml.cs">
-      <DependentUpon>BaskupPage.xaml</DependentUpon>
+    <Compile Include="View\CloudSettingsPage.xaml.cs">
+      <DependentUpon>CloudSettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DevPage.xaml.cs">
       <DependentUpon>DevPage.xaml</DependentUpon>
@@ -217,6 +218,7 @@
     <Content Include="Resources\Images\appbar.edit.rest.png" />
     <Content Include="Resources\Images\appbar.list.reorder.png" />
     <Content Include="Resources\Images\appbar.pin.rest.png" />
+    <Content Include="Resources\Images\appbar.skydrive.png" />
     <Content Include="Resources\Images\bg.jpg" />
     <Content Include="Resources\Images\questionmark.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
@@ -262,20 +264,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="..\PinHolder.UI.WP7\Themes\Generic.xaml">
-      <Link>Themes\Generic.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Resources\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\BaskupPage.xaml">
+    <Page Include="View\CloudSettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

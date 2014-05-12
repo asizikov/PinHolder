@@ -99,6 +99,10 @@
                                                  IconUri="/Resources/Images/questionmark.png"
                                                  Text="{Binding Path=Strings.Help,
                                                                 Source={StaticResource LocalizedStrings}}" />
+            <appBar:BindableApplicationBarButton Command="{Binding CloudSettingsCommand}"
+                                                 IconUri="/Resources/Images/appbar.skydrive.png"
+                                                 Text="{Binding Path=Strings.Help,
+                                                                Source={StaticResource LocalizedStrings}}" />
             <appBar:BindableApplicationBar.MenuItems>
                 <appBar:BindableApplicationBarMenuItem
                     Command="{Binding AboutCommand}"

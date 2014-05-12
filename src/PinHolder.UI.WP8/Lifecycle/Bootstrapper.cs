@@ -1,4 +1,5 @@
-﻿using Microsoft.Phone.Controls;
+﻿using Curacao.Mvvm.Abstractions.Services;
+using Microsoft.Phone.Controls;
 using PinHolder.Model;
 using PinHolder.Navigation;
 using PinHolder.PlatformAbstractions;
@@ -20,7 +21,11 @@ namespace PinHolder.Lifecycle
 
         private static void RegisterServices(PhoneApplicationFrame rootFrame)
         {
+            var dispatcher = new SystemDispatcher();
+            dispatcher.Initialize(rootFrame.Dispatcher);
+
             var ioc = TinyIoCContainer.Current;
+            ioc.Register<ISystemDispatcher>(dispatcher);
             ioc.Register<INavigationService>((container, overloads) => new NavigationService(rootFrame));
             ioc.Register<ISecondaryTileService>((container, overloads) => new SecondaryTileService());
             ioc.Register<BaseCardProvider>((container, overloads) => new CardProvider());
@@ -30,6 +35,7 @@ namespace PinHolder.Lifecycle
             ioc.Register((container, overloads) => new ApplicationSettingsProvider(container.Resolve<ISettingsLoader>()));
             ioc.Register<IPlatformTaskFactory>((container, overloads) => new PhoneTaskFactory());
             ioc.Register<StatisticsService>((container, overloads) => new YandexStatistics());
+            
         }
     }
 }
