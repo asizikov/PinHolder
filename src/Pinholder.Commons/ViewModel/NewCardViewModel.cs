@@ -1,6 +1,5 @@
 ﻿using System;
 using Curacao.Mvvm.Commands;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 using PinHolder.Navigation;
@@ -27,6 +26,7 @@ namespace PinHolder.ViewModel
             _stringsProvider = stringsProvider;
             _statistics = statistics;
             Card = new CardViewModel();
+            IsSixDigitsPin = false;
             Card.ReadyToSave += () =>
                 {
                     _canSave = true;
@@ -51,16 +51,30 @@ namespace PinHolder.ViewModel
         private RelayCommand _saveCommand;
 
         [UsedImplicitly]
+        public bool IsSixDigitsPin
+        {
+            get { return _isSixDigitsPin; }
+            set
+            {
+                if (value.Equals(_isSixDigitsPin)) return;
+                _isSixDigitsPin = value;
+                Card.SetPinCodeSize(_isSixDigitsPin ? 6 : 4);
+                OnPropertyChanged("IsSixDigitsPin");
+            }
+        }
+
+        [UsedImplicitly]
         public RelayCommand SaveCommand
         {
             get
             {
                 return _saveCommand
-                    ?? (_saveCommand = new RelayCommand(SaveCard, _ => CanSave()));
+                    ?? (_saveCommand = new RelayCommand(_ => SaveCard(), _ => CanSave()));
             }
         }
 
         private RelayCommand _deleteCommand;
+        private bool _isSixDigitsPin;
 
         [UsedImplicitly]
         public RelayCommand DeleteCommand

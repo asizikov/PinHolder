@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Curacao.Mvvm.Commands;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 using PinHolder.PlatformAbstractions;
@@ -28,7 +27,7 @@ namespace PinHolder.ViewModel
 
             Cards = collectionFactory.GetCollection<CardViewModel>();
             LoadData();
-            ApplyChangesCommand = new RelayCommand(SaveChanges);
+            ApplyChangesCommand = new RelayCommand(_ => SaveChanges());
             _statistics.PublishReorderPageLoaded();
         }
 

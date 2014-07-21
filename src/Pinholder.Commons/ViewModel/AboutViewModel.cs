@@ -1,6 +1,5 @@
 ﻿using System;
 using Curacao.Mvvm.Commands;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Lifecycle;
 using PinHolder.PlatformAbstractions;
@@ -21,7 +20,7 @@ namespace PinHolder.ViewModel
             _platformTaskFactory = platformTaskFactory;
             _statistics = statistics;
 
-            RateCommand = new RelayCommand(ShowRateTask);
+            RateCommand = new RelayCommand(_ => ShowRateTask());
             _statistics.PublishAboutLoaded();
         }
 
@@ -46,7 +45,7 @@ namespace PinHolder.ViewModel
         {
             get
             {
-                return new RelayCommand(() =>
+                return new RelayCommand(_ =>
                 {
                     var emailComposeTask = _platformTaskFactory.GetEmailTask(SUPPORT_EMAIL, "PinHolder " +
                                                                                             ApplicationVersion);

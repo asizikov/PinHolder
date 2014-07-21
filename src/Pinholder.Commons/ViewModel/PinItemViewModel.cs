@@ -1,5 +1,4 @@
 ﻿using System;
-using Curacao.Mvvm.ViewModel;
 
 namespace PinHolder.ViewModel
 {
@@ -7,9 +6,9 @@ namespace PinHolder.ViewModel
     {
         private string _pin;
 
-        private readonly Action<PinItemViewModel> _valueUpdatedCallback;
+        private readonly Action _valueUpdatedCallback;
 
-        public PinItemViewModel(Action<PinItemViewModel> updatedCallback )
+        public PinItemViewModel(Action updatedCallback )
         {
             _valueUpdatedCallback = updatedCallback;
         }
@@ -29,7 +28,7 @@ namespace PinHolder.ViewModel
                 OnPropertyChanged("Pin");
                 if (_valueUpdatedCallback != null)
                 {
-                    _valueUpdatedCallback(this);
+                    _valueUpdatedCallback();
                 }
             }
         }

@@ -101,6 +101,7 @@
     <Compile Include="Converters\ReversedBoolToVisibilityConverter.cs" />
     <Compile Include="Converters\ReversedZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\ZeroToVisibilityConverter.cs" />
+    <Compile Include="JetBrains.Annotations\JetBrains.Annotations.cs" />
     <Compile Include="Lifecycle\Bootstrapper.cs" />
     <Compile Include="Lifecycle\SecondaryTileService.cs" />
     <Compile Include="Lifecycle\StateManager.cs" />
@@ -254,14 +255,6 @@
       <Project>{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}</Project>
       <Name>Pinholder.Commons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj">
-      <Project>{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}</Project>
-      <Name>Curacao.Mvvm.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj">
-      <Project>{F66E4F7D-DF19-447E-BAF2-31118687BE7F}</Project>
-      <Name>Curacao.Mvvm</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Resources\Styles.xaml">
@@ -310,6 +303,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\BindableApplicationBar.1.1.0.0\lib\wp8\BindableApplicationBar.dll</HintPath>
     </Reference>
+    <Reference Include="Curacao.MVVM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Curacao.Mvvm.1.0.1\lib\Curacao.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="Curacao.Mvvm.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Curacao.Mvvm.Abstractions.1.0.1\lib\Curacao.Mvvm.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Live, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Live.Controls, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
@@ -320,12 +321,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\RateMyApp.1.1.0\lib\sl4-wp71\RateMyApp.dll</HintPath>
     </Reference>
-    <Reference Include="Yandex.Metrica, Version=1.0.5050.55, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Yandex.Metrica, Version=1.1.5227.137, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Yandex.Metrica.1.0.5050.55\lib\wp8\Yandex.Metrica.dll</HintPath>
+      <HintPath>..\packages\Yandex.Metrica.1.1.5227.137\lib\wp8\Yandex.Metrica.dll</HintPath>
     </Reference>
-    <Reference Include="Zlib.Portable">
-      <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
+    <Reference Include="Zlib.Portable, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Zlib.Portable.1.10.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup />

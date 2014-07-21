@@ -33,9 +33,17 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq, Version=4.2.1312.1416, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+    <Reference Include="Curacao.MVVM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Moq.4.2.1312.1416\lib\net40\Moq.dll</HintPath>
+      <HintPath>..\packages\Curacao.Mvvm.1.0.1\lib\Curacao.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=8.0.5185.29681, Culture=neutral, PublicKeyToken=81e1e91c5c2ba347, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\JetBrains.Annotations.Portable.8.0.5185.29681\lib\portable-win+net40+sl40+wp+Xbox40\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1402.2112, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,14 +76,6 @@
     <ProjectReference Include="..\Pinholder.Commons\Pinholder.Commons.csproj">
       <Project>{E6293B7C-5B0F-4904-AB6B-975FA0EC803B}</Project>
       <Name>Pinholder.Commons</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj">
-      <Project>{89d0eefb-d98e-4cb7-85ed-ca55f98a8b41}</Project>
-      <Name>Curacao.Mvvm.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj">
-      <Project>{f66e4f7d-df19-447e-baf2-31118687be7f}</Project>
-      <Name>Curacao.Mvvm</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

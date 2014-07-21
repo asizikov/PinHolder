@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 
@@ -10,7 +9,9 @@ namespace PinHolder.ViewModel
 {
     public class CardViewModel : UnsafeBaseViewModel
     {
-        private sealed class EmptyCardViewModel: CardViewModel
+        private int _pinDigits;
+
+        private sealed class EmptyCardViewModel : CardViewModel
         {
             public EmptyCardViewModel()
             {
@@ -42,7 +43,8 @@ namespace PinHolder.ViewModel
         {
             PinItems = new List<PinItemViewModel>();
             PinItems.AddRange(Enumerable.Range(0, CELLS_NUM)
-                .Select(_ =>new PinItemViewModel(OnUpdate)));
+                .Select(_ => new PinItemViewModel(OnUpdate)));
+            _pinDigits = PIN_SIZE;
         }
 
         public CardViewModel(Card model)
@@ -84,14 +86,20 @@ namespace PinHolder.ViewModel
         [UsedImplicitly]
         public List<PinItemViewModel> PinItems { get; set; }
 
+        public void SetPinCodeSize(int pinCodeSize)
+        {
+            _pinDigits = pinCodeSize;
+            OnUpdate();
+        }
+
         public static CardViewModel Empty
         {
             get { return _empty; }
         }
 
-        private void OnUpdate(PinItemViewModel item)
+        private void OnUpdate()
         {
-            if (PinItems.Count(pi => !string.IsNullOrEmpty(pi.Pin)) != PIN_SIZE) return;
+            if (PinItems.Count(pi => !string.IsNullOrEmpty(pi.Pin)) < _pinDigits) return;
             foreach (var pinItemViewModel in PinItems.Where(pi => string.IsNullOrEmpty(pi.Pin)))
             {
                 pinItemViewModel.SetSilently(GetRandomPinAsString());
@@ -101,7 +109,6 @@ namespace PinHolder.ViewModel
             {
                 ReadyToSave();
             }
-            
         }
 
         private string GetRandomPinAsString()
@@ -113,12 +120,12 @@ namespace PinHolder.ViewModel
         public virtual Card GetModel()
         {
             return new Card
-                {
-                    Id = Id,
-                    Name = Name,
-                    Description = Description,
-                    Pins = PinItems.Select(pi => pi.Pin).ToList()
-                };
+            {
+                Id = Id,
+                Name = Name,
+                Description = Description,
+                Pins = PinItems.Select(pi => pi.Pin).ToList()
+            };
         }
 
         private void RaiseNameOrDescriptionUpdated()

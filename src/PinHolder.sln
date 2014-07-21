@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinholder.Commons", "Pinhol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinHolder.UI.WP8", "PinHolder.UI.WP8\PinHolder.UI.WP8.csproj", "{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curacao.Mvvm.Abstractions", "submodules\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj", "{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curacao.Mvvm", "submodules\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj", "{F66E4F7D-DF19-447E-BAF2-31118687BE7F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,22 +51,6 @@ Global
 		{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}.Release|x86.ActiveCfg = Release|x86
 		{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}.Release|x86.Build.0 = Release|x86
 		{3B0345F9-9D02-4C78-A74E-709A0CAEA9CE}.Release|x86.Deploy.0 = Release|x86
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Release|ARM.ActiveCfg = Release|Any CPU
-		{89D0EEFB-D98E-4CB7-85ED-CA55F98A8B41}.Release|x86.ActiveCfg = Release|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Release|ARM.ActiveCfg = Release|Any CPU
-		{F66E4F7D-DF19-447E-BAF2-31118687BE7F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

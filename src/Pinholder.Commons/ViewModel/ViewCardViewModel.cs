@@ -1,6 +1,5 @@
 ﻿using System;
 using Curacao.Mvvm.Commands;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
@@ -64,7 +63,7 @@ namespace PinHolder.ViewModel
             get
             {
                 return new RelayCommand(
-                    () =>
+                    _ =>
                     {
                         _statistics.PublishViewCardPinButtonClick();
                         _secondaryTileService.TryCreate(Card.Name, Card.Description, Card.Id, () => { });

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Curacao.Mvvm.Commands;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Model;
 using PinHolder.Navigation;

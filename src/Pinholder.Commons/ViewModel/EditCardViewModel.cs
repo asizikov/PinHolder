@@ -1,6 +1,5 @@
 ﻿using System;
 using Curacao.Mvvm.Commands;
-using Curacao.Mvvm.ViewModel;
 using PinHolder.Annotations;
 using PinHolder.Lifecycle;
 using PinHolder.Model;
@@ -67,13 +66,13 @@ namespace PinHolder.ViewModel
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand SaveCommand
         {
-            get { return new RelayCommand(Save, _ => CanPerformCommands()); }
+            get { return new RelayCommand(_ => Save(), _ => CanPerformCommands()); }
         }
 
         [UsedImplicitly(ImplicitUseKindFlags.Access)]
         public RelayCommand DeleteCommand
         {
-            get { return new RelayCommand(Delete); }
+            get { return new RelayCommand(_=> Delete()); }
         }
 
         private void Delete()

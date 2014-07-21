@@ -11,9 +11,14 @@
     <RootNamespace>PinHolder</RootNamespace>
     <AssemblyName>PinHolder.Commons</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile104</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile154</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,20 +69,23 @@
     <Compile Include="ViewModel\NewCardViewModel.cs" />
     <Compile Include="ViewModel\PinItemViewModel.cs" />
     <Compile Include="ViewModel\ReorderViewModel.cs" />
+    <Compile Include="ViewModel\UnsafeBaseViewModel.cs" />
     <Compile Include="ViewModel\ViewCardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Curacao.MVVM">
+      <HintPath>..\packages\Curacao.Mvvm.1.0.1\lib\Curacao.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="Curacao.Mvvm.Abstractions">
+      <HintPath>..\packages\Curacao.Mvvm.Abstractions.1.0.1\lib\Curacao.Mvvm.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>..\packages\JetBrains.Annotations.Portable.8.0.5185.29681\lib\portable-win+net40+sl40+wp+Xbox40\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm.Abstractions\Curacao.Mvvm.Abstractions.csproj">
-      <Project>{89d0eefb-d98e-4cb7-85ed-ca55f98a8b41}</Project>
-      <Name>Curacao.Mvvm.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\submodules\Curacao.Mvvm\src\Curacao.Mvvm\Curacao.Mvvm.csproj">
-      <Project>{f66e4f7d-df19-447e-baf2-31118687be7f}</Project>
-      <Name>Curacao.Mvvm</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
